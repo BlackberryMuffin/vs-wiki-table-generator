@@ -29,7 +29,7 @@ def generate_tables(install_path:str, *, output_path:str="./"):
                     bought_by[bought["code"]] = []
                 bought_by[bought["code"]].append(translate_trader(install_path, trader))
 
-    out='{|<!--\nThis tables layout was generated automatically via <github link>. If you want to modify this tables layout, consider changing the code instead the table\'s source!\n-->class="wikitable sortable mw-collapsible"\n|+<translate>Clothing</translate>||-;\n!<translate>Item icon</translate>!!<translate>Item name</translate> !! <translate>Sold by</translate> !! <translate>Purchased by</translate> !! <translate>Craftable by all</translate> !! <translate>Recipe</translate>\n|-'
+    out='{|<!--\nThis tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table\'s source text!\n-->class="wikitable sortable mw-collapsible"\n|+<translate>Clothing</translate>||-;\n!<translate>Item icon</translate>!!<translate>Item name</translate> !! <translate>Sold by</translate> !! <translate>Purchased by</translate> !! <translate>Craftable by all</translate> !! <translate>Recipe</translate>\n|-'
     for item in items:
         out+=f"|[[File:{item}.png|64px]]||<translate>{items[item]}</translate>||{f"<translate>{"\n".join(sold_by[item])}</translate>" if item in sold_by else ""}||{f"<translate>{"\n".join(bought_by[item])}</translate>" if item in bought_by else ""}||||\n|-\n"
     out+="|}"
