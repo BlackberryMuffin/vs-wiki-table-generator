@@ -60,7 +60,7 @@ def generate_tables(install_path:str, *, output_path:str="./"):
 This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table\'s source text!
 -->class="wikitable sortable mw-collapsible"
 |+<translate>Clothing</translate>||-;
-!<translate>Item ccon</translate>!!<translate>Item name</translate>!!<translate>Item description</translate>!!<translate>Sold by</translate>!!<translate>Sold for (in rusty gears)</translate>!!<translate>Purchased by</translate>!!<translate>Purchased for (in rusty gears)</translate>!!<translate>Craftable by all</translate>!!<translate>Recipe</translate>
+!<translate>Item icon</translate>!!<translate>Item name</translate>!!<translate>Item description</translate>!!<translate>Sold by</translate>!!<translate>Sold for (in rusty gears)</translate>!!<translate>Purchased by</translate>!!<translate>Purchased for (in rusty gears)</translate>!!<translate>Craftable by all</translate>!!<translate>Recipe</translate>
 |-'''
 
     for item in items:
