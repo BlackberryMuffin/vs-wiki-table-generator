@@ -1,5 +1,6 @@
 from os import listdir, mkdir
 import json
+from _util_general.mediawiki_templates import tunit
 
 langs_dict={}
 
@@ -23,7 +24,7 @@ def generate_tables(install_path:str, *, output_path:str="./"):
 
 
 
-def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False):
+def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False, villagerCounter:list=None):
     if lang not in langs_dict:
         with open(f"{install_path}/assets/game/lang/{lang}.json", "r") as f:
             langs_dict[lang]=json.load(f)
@@ -36,7 +37,11 @@ def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bo
         name = langs_dict[lang][trader.replace("villager", "nametag")]
         villager = True
     if addTunit:
-        name = f"{{{{Tunit|{trader}|{name}}}}}"
+        name = tunit(trader,name)
+    if villager:
+        name += "<sup>1</sup>"
+        if type(villagerCounter) is list:
+            villagerCounter[0]+=1
 
     return name
 
