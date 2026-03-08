@@ -22,4 +22,4 @@ def generate(install_path:str):
                 print("\tFinished genertating "+entry.name)
     print("All done :3")
 
-generate("/home/philip/.config/VSLGameVersions/1.22.0-pre.5/") ### My debug thing that I'm too lazy to filter out of the git
+generate("/home/philip/.config/VSLGameVersions/1.22.0-rc.1/") ### My debug thing that I'm too lazy to filter out of the git

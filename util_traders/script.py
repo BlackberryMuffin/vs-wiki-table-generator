@@ -1,6 +1,10 @@
+from os import listdir, mkdir
+import json
+
+langs_dict={}
+
+
 def generate_tables(install_path:str, *, output_path:str="./"):
-    from os import listdir, mkdir
-    import json
     global traders_json
 
     path = install_path+"/assets/survival/config/tradelists/"
@@ -16,11 +20,23 @@ def generate_tables(install_path:str, *, output_path:str="./"):
     with open(output_path+"/generated/traders.json", "x") as f:
         f.write(json.dumps(traders_json, indent=4))
 
-def translate_trader(install_path:str, trader:str, *, lang:str="en"):
-    import json
 
-    with open(f"{install_path}/assets/game/lang/{lang}.json", "r") as f:
-        lang_dict=json.load(f)
 
-    return lang_dict[f"item-creature-{trader.replace("-","-*-")}-cold"][:-7]  if trader.startswith("trader-") else lang_dict[trader.replace("villager", "nametag")]
+
+def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False):
+    if lang not in langs_dict:
+        with open(f"{install_path}/assets/game/lang/{lang}.json", "r") as f:
+            langs_dict[lang]=json.load(f)
+
+    name = ""
+    villager = False
+    if trader.startswith("trader-"):
+        name = langs_dict[lang][f"item-creature-{trader.replace("-","-*-")}-cold"][:-7]
+    else:
+        name = langs_dict[lang][trader.replace("villager", "nametag")]
+        villager = True
+    if addTunit:
+        name = f"{{{{Tunit|{trader}|{name}}}}}"
+
+    return name
 
