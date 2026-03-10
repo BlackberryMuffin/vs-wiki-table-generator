@@ -1,5 +1,5 @@
 import json
-from util_traders.script import traders_json as traders, translate_trader
+import util_traders.script as trader_util
 from os import mkdir
 from _util_general.mediawiki_templates import tunit, hovertip
 
@@ -37,6 +37,8 @@ def generate_tables(install_path:str, *, output_path:str="./"):
         items["example-entry"]="Example entry"; warmth["example-entry"]="0%"; rain_prot["example-entry"]="0%"; eye_prot["example-entry"]="0%";
         descriptions["example-entry"]="This item is a placeholder which fills out all the columns so my code doesn't trim them off'"; sold_by["example-entry"]=["Null trader"]; bought_by["example-entry"]=["Null trader"]; craftable["example-entry"]="''yes''<br>only by Example Classes";
 
+
+    # Fills `items` (used for item-id + item name) and `descriptions` (used for item lore text) from the games translation files
     for key in lang_dict:
         if key.startswith(("item-clothes-")):
             items[key[5:]] = lang_dict[key]
@@ -44,26 +46,25 @@ def generate_tables(install_path:str, *, output_path:str="./"):
         if key.startswith(("itemdesc-clothes-")):
             descriptions[key[9:]] = lang_dict[key]
 
-    trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
-    trader_names=[]
+
+    #TODO: warmth
+
+    #TODO: rain prot
+
+    #TODO: eye:prot
+
+
+    # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
     contains_villagers=[0]
-    very_specific_function = lambda trader, sold_or_bought: hovertip(translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{sold_or_bought["price"]["avg"]-sold_or_bought["price"]["var"]} - {sold_or_bought["price"]["avg"]+sold_or_bought["price"]["var"]} {{{{Tunit|item-gear-rusty|rusty gears}}}}")
+    very_specific_function = lambda trader, trade: hovertip(trader_util.translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{trade["price"]["avg"]-trade["price"]["var"]} - {trade["price"]["avg"]+trade["price"]["var"]} {{{{Tunit|item-gear-rusty|rusty gears}}}}")
+    # Fetches all clothing trades from trader_util
+    trades = trader_util.trades_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
+    # The previously fetched trade data is now modified using very_specific_function and then added `sold_by` and `bought_by` which hold readable trade information
+    for clothing in trades:
+        sold_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["selling"]]
+        bought_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["buying"]]
 
-    for trader in traders:
-        trader_names.append((trader, translate_trader(install_path, trader)))
-        for sold in traders[trader]["selling"]["list"]:
-            if sold["code"].startswith("clothes-"):
-                if not sold["code"] in sold_by:
-                    sold_by[sold["code"]] = []
-                sold_by[sold["code"]].append(very_specific_function(trader, sold))
-
-        for bought in traders[trader]["buying"]["list"]:
-            if bought["code"].startswith("clothes-"):
-                if not bought["code"] in bought_by:
-                    bought_by[bought["code"]] = []
-                bought_by[bought["code"]].append(very_specific_function(trader, sold))
-    tunit_entries = special_tunit_entries + trader_names
-    trans_help += [f"<translate><!--T:{entry[0]}--> {entry[1]}</translate>" for entry in tunit_entries] + ["}}", trans_help[0]]
+    #TODO: craftable
 
 
 
@@ -105,5 +106,9 @@ def generate_tables(install_path:str, *, output_path:str="./"):
 
     with open(output_path+"/generated/table.txt", "x") as f:
         f.write(out)
+
+    trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
+    tunit_entries = special_tunit_entries + [(trader, trader_util.translate_trader(install_path, trader)) for trader in trader_util.get_trader_ids()]
+    trans_help += [f"<translate><!--T:{entry[0]}--> {entry[1]}</translate>" for entry in tunit_entries] + ["}}", trans_help[0]]
     with open(output_path+"/generated/translation_help.txt", "x") as f:
         f.write("\n".join(trans_help))

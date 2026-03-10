@@ -7,6 +7,7 @@ langs_dict={}
 
 def generate_tables(install_path:str, *, output_path:str="./"):
     global traders_json
+    global trades
 
     path = install_path+"/assets/survival/config/tradelists/"
 
@@ -21,7 +22,15 @@ def generate_tables(install_path:str, *, output_path:str="./"):
     with open(output_path+"/generated/traders.json", "x") as f:
         f.write(json.dumps(traders_json, indent=4))
 
-
+    trades = {}
+    directions = ["selling", "buying"]
+    for trader in traders_json:
+        for direction in directions:
+            for listings in traders_json[trader][direction]["list"]:
+                if not listings["code"] in trades:
+                    trades[listings["code"]] = {d:[] for d in directions}
+                #trades[listings["code"]][direction].append(very_specific_function(trader, listings))
+                trades[listings["code"]][direction].append((trader, listings))
 
 
 def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False, villagerCounter:list=None):
@@ -44,4 +53,32 @@ def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bo
             villagerCounter[0]+=1
 
     return name
+
+
+def get_trader_ids():
+    return [trader for trader in traders_json]
+
+
+### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
+###   `trades_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))` to narrow it down to just clothing items.
+def trades_by_type(destinction_fun):
+    return {item:trades[item] for item in trades if destinction_fun(item)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
