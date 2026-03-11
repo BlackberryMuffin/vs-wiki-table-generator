@@ -3,7 +3,7 @@ import json
 from _util_general.mediawiki_templates import tunit
 from _util_general.lang_dicts import get_dict
 
-def generate_tables(install_path:str, *, output_path:str="./"):
+def setup(install_path:str, *, output_path:str="./", lang):
     global traders_json
     global trades
 

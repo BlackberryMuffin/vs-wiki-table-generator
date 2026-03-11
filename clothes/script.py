@@ -22,7 +22,7 @@ special_tunit_entries=[
 
 special_names=["nadiya"]
 interpret_as={"butterflypin":"emblem"}
-def generate_tables(install_path:str, *, output_path:str="./", lang:str="en"):
+def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     Path(output_path+"/generated/tables").mkdir(parents=True, exist_ok=True)
 
     en_lang_dict=get_dict(install_path, lang="en")
@@ -93,15 +93,15 @@ def generate_tables(install_path:str, *, output_path:str="./", lang:str="en"):
         '-->class="wikitable sortable mw-collapsible" style="text-align:center;"\n'+\
         "|+<translate>Clothing</translate>||-;"+\
         "\n"+\
-        "!<translate>Item icon</translate>"+\
-        "!!<translate>Item name</translate>"+\
-        ('!!data-sort-type="number"|<translate>Warmth</translate>' if len(warmth) != 0 else "")+\
-        ('!!data-sort-type="number"|<translate>Rain prot.</translate>' if len(rain_prot) != 0 else "")+\
-        ("!!<translate>Eye prot.</translate>" if len(eye_prot) != 0 else "")+\
-        ("!!<translate>Item description</translate>" if len(descriptions) != 0 else "")+\
-        ("!!<translate>Bought from</translate>" if len(sold_by) != 0 else "")+\
-        ("!!<translate>Sold to</translate>" if len(bought_by) != 0 else "")+\
-        ("!!<translate>Craftable</translate>" if len(craftable) != 0 else "")+\
+        "!<translate>Item icon</translate><ref><code>assets/game/lang/en.json</code></ref>"+\
+        "!!<translate>Item name</translate><ref><code>assets/game/lang/</code></ref>"+\
+        ('!!data-sort-type="number"|<translate>Warmth</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>' if len(warmth) != 0 else "")+\
+        ('!!data-sort-type="number"|<translate>Rain prot.</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>' if len(rain_prot) != 0 else "")+\
+        ("!!<translate>Eye prot.</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>" if len(eye_prot) != 0 else "")+\
+        ("!!<translate>Item description</translate><ref><code>assets/game/lang/</code></ref>" if len(descriptions) != 0 else "")+\
+        ("!!<translate>Bought from</translate><ref><code>assets/survival/config/tradelists/</code></ref>" if len(sold_by) != 0 else "")+\
+        ("!!<translate>Sold to</translate><ref><code>assets/survival/config/tradelists/</code></ref>" if len(bought_by) != 0 else "")+\
+        ("!!<translate>Craftable</translate><ref><code>assets/survival/recipes/grid/clothes/</code></ref>" if len(craftable) != 0 else "")+\
         "\n"+\
         "|-\n"
 
@@ -153,14 +153,13 @@ def gen_clothing_attributes(install_path:str, output_path:str, *, gen_cleaned_js
                     sub_dirs.append((entry.path, sub_dirs[i][1]+((entry.name+"-") if entry.name != "villager" else "")))
                 elif entry.is_file() and entry.name.endswith(".json"):
                     with open(entry.path, "r") as f:
-                        repaired_json=repair_json(f.read())
-                        if gen_cleaned_jsons:
-                            path=output_path + "/generated/cleaned_jsons/"+"/".join(sub_dirs[i][1].split("-"))
-                            if not Path(path).exists():
-                                Path(path).mkdir(parents=True, exist_ok=True)
-                            with open(path+entry.name, "x", encoding="utf-8") as fi:
-                                fi.write(repaired_json)
-                        clothing_attributes[sub_dirs[i][1]+entry.name[:-5]] = json.loads(repaired_json)
+                        clothing_attributes[sub_dirs[i][1]+entry.name[:-5]] = json.loads(repair_json(f.read()))
+                    if gen_cleaned_jsons:
+                        path=output_path + "/generated/cleaned_jsons/"+"/".join(sub_dirs[i][1].split("-"))
+                        if not Path(path).exists():
+                            Path(path).mkdir(parents=True, exist_ok=True)
+                        with open(path+entry.name, "x", encoding="utf-8") as fi:
+                            fi.write(json.dumps(clothing_attributes[sub_dirs[i][1]+entry.name[:-5]], indent=4))
         i+=1
     if gen_cleaned_jsons:
         with open(output_path + "/generated/cleaned_jsons/_combined.json", "x", encoding="utf-8") as f:
