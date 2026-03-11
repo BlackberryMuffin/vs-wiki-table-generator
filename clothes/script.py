@@ -95,8 +95,8 @@ def generate_tables(install_path:str, *, output_path:str="./", lang:str="en"):
         "\n"+\
         "!<translate>Item icon</translate>"+\
         "!!<translate>Item name</translate>"+\
-        ("!!<translate>Warmth</translate>" if len(warmth) != 0 else "")+\
-        ("!!<translate>Rain prot.</translate>" if len(rain_prot) != 0 else "")+\
+        ('!!data-sort-type="number"|<translate>Warmth</translate>' if len(warmth) != 0 else "")+\
+        ('!!data-sort-type="number"|<translate>Rain prot.</translate>' if len(rain_prot) != 0 else "")+\
         ("!!<translate>Eye prot.</translate>" if len(eye_prot) != 0 else "")+\
         ("!!<translate>Item description</translate>" if len(descriptions) != 0 else "")+\
         ("!!<translate>Bought from</translate>" if len(sold_by) != 0 else "")+\
