@@ -1,7 +1,9 @@
+from sys import argv
+from os import scandir, path as os_path
+from importlib import import_module
+from shutil import rmtree
+
 def generate(install_path:str):
-    from os import scandir, path as os_path
-    from importlib import import_module
-    from shutil import rmtree
     print("Starting to set up utility scripts:")
     with scandir() as it:
         for entry in it:
@@ -22,4 +24,5 @@ def generate(install_path:str):
                 print("\tFinished genertating "+entry.name)
     print("All done :3")
 
-generate("/home/philip/.config/VSLGameVersions/1.22.0-rc.1/") ### My debug thing that I'm too lazy to filter out of the git
+if len(argv)>1:
+    generate(argv[1])
