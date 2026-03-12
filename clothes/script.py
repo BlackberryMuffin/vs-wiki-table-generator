@@ -7,6 +7,8 @@ from _util_general.json_util import repair as repair_json
 from os import scandir
 import re
 
+from util_recipes.script import recipes_by_type
+
 debug = True
 
 """
@@ -24,10 +26,12 @@ special_names=["nadiya"]
 interpret_as={"butterflypin":"emblem"}
 def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     Path(output_path+"/generated/tables").mkdir(parents=True, exist_ok=True)
+    Path(output_path+"/generated/recipes").mkdir(parents=True, exist_ok=True)
 
-    en_lang_dict=get_dict(install_path, lang="en")
     lang_dict=get_dict(install_path, lang=lang)
     gen_clothing_attributes(install_path, output_path, gen_cleaned_jsons=True)
+
+    annotations = []
 
     items={}
     warmth={}
@@ -38,17 +42,28 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     bought_by={}
     craftable={}
 
+    recipes = crafting_help(install_path, output_path, lang_dict)
+
 
     # Fills `items` (used for item-id + item name) and `descriptions` (used for item lore text) from the games translation files
-    for key in en_lang_dict:
-        if key.startswith(("item-clothes-")):
-            items[key[5:]] = (lang_dict if key in lang_dict else en_lang_dict)[key]
+    for key in lang_dict:
+        if key.startswith("item-clothes-"):
+            items[key[5:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
 
-        if key.startswith(("itemdesc-clothes-")):
-            descriptions[key[9:]] = (lang_dict if key in lang_dict else en_lang_dict)[key]
+        if key.startswith("itemdesc-clothes-"):
+            descriptions[key[9:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
+
+    got_items_from_recipes=False
+    for recipe in recipes:
+        craftable[recipe] = ",<br>".join([str(list(recipes[recipe][i]["ingredients"].keys())) for i in range(len(recipes[recipe]))])
+        if recipe not in items:
+            got_items_from_recipes=True
+            items[recipe] = f"{recipe}<sup>{len(annotations)+1}</sup>"
+    if got_items_from_recipes:
+        annotations.append("<translate>This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.</translate>")
 
 
-    #TODO: warmth
+    # Fills `warmth`, `rain_prot`, and `eye_prot` (no clue what the latter 2 do tbh)
     for item in items:
         attributes = get_attributes(item)
         if attributes is None:
@@ -56,8 +71,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         if "warmth" in attributes and attributes["warmth"]:
             warmth[item] = f"{attributes["warmth"]}°C"
         if "rainProtectionPerc" in attributes and attributes["rainProtectionPerc"]:
-            tmp = attributes["rainProtectionPerc"]*100
-            rain_prot[item] = f"{int(tmp) if tmp==int(tmp) else tmp}%"
+            rain_prot_tmp = attributes["rainProtectionPerc"]*100
+            rain_prot[item] = f"{int(rain_prot_tmp) if rain_prot_tmp==int(rain_prot_tmp) else rain_prot_tmp}%"
         if "eyeprotective" in attributes and attributes["eyeprotective"]:
             eye_prot[item] = "✅" ### <-- In case your font doesn't support it, that's a green checkmark :D
 
@@ -67,14 +82,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         with open(output_path+"generated/attributes", "x", encoding="utf-8") as f:
             f.write("\n".join(test_var_out))
 
-
-    #TODO: rain prot
-
-    #TODO: eye:prot
-
-
     # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
-    contains_villagers=[0]
+    contains_villagers=[0, len(annotations)+1]
     very_specific_function = lambda trader, trade: hovertip(trader_util.translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{trade["price"]["avg"]-trade["price"]["var"]} - {trade["price"]["avg"]+trade["price"]["var"]} {{{{Tunit|item-gear-rusty|rusty gears}}}}")
     # Fetches all clothing trades from trader_util
     trades = trader_util.trades_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
@@ -82,8 +91,11 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     for clothing in trades:
         sold_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["selling"]]
         bought_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["buying"]]
+    if contains_villagers[0]:
+        annotations.append("<translate>Villagers, while similar to {{ll|Trading|traders}} are seperate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>")
 
-    #TODO: craftable
+
+
 
 
 
@@ -109,18 +121,18 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
         out+=""+\
             f"|[[File:{item}.png|64px]]"+\
-            f"||<translate>{items[item]}</translate>"+\
-            (f"||{f"<translate>{warmth[item]}</translate>" if item in warmth else ""}" if len(warmth) != 0 else "")+\
-            (f"||{f"<translate>{rain_prot[item]}</translate>" if item in rain_prot else ""}" if len(rain_prot) != 0 else "")+\
-            (f"||{f"<translate>{eye_prot[item]}</translate>" if item in eye_prot else ""}" if len(eye_prot) != 0 else "")+\
-            (f"||{f"<translate>{descriptions[item]}</translate>" if item in descriptions else ""}" if len(descriptions) != 0 else "")+\
+            f"||{items[item]}"+\
+            (f"||{f"{warmth[item]}" if item in warmth else ""}" if len(warmth) != 0 else "")+\
+            (f"||{f"{rain_prot[item]}" if item in rain_prot else ""}" if len(rain_prot) != 0 else "")+\
+            (f"||{f"{eye_prot[item]}" if item in eye_prot else ""}" if len(eye_prot) != 0 else "")+\
+            (f"||{f"{descriptions[item]}" if item in descriptions else ""}" if len(descriptions) != 0 else "")+\
             (f"||{f"{",<br>".join(sold_by[item])}" if item in sold_by else ""}" if len(sold_by) != 0 else "")+\
             (f"||{f"{",<br>".join(bought_by[item])}" if item in bought_by else ""}" if len(bought_by) != 0 else "")+\
             (f"||{f"<translate>{craftable[item]}</translate>" if item in craftable else ""}" if len(craftable) != 0 else "")+\
             "\n|-\n"
     out+=""+\
         "|}"+\
-        ("<sup>1</sup> <translate>Villagers, while similar to {{ll|Trading|traders}} are seperate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>" if contains_villagers[0] else "")
+        "<br>".join([f"<sup>{i+1}</sup>{annotations[i]}" for i in range(len(annotations))])
 
 
     with open(output_path+"/generated/tables/all.txt", "x", encoding="utf-8") as f:
@@ -226,12 +238,79 @@ def get_attributes(item:str):
             if re.match(regex, item) and "eyeprotective" in clothing_attributes[attributes["category"]]["attributesByType"][regex]:
                 attributes["eyeprotective"] = clothing_attributes[attributes["category"]]["attributesByType"][regex]["eyeprotective"]
                 break
-
-
     return attributes
 
 
+def crafting_help(install_path:str, output_path:str, lang_dict):
+    specials = {
+        "color": [w[11:] for w in lang_dict if w.startswith("item-cloth-")]
+    }
 
+    ### TODO: finish craftables
+    recipes = recipes_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
+    replace = {}
+    for clothing in recipes:
+        if re.search(r"(\{.*})", clothing):
+            replace[clothing] = {}
+            clothing_copy = clothing
+            s = re.search(r"(\{.*})", clothing_copy)
+            while s:
+                wild_card = s[0][1:-1]
+                if s:
+                    new = None
+                    for sub_recipe in recipes[clothing]:
+                        if "allowedVariants" in sub_recipe and wild_card in sub_recipe["allowedVariants"]:
+                            clothing_copy = clothing_copy.replace(s[0], "")
+                            new = sub_recipe["allowedVariants"][wild_card]
+                        elif wild_card in specials:
+                            clothing_copy = clothing_copy.replace(s[0], "")
+                            new = specials[wild_card]
+                            if "skipVariants" in sub_recipe and wild_card in sub_recipe["skipVariants"]:
+                                new = [n for n in new if n not in sub_recipe["skipVariants"][wild_card]]
+                        else:
+                            for ingredient in sub_recipe["ingredients"]:
+                                if sub_recipe["ingredients"][ingredient]["name"] == wild_card:
+                                    clothing_copy = clothing_copy.replace(s[0], "")
+                                    new = sub_recipe["ingredients"][ingredient]["allowedvariants"]
+                    replace[clothing][s[0]] = new
+                s = re.search(r"(\{.*})", clothing_copy)
+
+    with open(output_path + "/generated/recipes/wild_cards.json", "x", encoding="utf-8") as f:
+        f.write(json.dumps([clothing for clothing in replace], indent=4))
+
+    ### DEBUG addition, just tests the warning system
+    replace["fake-{wild}-{card}-item, this is just a drill!"] = 1
+    for clothing in replace:
+        if re.search(r"(.*\{[^}]*})(.*\{[^}]*})+.*", clothing):
+            print("\t\tPANIC: THERE IS A CLOTHING RECIPE WITH MORE THAN ONE WILD CARD!!! IT IS:\t", clothing)
+            continue
+        for replacee in replace[clothing]:
+            for replacement in replace[clothing][replacee]:
+                name = clothing.replace(replacee, replacement)
+                recipes[name] = json.loads(json.dumps(recipes[clothing]))
+                for sub_recipe in recipes[name]:
+                    for ingredient in sub_recipe["ingredients"]:
+                        if "code" in sub_recipe["ingredients"][ingredient] and replacee in \
+                                sub_recipe["ingredients"][ingredient]["code"]:
+                            tmp = sub_recipe["ingredients"][ingredient]
+                            tmp["code"] = tmp["code"].replace(replacee, replacement)
+        del recipes[clothing]
+
+    with open(output_path + "/generated/recipes/main.json", "x", encoding="utf-8") as f:
+        f.write(json.dumps(recipes, indent=4))
+
+    multi = []
+    fakes = []
+    for recipe in recipes:
+        if not recipe.startswith("clothes-"):
+            fakes.append(recipe)
+        elif len(recipes[recipe]) > 1:
+            multi.append(recipe)
+    with open(output_path + "/generated/recipes/fake.json", "x", encoding="utf-8") as f:
+        f.write(json.dumps(fakes, indent=4))
+    with open(output_path + "/generated/recipes/multi.json", "x", encoding="utf-8") as f:
+        f.write(json.dumps(multi, indent=4))
+    return {recipe:recipes[recipe] for recipe in recipes if recipe not in fakes}
 
 
 

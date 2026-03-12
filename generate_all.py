@@ -24,8 +24,12 @@ def generate(install_path:str, *, lang:str="en"):
                 print("\tFinished genertating "+entry.name)
     print("All done :3")
 
+
+from datetime import datetime
+start = datetime.now()
 if len(argv)>1:
     if len(argv) == 2:
         generate(install_path=argv[1])
     else:
         generate(argv[1], lang=argv[2])
+print("\nTook:",datetime.now() - start)

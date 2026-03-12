@@ -5,8 +5,15 @@ import json
 
 """
 A lot of the grid recipes have horizontal tabulators inside strings, which is not allowed under standard JSON.
-To search for relevant shapes look for ".*	.*" (including the quotation marks) within the vanilla (not generated) grid recipes.
-Idk if this will cause problems yet.
+To search for relevant shapes look for
+    ".*	.*"
+    (starting and ending with the quotation marks))
+within the vanilla (not generated) grid recipes. Idk if this will cause problems yet.
+"""
+"""
+Oh gods no, there are some recipes with multiple wildcards, look for in the generated recipes:
+    "([^"\n]*\{[^"\n}]*})([^"\n]*\{[^"\n}]*})+[^"\n]*"
+    (starting and ending with the quotation marks))
 """
 
 def setup(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
@@ -34,7 +41,6 @@ def setup(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons
     if gen_cleaned_jsons:
         with open(output_path + "/generated/cleaned_jsons/_combined.json", "x", encoding="utf-8") as fi:
             fi.write(json.dumps(recipes, indent=4))
-    recipes_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
 
 
 
@@ -48,7 +54,7 @@ def recipes_by_type(destinction_fun):
                 if recipe["output"]["code"] not in out:
                     out[recipe["output"]["code"]] = []
                 out[recipe["output"]["code"]].append(recipe)
-    return out
+    return json.loads(json.dumps(out))
 
 
 
