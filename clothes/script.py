@@ -51,11 +51,13 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             items[key[5:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
 
         if key.startswith("itemdesc-clothes-"):
-            descriptions[key[9:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
+            descriptions[key[9:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key].replace('<font color="#99c9f9">', '<font color="#0099ff">')}</translate>"
 
     got_items_from_recipes=False
     for recipe in recipes:
-        craftable[recipe] = ",<br>".join([str(list(recipes[recipe][i]["ingredients"].keys())) for i in range(len(recipes[recipe]))])
+        #craftable[recipe] = ",<br>".join([str(list(recipes[recipe][i]["ingredients"].keys())) for i in range(len(recipes[recipe]))])
+        string = ",and<br>".join({"by "+ recipes[recipe][i]["requiresTrait"]+"s" for i in range(len(recipes[recipe])) if "requiresTrait" in recipes[recipe][i]})
+        craftable[recipe] = "yes" + (",<br>" if string else "") + string
         if recipe not in items:
             got_items_from_recipes=True
             items[recipe] = f"{recipe}<sup>{len(annotations)+1}</sup>"
