@@ -31,7 +31,9 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     lang_dict=get_dict(install_path, lang=lang)
     gen_clothing_attributes(install_path, output_path, gen_cleaned_jsons=True)
 
-    annotations = []
+    categories_ignore=["nadiya"]
+    categories_replace={"butterflypin": "emblem"}
+    categories={"_all":[]}
 
     items={}
     warmth={}
@@ -53,16 +55,35 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         if key.startswith("itemdesc-clothes-"):
             descriptions[key[9:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key].replace('<font color="#99c9f9">', '<font color="#0099ff">')}</translate>"
 
-    got_items_from_recipes=False
     for recipe in recipes:
         #craftable[recipe] = ",<br>".join([str(list(recipes[recipe][i]["ingredients"].keys())) for i in range(len(recipes[recipe]))])
         string = ",and<br>".join({"by "+ recipes[recipe][i]["requiresTrait"]+"s" for i in range(len(recipes[recipe])) if "requiresTrait" in recipes[recipe][i]})
         craftable[recipe] = "yes" + (",<br>" if string else "") + string
         if recipe not in items:
-            got_items_from_recipes=True
-            items[recipe] = f"{recipe}<sup>{len(annotations)+1}</sup>"
-    if got_items_from_recipes:
-        annotations.append("<translate>This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.</translate>")
+            #items[recipe] = f"{recipe}<sup>{len(annotations)+1}</sup>"
+            items[recipe] = f"{recipe}<sup>_-XYZ-_</sup>"
+
+    for item in items:
+        split_name = item.split("-")
+        for i in range(1, len(split_name)):
+            category = split_name[i]
+            if category in categories_ignore:
+                continue
+            if category not in categories:
+                categories[category] = []
+            categories[category].append(item)
+            categories["_all"].append(item)
+
+            break
+    for replacee in categories_replace:
+        if replacee not in categories:
+            continue
+        if categories_replace[replacee] not in categories:
+            categories[categories_replace[replacee]] = []
+        categories[categories_replace[replacee]] += categories[replacee]
+        del categories[replacee]
+    with open(output_path+"/generated/categories.json", "x", encoding="utf-8") as f:
+        f.write(json.dumps(categories, indent=4))
 
 
     # Fills `warmth`, `rain_prot`, and `eye_prot` (no clue what the latter 2 do tbh)
@@ -85,60 +106,132 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             f.write("\n".join(test_var_out))
 
     # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
-    contains_villagers=[0, len(annotations)+1]
+    contains_villagers=[0]
     very_specific_function = lambda trader, trade: hovertip(trader_util.translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{trade["price"]["avg"]-trade["price"]["var"]} - {trade["price"]["avg"]+trade["price"]["var"]} {{{{Tunit|item-gear-rusty|rusty gears}}}}")
     # Fetches all clothing trades from trader_util
     trades = trader_util.trades_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
     # The previously fetched trade data is now modified using very_specific_function and then added `sold_by` and `bought_by` which hold readable trade information
     for clothing in trades:
-        sold_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["selling"]]
-        bought_by[clothing] = [very_specific_function(*trade) for trade in trades[clothing]["buying"]]
-    if contains_villagers[0]:
-        annotations.append("<translate>Villagers, while similar to {{ll|Trading|traders}} are seperate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>")
+        villager_count=contains_villagers[0]
+        sold_by[clothing] = ([very_specific_function(*trade) for trade in trades[clothing]["selling"]], villager_count!=contains_villagers)
+        villager_count=contains_villagers[0]
+        bought_by[clothing] = ([very_specific_function(*trade) for trade in trades[clothing]["buying"]], villager_count!=contains_villagers)
 
 
 
 
+    sorted_categories=list(categories.keys())
+    sorted_categories.sort()
+    for category in sorted_categories:
+        tmp = categories[category]
+        del categories[category]
+        categories[category] = tmp
 
 
-    out=""+\
-        "{|<!--\n"+\
-        "This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!\n"+\
-        '-->class="wikitable sortable mw-collapsible" style="text-align:center;"\n'+\
-        "|+<translate>Clothing</translate>||-;"+\
-        "\n"+\
-        "!<translate>Item icon</translate><ref><code>assets/game/lang/en.json</code></ref>"+\
-        "!!<translate>Item name</translate><ref><code>assets/game/lang/</code></ref>"+\
-        ('!!data-sort-type="number"|<translate>Warmth</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>' if len(warmth) != 0 else "")+\
-        ('!!data-sort-type="number"|<translate>Rain prot.</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>' if len(rain_prot) != 0 else "")+\
-        ("!!<translate>Eye prot.</translate><ref><code>assets/survival/itemtypes/wearable/seraph/</code></ref>" if len(eye_prot) != 0 else "")+\
-        ("!!<translate>Item description</translate><ref><code>assets/game/lang/</code></ref>" if len(descriptions) != 0 else "")+\
-        ("!!<translate>Bought from</translate><ref><code>assets/survival/config/tradelists/</code></ref>" if len(sold_by) != 0 else "")+\
-        ("!!<translate>Sold to</translate><ref><code>assets/survival/config/tradelists/</code></ref>" if len(bought_by) != 0 else "")+\
-        ("!!<translate>Craftable</translate><ref><code>assets/survival/recipes/grid/clothes/</code></ref>" if len(craftable) != 0 else "")+\
-        "\n"+\
-        "|-\n"
+    annotations = {
+        "no_name": "<translate>This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.</translate>",
+        "villager": "<translate>Villagers, while similar to {{ll|Trading|traders}} are seperate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>",
+    }
 
-    for item in items:
+    references = {
+        "icon": ['<ref name="icon"><br><code>.blockitempngexport all 400</code></ref>'],
+        "lang": ['<ref name="lang"><br><code>assets/game/lang/</code></ref>'],
+        "warmth": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>'],
+        "rain_prot": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="rain_prot_unused"><br>as of <code>1.22.0</code> the rain prot. stat is not used or shown ingame</ref>'],
+        "eye_prot": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="eye_prot_unused"><br>as of <code>1.22.0</code> the eye prot. stat is not used or shown ingame</ref>'],
+        "trades": ['<ref name="trades"><br><code>assets/survival/config/tradelists/</code></ref>'],
+        "crafting": ['<ref name="crafting"><br><code>assets/survival/recipes/grid/clothes/</code></ref>'],
+    }
+    def get_ref(ref_str:str):
+        yield "".join(references[ref_str])
+        print(ref_str, "".join(references[ref_str]))
+        for i in range(len(references[ref_str])):
+            pass#references[ref_str][i] = re.sub(r'<ref name="([^"\n]*)">.*', r'<ref name="\1" />', references[ref_str][i])
 
+
+    combined_tables = []
+    for category in categories:
+        annot_bools = {
+        "villager": False,
+        "no_name": False,
+        }
+
+        has_warmth = False
+        has_rain_prot = False
+        has_eye_prot = False
+        has_descriptions = False
+        has_sold_by = False
+        has_bought_by = False
+        has_craftable = False
+
+        for item in categories[category]:
+            has_warmth +=  item in warmth
+            has_rain_prot +=  item in rain_prot
+            has_eye_prot +=  item in eye_prot
+            has_descriptions +=  item in descriptions
+            if item in sold_by:
+                has_sold_by += 1
+                annot_bools["villager"] += sold_by[item][1]
+            if item in bought_by:
+                has_bought_by += 1
+                annot_bools["villager"] += bought_by[item][1]
+            has_craftable +=  item in craftable
+            annot_bools["no_name"] += items[item] == item
+            
+        annotations_inner = []
+        for annotation in annotations:
+            if annot_bools[annotation]:
+                annotations_inner.append(annotations[annotation])
+                annot_bools[annotation] = str(len(annotations_inner)-1)
+
+
+        out=f"=== <translate>{category.title()}</translate> ===\n"+\
+            '{|<!--\n'+\
+            "This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!\n"+\
+            '-->class="mw-collapsible mw-collapsed""\n'+\
+            '|+\n'+\
+            '|\n'+\
+            '{|class="wikitable sortable" style="text-align:center;\n'+\
+            f"|+||-;"+\
+            "\n"+\
+            f'!<translate>Item icon</translate>{list(get_ref("icon"))[0]}'+\
+            f'!!<translate>Item name</translate>{list(get_ref("lang"))[0]}'+\
+            (f'!!data-sort-type="number"|<translate>Warmth</translate>{list(get_ref("warmth"))[0]}' if has_warmth != 0 else "")+\
+            (f'!!data-sort-type="number"|<translate>Rain prot.</translate>{list(get_ref("rain_prot"))[0]}' if has_rain_prot != 0 else "")+\
+            (f'!!<translate>Eye prot.</translate>{list(get_ref("eye_prot"))[0]}' if has_eye_prot != 0 else "")+\
+            (f'!!<translate>Item description</translate>{list(get_ref("lang"))[0]}' if has_descriptions != 0 else "")+\
+            (f'!!<translate>Bought from</translate>{list(get_ref("trades"))[0]}' if has_sold_by != 0 else "")+\
+            (f'!!<translate>Sold to</translate>{list(get_ref("trades"))[0]}' if has_bought_by != 0 else "")+\
+            (f'!!<translate>Craftable</translate>{list(get_ref("crafting"))[0]}' if has_craftable != 0 else "")+\
+            '\n'+\
+            '|-\n'
+
+        for item in categories[category]:
+
+            out+=""+\
+                f"|[[File:{item}.png|64px]]"+\
+                f"||{items[item].replace("_-XYZ-_", "" if not annot_bools["no_name"] else annot_bools["no_name"])}"+\
+                (f"||{f"{warmth[item]}" if item in warmth else ""}" if has_warmth != 0 else "")+\
+                (f"||{f"{rain_prot[item]}" if item in rain_prot else ""}" if has_rain_prot != 0 else "")+\
+                (f"||{f"{eye_prot[item]}" if item in eye_prot else ""}" if has_eye_prot != 0 else "")+\
+                (f"||{f"{descriptions[item]}" if item in descriptions else ""}" if has_descriptions != 0 else "")+\
+                (f"||{f"{",<br>".join(sold_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in sold_by else ""}" if has_sold_by != 0 else "")+\
+                (f"||{f"{",<br>".join(bought_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in bought_by else ""}" if has_bought_by != 0 else "")+\
+                (f"||{f"<translate>{craftable[item]}</translate>" if item in craftable else ""}" if has_craftable != 0 else "")+\
+                "\n|-\n"
         out+=""+\
-            f"|[[File:{item}.png|64px]]"+\
-            f"||{items[item]}"+\
-            (f"||{f"{warmth[item]}" if item in warmth else ""}" if len(warmth) != 0 else "")+\
-            (f"||{f"{rain_prot[item]}" if item in rain_prot else ""}" if len(rain_prot) != 0 else "")+\
-            (f"||{f"{eye_prot[item]}" if item in eye_prot else ""}" if len(eye_prot) != 0 else "")+\
-            (f"||{f"{descriptions[item]}" if item in descriptions else ""}" if len(descriptions) != 0 else "")+\
-            (f"||{f"{",<br>".join(sold_by[item])}" if item in sold_by else ""}" if len(sold_by) != 0 else "")+\
-            (f"||{f"{",<br>".join(bought_by[item])}" if item in bought_by else ""}" if len(bought_by) != 0 else "")+\
-            (f"||{f"<translate>{craftable[item]}</translate>" if item in craftable else ""}" if len(craftable) != 0 else "")+\
-            "\n|-\n"
-    out+=""+\
-        "|}"+\
-        "<br>".join([f"<sup>{i+1}</sup>{annotations[i]}" for i in range(len(annotations))])
+            "|}"+\
+            "<br>".join([f"<sup>{i+1}</sup>{annotations_inner[i]}" for i in range(len(annotations_inner))])+\
+            "\n|}"
 
+        if category != "_all":
+            combined_tables.append(out)
 
-    with open(output_path+"/generated/tables/all.txt", "x", encoding="utf-8") as f:
-        f.write(out)
+        with open(output_path+f"/generated/tables/{category}.txt", "x", encoding="utf-8") as f:
+            f.write(out)
+
+    with open(output_path+"/generated/tables/_combined.txt", "x", encoding="utf-8") as f:
+        f.write(("\n"*3).join(combined_tables))
 
     trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
     tunit_entries = special_tunit_entries + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]

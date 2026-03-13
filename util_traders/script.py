@@ -44,7 +44,7 @@ def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bo
     if addTunit:
         name = tunit(trader,name)
     if villager and type(villagerCounter) is list:
-        name += f"<sup>{villagerCounter[1]}</sup>"
+        name += "<sup>_-XYZ-_</sup>"
         villagerCounter[0]+=1
 
     return name
