@@ -1,13 +1,18 @@
 import json
-import util_traders.script as trader_util
 from pathlib import Path
 from _util_general.mediawiki_templates import tunit, hovertip
 from _util_general.lang_dicts import get_dict
 from _util_general.json_util import repair as repair_json
-from os import scandir
+from os import scandir, path as os_path
+from shutil import rmtree
 import re
 
+from util_char_classes.script import char_class_gear_by_type
+from util_fishing_junk.script import fishable_by_type
+from util_loot.script import lootable_by_type
+from util_panning.script import pannable_by_type
 from util_recipes.script import recipes_by_type
+import util_traders.script as trader_util
 
 debug = True
 
@@ -18,12 +23,8 @@ debug = True
         It can technically be anywhere, but this placement reduces the risk of it being deleted by accident.
 """
 
-special_tunit_entries=[
-    ("item-gear-rusty", "rusty gears"),
-]
 
-special_names=["nadiya"]
-interpret_as={"butterflypin":"emblem"}
+
 def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     Path(output_path+"/generated/tables").mkdir(parents=True, exist_ok=True)
     Path(output_path+"/generated/recipes").mkdir(parents=True, exist_ok=True)
@@ -31,9 +32,47 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     lang_dict=get_dict(install_path, lang=lang)
     gen_clothing_attributes(install_path, output_path, gen_cleaned_jsons=True)
 
+    special_tunit_entries = {
+        "item-gear-rusty": "rusty gears",
+
+        "class-equipment-commoner": "Part of the '''Commoner''' starter gear",
+        "class-equipment-hunter": "Part of the '''Hunter''' starter gear",
+        "class-equipment-malefactor": "Part of the '''Malefactor''' starter gear",
+        "class-equipment-clockmaker": "Part of the '''Clockmaker''' starter gear",
+        "class-equipment-blackguard": "Part of the '''Blackguard''' starter gear",
+        "class-equipment-tailor": "Part of the '''Tailor''' starter gear",
+
+        "table-header-icon": "Item icon",
+        "table-header-name": "Item name",
+        "table-header-warmth": "Warmth",
+        "table-header-rain-prot": "Rain prot.",
+        "table-header-eye-prot": "Eye prot.",
+        "table-header-desc": "Item description",
+        "table-header-bought-from": "Bought from",
+        "table-header-sold-to": "Sold to",
+        "table-header-craftable": "Craftable",
+        "table-header-lootpool": "Present in stackrandomizers",
+        "table-header-class-gear": "Present in stackrandomizers",
+        "table-header-other-means": "Other means of obtaining",
+
+        "table-content-clothier-only": "Requires Clothier trait",
+        "table-content-panning-bonysoil": "Obtainable from panning bony soil",
+        "table-content-panning-other": "Obtainable from panning gravel or sand",
+        "table-content-fishing-junk": "Obtainable from fishing",
+    }
+
+    old_t_ids=get_old_t_ids(output_path+"/re_input/")
+
     categories_ignore=["nadiya"]
     categories_replace={"butterflypin": "emblem"}
-    categories={"_all":[]}
+    categories={"--all":[]}
+    lbt=lootable_by_type(lambda item: item.startswith("clothes-"))
+    pan=pannable_by_type(lambda item: item.startswith("clothes-"))
+    fish=fishable_by_type(lambda item: item.startswith("clothes-"))
+    char=char_class_gear_by_type(lambda item: item.startswith("clothes-"))
+    print(char)
+
+    round_to=3
 
     items={}
     warmth={}
@@ -43,26 +82,55 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     sold_by={}
     bought_by={}
     craftable={}
+    lootable={item: ",<br>".join([f"<code>{hovertip(arr[0][3:], f"{round(arr[1] * 100, round_to)}%")}</code>" for arr in lbt[item]]) for item in lbt}
+    other_means={}
+
+
+    pannable={item: ",<br>".join([f"{hovertip(arr[0], f"{round(arr[1] * 100, round_to)}%")}" for arr in pan[item]]) for item in pan}
+    fishable={item: hovertip(tunit("table-content-fishing-junk", special_tunit_entries["table-content-fishing-junk"]), f"{round(fish[item]*100, round_to)}%") for item in fish}
+    starter_gear={item: ",<br>".join([tunit(char_class, special_tunit_entries[char_class]) for char_class in char[item]]) for item in char}
+
+    with open(output_path+"/generated/lootable.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(lootable, indent=4))
+
+    with open(output_path+"/generated/pannable.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(pannable, indent=4))
+    with open(output_path+"/generated/fishable.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(fishable, indent=4))
+    with open(output_path+"/generated/class_obtainable.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(starter_gear, indent=4))
+
 
     recipes = crafting_help(install_path, output_path, lang_dict)
-
 
     # Fills `items` (used for item-id + item name) and `descriptions` (used for item lore text) from the games translation files
     for key in lang_dict:
         if key.startswith("item-clothes-"):
-            items[key[5:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
+            items[key[5:]] = f"<translate>{old_t_ids[key[5:]]["name"] if key[5:] in old_t_ids else ""}{(lang_dict if key in lang_dict else lang_dict)[key]}</translate>"
 
         if key.startswith("itemdesc-clothes-"):
-            descriptions[key[9:]] = f"<translate>{(lang_dict if key in lang_dict else lang_dict)[key].replace('<font color="#99c9f9">', '<font color="#0099ff">')}</translate>"
+            descriptions[key[9:]] = f"<translate>{old_t_ids[key[9:]]["desc"] if key[9:] in old_t_ids else ""}{(lang_dict if key in lang_dict else lang_dict)[key].replace('<font color="#99c9f9">', '<font color="#0099ff">')}</translate>"
 
+    # add recipes
     for recipe in recipes:
-        #craftable[recipe] = ",<br>".join([str(list(recipes[recipe][i]["ingredients"].keys())) for i in range(len(recipes[recipe]))])
-        string = ",and<br>".join({"by "+ recipes[recipe][i]["requiresTrait"]+"s" for i in range(len(recipes[recipe])) if "requiresTrait" in recipes[recipe][i]})
-        craftable[recipe] = "yes" + (",<br>" if string else "") + string
+        string = "✅" ### <-- In case your font doesn't support it, that's a green checkmark :D
+        for i in range(len(recipes[recipe])):
+            if "requiresTrait" in recipes[recipe][i]:
+                if recipes[recipe][i]["requiresTrait"] != "clothier":
+                    raise Exception(f"ERROR: THERE IS A NON-CLOTHIER CRAFTING REQUIREMENT\nTHE CODE MUST BE CHANGED ACCORDINGLY")
+                string = f"❎<br>{tunit("table-content-clothier-only",special_tunit_entries["table-content-clothier-only"])}"
+
+        # if item in recipes but not in en.json: add it
+        craftable[recipe] = string
         if recipe not in items:
-            #items[recipe] = f"{recipe}<sup>{len(annotations)+1}</sup>"
             items[recipe] = f"{recipe}<sup>_-XYZ-_</sup>"
 
+    for item in items:
+        s = ",<br>".join([fishable[junk] for junk in fishable if junk == item] + [pannable[mud] for mud in pannable if mud == item] + [starter_gear[gear] for gear in starter_gear if gear == item])
+        if s:
+            other_means[item]=s
+
+    # Sort into clothing categories
     for item in items:
         split_name = item.split("-")
         for i in range(1, len(split_name)):
@@ -72,7 +140,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             if category not in categories:
                 categories[category] = []
             categories[category].append(item)
-            categories["_all"].append(item)
+            categories["--all"].append(item)
 
             break
     for replacee in categories_replace:
@@ -107,7 +175,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
     # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
     contains_villagers=[0]
-    very_specific_function = lambda trader, trade: hovertip(trader_util.translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{trade["price"]["avg"]-trade["price"]["var"]} - {trade["price"]["avg"]+trade["price"]["var"]} {{{{Tunit|item-gear-rusty|rusty gears}}}}")
+    very_specific_function = lambda trader, trade: hovertip(trader_util.translate_trader(install_path, trader, addTunit=True, villagerCounter=contains_villagers), f"{trade["price"]["avg"]-trade["price"]["var"]} - {trade["price"]["avg"]+trade["price"]["var"]} {tunit("item-gear-rusty", special_tunit_entries["item-gear-rusty"])}")
     # Fetches all clothing trades from trader_util
     trades = trader_util.trades_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
     # The previously fetched trade data is now modified using very_specific_function and then added `sold_by` and `bought_by` which hold readable trade information
@@ -121,39 +189,81 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
 
     sorted_categories=list(categories.keys())
-    sorted_categories.sort()
-    for category in sorted_categories:
-        tmp = categories[category]
-        del categories[category]
-        categories[category] = tmp
-
-
-    annotations = {
-        "no_name": "<translate>This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.</translate>",
-        "villager": "<translate>Villagers, while similar to {{ll|Trading|traders}} are seperate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>",
+    super_categories={
+        "tables ==":(),
+        "primary-clothing ===": {"foot", "shoulder", "upperbodyover", "lowerbody", "upperbody"},
+        "secondary-clothing ===": {"head", "hand", "face", "waist"},
+        "pure-accessories ===": {"arm", "emblem", "neck"},
+        "citations ==": (),
     }
+    sorted_categories.sort()
+    for super_category in super_categories:
+        categories[super_category] = None
+        for category in sorted_categories:
+            if category not in super_categories[super_category]:
+                continue
+            tmp = categories[category]
+            del categories[category]
+            categories[category] = tmp
+
+    tmp = {
+        "citation-no-name": 'This item is not yet present in <tvar name="path_name"><code>assets/game/lang/en.json</code></tvar>, so it has no official name yet.',
+        "citation-villager": "Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.",
+    }
+    annotations = {
+        "no_name": [
+            f"<translate><!--T:citation-no-name--> {tmp["citation-no-name"]}</translate>",
+            tunit("citation-no-name", tmp["citation-no-name"]),
+            False,
+        ],
+        "villager": [
+            f"<translate><!--T:citation-villager--> {tmp["citation-villager"]}</translate>",
+            tunit("citation-villager", tmp["citation-villager"]),
+            False,
+        ],
+    }
+    def get_ann(ref_str:str, *, force_og:bool=False):
+        if force_og:
+            return annotations[ref_str][0]
+        if annotations[ref_str][2]:
+            return annotations[ref_str][1]
+        annotations[ref_str][2] = True
+        return annotations[ref_str][0]
+
 
     references = {
-        "icon": ['<ref name="icon"><br><code>.blockitempngexport all 400</code></ref>'],
-        "lang": ['<ref name="lang"><br><code>assets/game/lang/</code></ref>'],
-        "warmth": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>'],
-        "rain_prot": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="rain_prot_unused"><br>as of <code>1.22.0</code> the rain prot. stat is not used or shown ingame</ref>'],
-        "eye_prot": ['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="eye_prot_unused"><br>as of <code>1.22.0</code> the eye prot. stat is not used or shown ingame</ref>'],
-        "trades": ['<ref name="trades"><br><code>assets/survival/config/tradelists/</code></ref>'],
-        "crafting": ['<ref name="crafting"><br><code>assets/survival/recipes/grid/clothes/</code></ref>'],
+        "icon": [['<ref name="icon"><br><code>.blockitempngexport all 400</code></ref>']],
+        "lang": [['<ref name="lang"><br><code>assets/game/lang/</code></ref>']],
+        "warmth": [['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>']],
+        "rain_prot": [['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="rain_prot_unused"><br>as of <code>1.22.0</code> the rain prot. stat is not used or shown ingame</ref>']],
+        "eye_prot": [['<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>', '<ref name="eye_prot_unused"><br>as of <code>1.22.0</code> the eye prot. stat is not used or shown ingame</ref>']],
+        "trades": [['<ref name="trades"><br><code>assets/survival/config/tradelists/</code></ref>']],
+        "crafting": [['<ref name="crafting"><br><code>assets/survival/recipes/grid/clothes/</code></ref>']],
+        "looting": [['<ref name="looting"><br><code>assets/survival/itemtypes/meta/stackrandomizer.json</code></ref>']],
+        "other_means": [['<ref name="other_means"><br>{{ll|Class}}: <code>assets/survival/config/characterclasses.json</code><br>{{ll|Panning}}: <code>assets/survival/blocktypes/wood/pan.json</code><br>{{ll|Fishing}}: <code>assets/survival/entities/nonliving/bobber.json</code></ref>']]
     }
-    def get_ref(ref_str:str):
-        yield "".join(references[ref_str])
-        print(ref_str, "".join(references[ref_str]))
-        for i in range(len(references[ref_str])):
-            pass#references[ref_str][i] = re.sub(r'<ref name="([^"\n]*)">.*', r'<ref name="\1" />', references[ref_str][i])
+    def get_ref(ref_str:str, *, force_og:bool=False):
+        yield "".join(references[ref_str][0 if force_og else -1])
+        #print(ref_str, "".join(references[ref_str]))
+        if not force_og and len(references[ref_str]) == 1:
+            references[ref_str].append([])
+            for i in range(len(references[ref_str][0])):
+                references[ref_str][1].append(re.sub(r'<ref name="([^"\n]*)">.*', r'<ref name="\1"/>', references[ref_str][0][i]))
 
 
     combined_tables = []
     for category in categories:
+        if category.endswith("="):
+            name=category.replace("-", " ").capitalize()
+            special_tunit_entries[re.sub(r"(.*) (=+)", r"title-\1", category)] = re.sub(r"(.*) (=+)", r"\1", name)
+            combined_tables.append(re.sub(r"(.*) (=+)", r"\2 {{Tunit|_-XYZ-_|\1}} \2", name).replace("_-XYZ-_", re.sub(r"(.*) (=+)", r"title-\1", category)))
+            continue
+        special_tunit_entries["title-"+category] = category.title()
+
+
         annot_bools = {
-        "villager": False,
-        "no_name": False,
+            "villager": False,
+            "no_name": False,
         }
 
         has_warmth = False
@@ -163,6 +273,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         has_sold_by = False
         has_bought_by = False
         has_craftable = False
+        has_lootable = False
+        has_other_means = False
 
         for item in categories[category]:
             has_warmth +=  item in warmth
@@ -176,16 +288,18 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
                 has_bought_by += 1
                 annot_bools["villager"] += bought_by[item][1]
             has_craftable +=  item in craftable
+            has_lootable +=  item in lootable
             annot_bools["no_name"] += items[item] == item
-            
+            has_other_means += item in other_means
+
         annotations_inner = []
         for annotation in annotations:
             if annot_bools[annotation]:
-                annotations_inner.append(annotations[annotation])
+                annotations_inner.append(get_ann(annotation, force_og=category=="--all"))
                 annot_bools[annotation] = str(len(annotations_inner)-1)
 
 
-        out=f"=== <translate>{category.title()}</translate> ===\n"+\
+        out=f"==== {tunit("title-"+category, special_tunit_entries["title-"+category])} ====\n"+\
             '{|<!--\n'+\
             "This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!\n"+\
             '-->class="mw-collapsible mw-collapsed""\n'+\
@@ -194,47 +308,56 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             '{|class="wikitable sortable" style="text-align:center;\n'+\
             f"|+||-;"+\
             "\n"+\
-            f'!<translate>Item icon</translate>{list(get_ref("icon"))[0]}'+\
-            f'!!<translate>Item name</translate>{list(get_ref("lang"))[0]}'+\
-            (f'!!data-sort-type="number"|<translate>Warmth</translate>{list(get_ref("warmth"))[0]}' if has_warmth != 0 else "")+\
-            (f'!!data-sort-type="number"|<translate>Rain prot.</translate>{list(get_ref("rain_prot"))[0]}' if has_rain_prot != 0 else "")+\
-            (f'!!<translate>Eye prot.</translate>{list(get_ref("eye_prot"))[0]}' if has_eye_prot != 0 else "")+\
-            (f'!!<translate>Item description</translate>{list(get_ref("lang"))[0]}' if has_descriptions != 0 else "")+\
-            (f'!!<translate>Bought from</translate>{list(get_ref("trades"))[0]}' if has_sold_by != 0 else "")+\
-            (f'!!<translate>Sold to</translate>{list(get_ref("trades"))[0]}' if has_bought_by != 0 else "")+\
-            (f'!!<translate>Craftable</translate>{list(get_ref("crafting"))[0]}' if has_craftable != 0 else "")+\
+            f'!{tunit("table-header-icon", special_tunit_entries["table-header-icon"])}{list(get_ref("icon", force_og=category=="--all"))[0]}'+\
+            f'!!{tunit("table-header-name", special_tunit_entries["table-header-name"])}{list(get_ref("lang", force_og=category=="--all"))[0]}'+\
+            (f'!!data-sort-type="number"|{tunit("table-header-warmth", special_tunit_entries["table-header-warmth"])}{list(get_ref("warmth", force_og=category=="--all"))[0]}' if has_warmth != 0 else "")+\
+            (f'!!data-sort-type="number"|{tunit("table-header-rain-prot", special_tunit_entries["table-header-rain-prot"])}{list(get_ref("rain_prot", force_og=category=="--all"))[0]}' if has_rain_prot != 0 else "")+\
+            (f'!!{tunit("table-header-eye-prot", special_tunit_entries["table-header-eye-prot"])}{list(get_ref("eye_prot", force_og=category=="--all"))[0]}' if has_eye_prot != 0 else "")+\
+            (f'!!{tunit("table-header-desc", special_tunit_entries["table-header-desc"])}{list(get_ref("lang", force_og=category=="--all"))[0]}' if has_descriptions != 0 else "")+\
+            (f'!!{tunit("table-header-sold-to", special_tunit_entries["table-header-sold-to"])}{list(get_ref("trades", force_og=category=="--all"))[0]}' if has_bought_by != 0 else "")+\
+            (f'!!{tunit("table-header-bought-from", special_tunit_entries["table-header-bought-from"])}{list(get_ref("trades", force_og=category=="--all"))[0]}' if has_sold_by != 0 else "")+\
+            (f'!!{tunit("table-header-craftable", special_tunit_entries["table-header-craftable"])}{list(get_ref("crafting", force_og=category=="--all"))[0]}' if has_craftable != 0 else "")+\
+            (f'!!{tunit("table-header-lootpool", special_tunit_entries["table-header-lootpool"])}{list(get_ref("looting", force_og=category=="--all"))[0]}' if has_lootable != 0 else "")+\
+            (f'!!{tunit("table-header-other-means", special_tunit_entries["table-header-other-means"])}{list(get_ref("other_means", force_og=category=="--all"))[0]}' if has_other_means != 0 else "")+\
             '\n'+\
             '|-\n'
-
         for item in categories[category]:
 
             out+=""+\
                 f"|[[File:{item}.png|64px]]"+\
                 f"||{items[item].replace("_-XYZ-_", "" if not annot_bools["no_name"] else annot_bools["no_name"])}"+\
-                (f"||{f"{warmth[item]}" if item in warmth else ""}" if has_warmth != 0 else "")+\
-                (f"||{f"{rain_prot[item]}" if item in rain_prot else ""}" if has_rain_prot != 0 else "")+\
-                (f"||{f"{eye_prot[item]}" if item in eye_prot else ""}" if has_eye_prot != 0 else "")+\
-                (f"||{f"{descriptions[item]}" if item in descriptions else ""}" if has_descriptions != 0 else "")+\
-                (f"||{f"{",<br>".join(sold_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in sold_by else ""}" if has_sold_by != 0 else "")+\
-                (f"||{f"{",<br>".join(bought_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in bought_by else ""}" if has_bought_by != 0 else "")+\
-                (f"||{f"<translate>{craftable[item]}</translate>" if item in craftable else ""}" if has_craftable != 0 else "")+\
+                (f"||{f"{warmth[item]}" if item in warmth else ""}" if has_warmth else "")+\
+                (f"||{f"{rain_prot[item]}" if item in rain_prot else ""}" if has_rain_prot else "")+\
+                (f"||{f"{eye_prot[item]}" if item in eye_prot else ""}" if has_eye_prot else "")+\
+                (f"||{f"{descriptions[item]}" if item in descriptions else ""}" if has_descriptions else "")+\
+                (f"||{f"{",<br>".join(bought_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in bought_by else ""}" if has_bought_by else "")+\
+                (f"||{f"{",<br>".join(sold_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in sold_by else ""}" if has_sold_by else "")+\
+                (f"||{f"{craftable[item]}" if item in craftable else ""}" if has_craftable else "")+\
+                (f"||{f"{lootable[item]}" if item in lootable else ""}" if has_lootable else "")+\
+                (f"||{f"{other_means[item]}" if item in other_means else ""}" if has_other_means else "")+\
                 "\n|-\n"
         out+=""+\
             "|}"+\
             "<br>".join([f"<sup>{i+1}</sup>{annotations_inner[i]}" for i in range(len(annotations_inner))])+\
             "\n|}"
 
-        if category != "_all":
+        if category != "--all":
             combined_tables.append(out)
 
         with open(output_path+f"/generated/tables/{category}.txt", "x", encoding="utf-8") as f:
             f.write(out)
-
+    combined_tables.append("<references/>")
     with open(output_path+"/generated/tables/_combined.txt", "x", encoding="utf-8") as f:
-        f.write(("\n"*3).join(combined_tables))
+        f.write("\n".join(combined_tables))
+
+    if os_path.exists(output_path + "/re_input/"):
+        rmtree(output_path + "/re_input/")
+    Path(output_path + "/re_input/").mkdir(parents=True, exist_ok=True)
+    with open(output_path + "/re_input/table.txt", "x", encoding="utf-8") as f:
+        f.write("\n".join(combined_tables))
 
     trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
-    tunit_entries = special_tunit_entries + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]
+    tunit_entries = [(entry, special_tunit_entries[entry]) for entry in special_tunit_entries] + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]
     trans_help += [f"<translate><!--T:{entry[0]}--> {entry[1]}</translate>" for entry in tunit_entries] + ["}}", trans_help[0]]
     with open(output_path+"/generated/translation_help.txt", "x", encoding="utf-8") as f:
         f.write("\n".join(trans_help))
@@ -341,7 +464,6 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
         "color": [w[11:] for w in lang_dict if w.startswith("item-cloth-")]
     }
 
-    ### TODO: finish craftables
     recipes = recipes_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))
     replace = {}
     for clothing in recipes:
@@ -406,6 +528,27 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
     with open(output_path + "/generated/recipes/multi.json", "x", encoding="utf-8") as f:
         f.write(json.dumps(multi, indent=4))
     return {recipe:recipes[recipe] for recipe in recipes if recipe not in fakes}
+
+
+### It's a bit flawed, as it always assumes the first t_id to be the items name, then the second its description
+def get_old_t_ids(input_path:str):
+    file_name=input_path+"/table.txt"
+    if not os_path.exists(file_name):
+        return {}
+    with open(file_name, "r", encoding="utf-8") as f:
+        contents=f.read().split("|-")
+    out={}
+    for content in contents:
+        name=re.findall(r"\[\[File\:(.+)\.png\|64px\]\]", content)
+        t_ids=re.findall(r"\<\!\-\-T\:\d+\-\-\> ", content)
+        if re.search(r"\[\[File:([\w+]+).png|\d\dpx]]", content) and t_ids:
+            if len(name) > 1 or len(t_ids) > 2:
+                print("WARNING: TOO MUCH STUFF, YOU FAILED")
+            out[name[0]] = {
+                "name": t_ids[0],
+                "desc": t_ids[1] if len(t_ids) > 1 else "",
+            }
+    return out
 
 
 

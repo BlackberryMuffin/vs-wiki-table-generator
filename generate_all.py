@@ -4,6 +4,12 @@ from importlib import import_module
 from shutil import rmtree
 
 def generate(install_path:str, *, lang:str="en"):
+    with scandir() as it:
+        for entry in it:
+            generated_path = entry.name+"/generated"
+            if entry.name.startswith("_") and entry.is_dir():
+                if os_path.exists(generated_path):
+                    rmtree(generated_path)
     print("Starting to set up utility scripts:")
     with scandir() as it:
         for entry in it:
@@ -22,6 +28,7 @@ def generate(install_path:str, *, lang:str="en"):
                     rmtree(generated_path)
                 import_module(entry.name+".script").generate(install_path=install_path, output_path=entry.name+"/", lang=lang)
                 print("\tFinished genertating "+entry.name)
+
     print("All done :3")
 
 

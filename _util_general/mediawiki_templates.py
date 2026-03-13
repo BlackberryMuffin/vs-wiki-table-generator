@@ -1,5 +1,5 @@
 def tunit(id:str, text:str):
-    return "{{Tunit|"+id+"|"+text+"}}"
+    return f"{{{{Tunit|{id}|{text}}}}}"
 
 def hovertip(text:str, hovertext:str):
-    return "{{Hovertip|"+text+"|"+hovertext+"}}"
+    return f"{{{{Hovertip|{text}|{hovertext}}}}}"

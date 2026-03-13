@@ -1,0 +1,41 @@
+assets/survival/blocktypes/wood/pan.json
+assets/survival/config/characterclasses.json
+assets/survival/entities/nonliving/bobber.json
+
+
+
+(assets/survival/itemtypes/meta/stackrandomizer-library.json) (plain glasses)
+(assets/survival/itemtypes/meta/stackrandomizer-clutter.json) (plain glasses)
+
+
+
+(assets/survival/config/dialogue/gerhardt.json) (given away?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(assets/survival/worldgen/schematics/buriedtreasure) (uuuuuhhhhhh)
+(assets/survival/worldgen/schematics/story) (uuuuuhhhhhh)
+(assets/survival/worldgen/schematics/trader/forest) (uuuuuhhhhhh)
+(assets/survival/worldgen/schematics/trader/hotdry) (uuuuuhhhhhh)
+(assets/survival/worldgen/schematics/surface/special) (uuuuuhhhhhh) (cathedral-of-tyrons-basement.json waddafuk?)
+(assets/survival/worldgen/dungeontiles/refinery/simple/bedroom/33/woodcobble/paths/right/rp4.json) (just 1 item?)
+(assets/survival/worldgen/dungeontiles/refinery/simple/entrance/guardroom/t1.json) (just 1 item?)
+(assets/survival/worldgen/schematics/underground/lakes/small3.json) (just 1 item)
+(assets/survival/worldgen/schematics/underground/small/s-guardroom2.json) (just 1 item)
