@@ -1,0 +1,1691 @@
+== {{Tunit|title-tables|Tables}} ==
+=== {{Tunit|title-primary-clothing|Primary clothing}} ===
+==== {{Tunit|title-head|Head}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"><br><code>.blockitempngexport all 400</code></ref>!!{{Tunit|table-header-name|Item name}}<ref name="lang"><br><code>assets/game/lang/</code></ref>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref><ref name="rain_prot_unused"><br>as of <code>1.22.0</code> the rain prot. stat is not used or shown ingame</ref>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"><br><code>assets/survival/config/tradelists/</code></ref>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"><br><code>assets/survival/recipes/grid/clothes/</code></ref>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"><br><code>assets/survival/itemtypes/meta/stackrandomizer.json</code></ref>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"><br>{{ll|Class}}: <code>assets/survival/config/characterclasses.json</code><br>{{ll|Panning}}: <code>assets/survival/blocktypes/wood/pan.json</code><br>{{ll|Fishing}}: <code>assets/survival/entities/nonliving/bobber.json</code></ref>
+|-
+|[[File:clothes-head-bamboo-conehat-large.png|64px]]||<translate><!--T:1665--> Bamboo cone hat (large)</translate>||1°C||85%||||||||✅||||
+|-
+|[[File:clothes-head-bamboo-conehat.png|64px]]||<translate><!--T:1666--> Bamboo cone hat</translate>||1°C||85%||||||||✅||||
+|-
+|[[File:clothes-head-tophat.png|64px]]||<translate><!--T:1667--> Top hat</translate>||1°C||70%||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-head-squire-hood.png|64px]]||<translate><!--T:1668--> Squire hood</translate>||1°C||||<translate><!--T:1669--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-head-silver-diadem.png|64px]]||<translate><!--T:1670--> Silver diadem</translate>||1°C||||<translate><!--T:1671--> <font color="#0099ff"><i>Brave and pure, Wilfried remained behind on the surface with a small regiment. He was tasked to hold back any desperate, violent beings seeking entry to the underground.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|12.75 - 21.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-highstatus|1.676%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.04%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.01%}}
+|-
+|[[File:clothes-head-shepherds-cowl.png|64px]]||<translate><!--T:1672--> Shepherd cowl</translate>||1°C||||<translate><!--T:1673--> <font color="#0099ff"><i>Simple shepherd’s clothing. They could be found caring for and protecting their flock. Not anymore.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-head-roll-hat.png|64px]]||<translate><!--T:1674--> Roll hat</translate>||1°C||50%||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-head-peasent-head-scarf.png|64px]]||<translate><!--T:1675--> Peasant head scarf</translate>||1°C||||<translate><!--T:1676--> <font color="#0099ff"><i>A symbol of their pride.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-head-noble-fillet.png|64px]]||<translate><!--T:1677--> Noble fillet</translate>||1°C||||<translate><!--T:1678--> <font color="#0099ff"><i>For all his fanfare, he was surprisingly moderate in policy.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-head-minstrel-hat.png|64px]]||<translate><!--T:1679--> Minstrel hat</translate>||1°C||50%||<translate><!--T:1680--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-head-messengers-hat.png|64px]]||<translate><!--T:1681--> Messenger hat</translate>||1°C||50%||<translate><!--T:1682--> <font color="#0099ff"><i>The message eventually reached every village, every town. At least the ones that were left.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-head-merchant-hat.png|64px]]||<translate><!--T:1683--> Merchant hat</translate>||1°C||50%||<translate><!--T:1684--> <font color="#0099ff"><i>When the time came to retreat underground, the Hansa refused. They dropped off the last of their cargo, then lifted their ramps and set sail into an increasingly dark sea.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-head-lackey-hat.png|64px]]||<translate><!--T:1685--> Lackey hat</translate>||1°C||50%||<translate><!--T:1686--> <font color="#0099ff"><i>Loyal attendants. They clung to kings and queens as a way of life. Graceful or foolish — it was hard to say.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-head-jailors-hat.png|64px]]||<translate><!--T:1687--> Jailors hat</translate>||1°C||50%||<translate><!--T:1688--> <font color="#0099ff"><i>Innovation did not always herald a change in polity. In this, we were the same as ever.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-head-gold-coronet.png|64px]]||<translate><!--T:1689--> Gold coronet</translate>||1°C||||<translate><!--T:1690--> <font color="#0099ff"><i>Vestments of the old royalty, who refused the Oath and clung to their lands. Hail to the lords of rubble.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.04%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.01%}}
+|-
+|[[File:clothes-head-gem-encrusted-fur-hat.png|64px]]||<translate><!--T:1691--> Gem encrusted fur hat</translate>||1°C||50%||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-head-fortune-tellers-scarf.png|64px]]||<translate><!--T:1692--> Fortune teller scarf</translate>||1°C||||<translate><!--T:1693--> <font color="#0099ff"><i>He believed there was truth in the words of the old crones and wanderers. A truth only he could see.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-head-fancy-head-dress.png|64px]]||<translate><!--T:1694--> Fancy head dress</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-head-embroidered-coif.png|64px]]||<translate><!--T:1695--> Embroidered coif</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-head-hunter-cape.png|64px]]||<translate><!--T:1696--> Hunter hood</translate>||1°C||70%||<translate><!--T:1697--> <font color="#0099ff"><i>Excessively washed and repaired multiple times.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-head-straw-hat.png|64px]]||<translate><!--T:1698--> Straw hat</translate>||1°C||85%||||||||✅||||
+|-
+|[[File:clothes-head-marketeer.png|64px]]||<translate><!--T:1699--> Marketeer litham</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-head-rotwalker.png|64px]]||<translate><!--T:1700--> Rotwalker hood</translate>||1°C||70%||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-head-mianguan.png|64px]]||<translate><!--T:1701--> Mianguan</translate>||1°C||||||||||||||
+|-
+|[[File:clothes-head-crown.png|64px]]||<translate><!--T:1702--> Crown</translate>||1°C||||||||||||||
+|-
+|[[File:clothes-head-rottenking.png|64px]]||<translate><!--T:1703--> Rotten king crown</translate>||1°C||||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-head-alchemist.png|64px]]||<translate><!--T:1704--> Alchemist hat</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-head-furhatwide-fox-red.png|64px]]||<translate><!--T:1705--> Red fox fur trapper hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-furhatwide-generic-gray.png|64px]]||<translate><!--T:1706--> Raccoon fur trapper hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-furhatwide-generic-white.png|64px]]||<translate><!--T:1707--> Arctic fox fur trapper hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-furhattail-fox-arctic.png|64px]]||<translate><!--T:1708--> Arctic fox tail hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-furhattail-fox-red.png|64px]]||<translate><!--T:1709--> Red fox tail hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-furhattail-raccoon-common.png|64px]]||<translate><!--T:1710--> Raccoon tail hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-nadiya-head-alchemist.png|64px]]||<translate><!--T:1711--> Nadiyan alchemist hat</translate>||1°C||70%||||||||||||
+|-
+|[[File:clothes-nadiya-head-barber.png|64px]]||<translate><!--T:1712--> Nadiyan barber hat</translate>||1°C||||||||||||||
+|-
+|[[File:clothes-nadiya-head-beekeeper.png|64px]]||<translate><!--T:1713--> Nadiyan beekeeper hood</translate>||1°C||70%||||||||||||
+|-
+|[[File:clothes-nadiya-head-blacksmith.png|64px]]||<translate><!--T:1714--> Nadiyan blacksmith hood</translate>||1°C||70%||||||||||||
+|-
+|[[File:clothes-nadiya-head-fisher.png|64px]]||<translate><!--T:1715--> Nadiyan fisher hat</translate>||1°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-guard.png|64px]]||<translate><!--T:1716--> Nadiyan guard helmet</translate>||1°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-hunter.png|64px]]||<translate><!--T:1717--> Nadiyan hunter hat</translate>||1°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-innkeeper.png|64px]]||<translate><!--T:1718--> Nadiyan innkeeper hat</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-miner.png|64px]]||<translate><!--T:1719--> Nadiyan miner hat</translate>||1°C||70%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-musician.png|64px]]||<translate><!--T:1720--> Nadiyan musician hat</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasantbeige.png|64px]]||<translate><!--T:1721--> Beige Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasantblue.png|64px]]||<translate><!--T:1722--> Blue Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasantbrown.png|64px]]||<translate><!--T:1723--> Brown Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasantred.png|64px]]||<translate><!--T:1724--> Red Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasanttan.png|64px]]||<translate><!--T:1725--> Tan Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-peasantwhite.png|64px]]||<translate><!--T:1726--> White Nadiyan peasant hat</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-shepherd.png|64px]]||<translate><!--T:1727--> Nadiyan shepherd hat</translate>||1°C||70%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-tailor.png|64px]]||<translate><!--T:1728--> Nadiyan tailor hat</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-winter1.png|64px]]||<translate><!--T:1729--> Brown Nadiyan fur-lined hat</translate>||1.5°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-head-winter2.png|64px]]||<translate><!--T:1730--> Blue Nadiyan fur-lined hat</translate>||1.5°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-head-crown-byzantine.png|64px]]||<translate><!--T:1731--> Byzantine crown</translate>||1°C||||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|1.316%}}</code>||
+|-
+|[[File:clothes-head-bucket.png|64px]]||<translate><!--T:1732--> Bucket helm</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-head-bycocket.png|64px]]||<translate><!--T:1733--> Bycocket</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-head-bycocketfeather.png|64px]]||<translate><!--T:1734--> Feathered bycocket</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-head-litham.png|64px]]||<translate><!--T:1735--> Plain litham</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-head-wimple.png|64px]]||<translate><!--T:1736--> Wimple</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-acrobat.png|64px]]||<translate><!--T:1737--> Acrobat hairpin</translate>||1°C||||||||||||<code>{{Hovertip|accessory-lowstatus|2.899%}}</code>||
+|-
+|[[File:clothes-head-temptress.png|64px]]||<translate><!--T:1738--> Temptress bycocket</translate>||1°C||||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-head-furbrim.png|64px]]||<translate><!--T:1739--> Fur brim hat</translate>||1°C||||||||||||||
+|-
+|[[File:clothes-head-hide.png|64px]]||<translate><!--T:1740--> Hide hat</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-jester.png|64px]]||<translate><!--T:1741--> Jester cowl</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-head-liripipeblack.png|64px]]||<translate><!--T:1742--> Black liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipeblue.png|64px]]||<translate><!--T:1743--> Blue liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipebrown.png|64px]]||<translate><!--T:1744--> Brown liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipegray.png|64px]]||<translate><!--T:1745--> Gray liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipegreen.png|64px]]||<translate><!--T:1746--> Green liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipeorange.png|64px]]||<translate><!--T:1747--> Orange liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipepink.png|64px]]||<translate><!--T:1748--> Pink liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipepurple.png|64px]]||<translate><!--T:1749--> Purple liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipered.png|64px]]||<translate><!--T:1750--> Red liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipewhite.png|64px]]||<translate><!--T:1751--> White liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-liripipeyellow.png|64px]]||<translate><!--T:1752--> Yellow liripipe</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-phrygian.png|64px]]||<translate><!--T:1753--> Phrygian cap</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-thrumcap.png|64px]]||<translate><!--T:1754--> Thrum cap</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-head-wreathflower.png|64px]]||<translate><!--T:1755--> Flower wreath</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-head-emeraldreindeerherder.png|64px]]||<translate><!--T:1756--> Emerald reindeer herder hat</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-head-capotain.png|64px]]||<translate><!--T:1757--> Capotain</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-head-broadbrim.png|64px]]||<translate><!--T:1758--> Broadbrim hat</translate>||1°C||70%||||||||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|}<sup>1</sup><translate><!--T:citation-villager--> Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.</translate>
+|}
+==== {{Tunit|title-shoulder|Shoulder}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}<ref name="attribute"/><ref name="rain_prot_unused"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-shoulder-scarf.png|64px]]||<translate><!--T:1306--> Scarf</translate>||1°C||||||||||||||
+|-
+|[[File:clothes-shoulder-woolen-scarf.png|64px]]||<translate><!--T:1307--> Woolen scarf</translate>||1°C||||||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-shoulder-stained-leather-poncho.png|64px]]||<translate><!--T:1308--> Stained leather poncho</translate>||1°C||90%||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-lowstatus|0.156%}}</code>||
+|-
+|[[File:clothes-shoulder-shortsleeve-pearl-moonrobe.png|64px]]||<translate><!--T:1309--> Shortsleeve pearl moonrobe</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-royal-fur.png|64px]]||<translate><!--T:1310--> Prince fur</translate>||3°C||||<translate><!--T:1311--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-shoulder-peasent-kaftan.png|64px]]||<translate><!--T:1312--> Peasant kaftan</translate>||1°C||||<translate><!--T:1313--> <font color="#0099ff"><i>From a time when men were corralled by other men, not by monsters.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-noble-fur-collar.png|64px]]||<translate><!--T:1314--> Noble fur collar</translate>||3°C||||<translate><!--T:1315--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|1.045%}}</code>||
+|-
+|[[File:clothes-shoulder-mooncloth-robe.png|64px]]||<translate><!--T:1316--> Mooncloth robe</translate>||1°C||||||{{Hovertip|{{Tunit|trader-furniture|Furniture trader}}|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-minstrel-coat.png|64px]]||<translate><!--T:1317--> Minstrel coat</translate>||2°C||||<translate><!--T:1318--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-mediumstatus|2.405%}}</code>||
+|-
+|[[File:clothes-shoulder-longsleeve-pearl-moonrobe.png|64px]]||<translate><!--T:1319--> Longsleeve pearl moonrobe</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-hunter-poncho.png|64px]]||<translate><!--T:1320--> Hunter poncho</translate>||1°C||90%||<translate><!--T:1321--> <font color="#0099ff"><i>A humble shelter from the wind and rain.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-shoulder-jord-robe.png|64px]]||<translate><!--T:1322--> Jord robe</translate>||1°C||||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-shoulder-hooded-cape.png|64px]]||<translate><!--T:1323--> Hooded cape</translate>||1°C||90%||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-shoulder-embroidered-tartarean-scarf.png|64px]]||<translate><!--T:1324--> Embroidered tartar scarf</translate>||1°C||||||{{Hovertip|{{Tunit|trader-furniture|Furniture trader}}|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-embroidered-collar.png|64px]]||<translate><!--T:1325--> Embroidered collar</translate>||1°C||||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-shoulder-blacksmith-apron.png|64px]]||<translate><!--T:1326--> Blacksmith apron</translate>||0.5°C||||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-shoulder-artisans-scarf.png|64px]]||<translate><!--T:1327--> Artisans scarf</translate>||1°C||||||{{Hovertip|{{Tunit|trader-furniture|Furniture trader}}|0.75 - 1.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-shoulder-aristocrat-mantle.png|64px]]||<translate><!--T:1328--> Aristocrat mantle</translate>||1°C||||<translate><!--T:1329--> <font color="#0099ff"><i>Despite his efforts, the nobility flourished during those golden years.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-shoulder-squire-tunic.png|64px]]||<translate><!--T:1330--> Squire tunic</translate>||1°C||||<translate><!--T:1331--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-shoulder-clockmaker-apron.png|64px]]||<translate><!--T:1332--> Clockmaker apron</translate>||0.5°C||||<translate><!--T:1333--> <font color="#0099ff"><i>A small inscription on the backside reads “Tempus Rerum Imperator”</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-shoulder-forlorn-sash.png|64px]]||<translate><!--T:1334--> Forlorn Hope sash</translate>||0.1°C||||<translate><!--T:1335--> <font color="#0099ff"><i>The Order of the Forlorn Hope: like-minded knights brought together by desperation and curiosity.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-shoulder-malefactor-cloak.png|64px]]||<translate><!--T:1336--> Malefactor heavy cloak</translate>||0.5°C||80%||<translate><!--T:1337--> <font color="#0099ff"><i>A thick leather cloak to protect against exposure.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-shoulder-marketeer.png|64px]]||<translate><!--T:1338--> Marketeer cape</translate>||0.5°C||50%||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-shoulder-rotwalker.png|64px]]||<translate><!--T:1339--> Rotwalker cape</translate>||1°C||50%||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-shoulder-surgeon.png|64px]]||<translate><!--T:1340--> Barber surgeon mantle</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-shoulder-miner.png|64px]]||<translate><!--T:1341--> Miner cape</translate>||1°C||90%||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-alchemist.png|64px]]||<translate><!--T:1342--> Alchemist apron</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-shoulder-survivor.png|64px]]||<translate><!--T:1343--> Survivor cloak</translate>||1°C||80%||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-scribe.png|64px]]||<translate><!--T:1344--> Scribe hood</translate>||1°C||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-shoulder-alchemist.png|64px]]||<translate><!--T:1345--> Nadiyan alchemist capelet</translate>||1°C||50%||||||||||||
+|-
+|[[File:clothes-nadiya-shoulder-barber.png|64px]]||<translate><!--T:1346--> Nadiyan barber apron</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-blacksmith.png|64px]]||<translate><!--T:1347--> Nadiyan blacksmith apron</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-fisher.png|64px]]||<translate><!--T:1348--> Nadiyan fisher capelet</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-guard.png|64px]]||<translate><!--T:1349--> Nadiyan guard tabbard</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-hunter.png|64px]]||<translate><!--T:1350--> Nadiyan hunter cape</translate>||1°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-innkeeper.png|64px]]||<translate><!--T:1351--> Nadiyan innkeeper apron</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-musician.png|64px]]||<translate><!--T:1352--> Nadiyan musician hood</translate>||1°C||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-peasant1.png|64px]]||<translate><!--T:1353--> Blue Nadiyan peasant cape</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-peasant2.png|64px]]||<translate><!--T:1354--> Beige Nadiyan peasant cape</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-peasant3.png|64px]]||<translate><!--T:1355--> Brown Nadiyan peasant cape</translate>||1°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-shepherd.png|64px]]||<translate><!--T:1356--> Nadiyan shepherd cape</translate>||1°C||85%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-shoulder-winter1.png|64px]]||<translate><!--T:1357--> Nadiyan fur capelet</translate>||1.5°C||50%||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|14.25 - 23.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-shoulder-furwrap.png|64px]]||<translate><!--T:1358--> Fur wrap</translate>||3°C||||||||||✅||||
+|-
+|[[File:clothes-shoulder-acrobat.png|64px]]||<translate><!--T:1359--> Acrobat capelet</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-midnightponcho.png|64px]]||<translate><!--T:1360--> Midnight poncho</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-shoulder-forestponcho.png|64px]]||<translate><!--T:1361--> Forest poncho</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-shoulder-owlponcho.png|64px]]||<translate><!--T:1362--> Owl poncho</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-shawlmoth.png|64px]]||<translate><!--T:1363--> Moth patterned shawl</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-shawlhawk.png|64px]]||<translate><!--T:1364--> Hawk patterned shawl</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronyellow.png|64px]]||<translate><!--T:1365--> Yellow apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronwhite.png|64px]]||<translate><!--T:1366--> White apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronred.png|64px]]||<translate><!--T:1367--> Red apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronpurple.png|64px]]||<translate><!--T:1368--> Purple apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronplain.png|64px]]||<translate><!--T:1369--> Plain apron</translate>||1°C||||||||||✅||||
+|-
+|[[File:clothes-shoulder-apronbrown.png|64px]]||<translate><!--T:1370--> Brown apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronorange.png|64px]]||<translate><!--T:1371--> Orange apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-aprongreen.png|64px]]||<translate><!--T:1372--> Green apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-aprongray.png|64px]]||<translate><!--T:1373--> Gray apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronpink.png|64px]]||<translate><!--T:1374--> Pink apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronblue.png|64px]]||<translate><!--T:1375--> Blue apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-apronblack.png|64px]]||<translate><!--T:1376--> Black apron</translate>||1°C||||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-shoulder-emeraldreindeerherder.png|64px]]||<translate><!--T:1377--> Emerald reindeer herder mantle</translate>||1°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-shoulder-rawhidewrap.png|64px]]||<translate><!--T:1378--> Rawhide wrap</translate>||1°C||||||||||✅||||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-upperbody|Upperbody}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-upperbody-great-steppe-shirt.png|64px]]||<translate><!--T:1379--> Great Steppe shirt</translate>||2°C||<translate><!--T:1380--> <font color="#0099ff"><i>Her partner, Lima, was always close by, circling the skies.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-raw-hide-mantle.png|64px]]||<translate><!--T:1381--> Rawhide mantle</translate>||2°C||<translate><!--T:1382--> <font color="#0099ff"><i>Rather unrefined, but warm and protective.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-upperbody-woolen-shirt.png|64px]]||<translate><!--T:1383--> Woolen shirt</translate>||2°C||||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|0.156%}}</code>||
+|-
+|[[File:clothes-upperbody-temptress-velvet-shirt.png|64px]]||<translate><!--T:1384--> Temptress velvet shirt</translate>||2°C||<translate><!--T:1385--> <font color="#0099ff"><i>A countess, a diplomat, a mystery. She moved freely from court to court, sowing intrigue for some grand purpose. Truth be told, I don't think anyone could have stopped her.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-upperbody-tattered-linen-shirt.png|64px]]||<translate><!--T:1386--> Tattered linen shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|4.68%}}</code>||
+|-
+|[[File:clothes-upperbody-tattered-crimson-tunic.png|64px]]||<translate><!--T:1387--> Tattered crimson tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-upperbody-squire-shirt.png|64px]]||<translate><!--T:1388--> Squire shirt</translate>||2°C||<translate><!--T:1389--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-upperbody-shepherd-tunic.png|64px]]||<translate><!--T:1390--> Shepherd tunic</translate>||2°C||<translate><!--T:1391--> <font color="#0099ff"><i>Simple shepherd’s clothing. They could be found caring for and protecting their flock. Not anymore.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-upperbody-scarlet-ornate-linen-tunic.png|64px]]||<translate><!--T:1392--> Scarlet ornate linen tunic</translate>||2°C||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||||
+|-
+|[[File:clothes-upperbody-reindeer-herder-collared-shirt.png|64px]]||<translate><!--T:1393--> Reindeer herder collared shirt</translate>||2°C||<translate><!--T:1394--> <font color="#0099ff"><i>The colorful wear of a Sámi. They fared well in their frozen lands. Truly, we envied them.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-artisan|Artisan trader}}|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-upperbody-prince-tunic.png|64px]]||<translate><!--T:1395--> Prince tunic</translate>||2°C||<translate><!--T:1396--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-upperbody-peasent-shirt.png|64px]]||<translate><!--T:1397--> Peasant shirt</translate>||2°C||<translate><!--T:1398--> <font color="#0099ff"><i>From a time when men were corralled by other men, not by monsters.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-upperbody-pearl-shirt.png|64px]]||<translate><!--T:1399--> Pearl shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.156%}}</code>||
+|-
+|[[File:clothes-upperbody-noble-shirt.png|64px]]||<translate><!--T:1400--> Noble shirt</translate>||2°C||<translate><!--T:1401--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|6.969%}}</code>||
+|-
+|[[File:clothes-upperbody-minstrel-shirt.png|64px]]||<translate><!--T:1402--> Minstrel shirt</translate>||2°C||<translate><!--T:1403--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-upperbody-messenger-shirt.png|64px]]||<translate><!--T:1404--> Messenger shirt</translate>||2°C||<translate><!--T:1405--> <font color="#0099ff"><i>They carried a simple message, and they were hated and feared for it.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbody-merchant-shirt.png|64px]]||<translate><!--T:1406--> Merchant shirt</translate>||2°C||<translate><!--T:1407--> <font color="#0099ff"><i>The Hanseatic League, with their merchant navies, offered their services to charter and transport the incredible amount of goods, materials, and refugees. It was a monumental effort of logistics; something only they could pull off.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|3.436%}}</code>||
+|-
+|[[File:clothes-upperbody-linen-tunic.png|64px]]||<translate><!--T:1408--> Linen tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-lackey-shirt.png|64px]]||<translate><!--T:1409--> Lackey shirt</translate>||2°C||<translate><!--T:1410--> <font color="#0099ff"><i>Loyal attendants. They clung to kings and queens as a way of life. Graceful or foolish — it was hard to say.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-upperbody-jailor-tunic.png|64px]]||<translate><!--T:1411--> Jailor tunic</translate>||2°C||<translate><!--T:1412--> <font color="#0099ff"><i>Innovation did not always herald a change in polity. In this, we were the same as ever.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-mediumstatus|2.405%}}</code>||
+|-
+|[[File:clothes-upperbody-earth-toned-robe.png|64px]]||<translate><!--T:1413--> Earth toned robe</translate>||2°C||||||||✅||<code>{{Hovertip|cloth-mediumstatus|0.344%}}</code>||
+|-
+|[[File:clothes-upperbody-cendre-shirt.png|64px]]||<translate><!--T:1414--> Cendre shirt</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbody-hunter-shirt.png|64px]]||<translate><!--T:1415--> Hunter shirt</translate>||2°C||<translate><!--T:1416--> <font color="#0099ff"><i>Hunters across the land were called upon to put their talents to use and to bring mercy to their old quarries.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-upperbody-azure-embroidered-shirt.png|64px]]||<translate><!--T:1417--> Azure embroidered shirt</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-aristocrat-shirt.png|64px]]||<translate><!--T:1418--> Aristocrat shirt</translate>||2°C||<translate><!--T:1419--> <font color="#0099ff"><i>Despite his efforts, the nobility flourished during those golden years.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-upperbody-blackguard-shirt.png|64px]]||<translate><!--T:1420--> Blackguard shirt</translate>||2°C||<translate><!--T:1421--> <font color="#0099ff"><i>A new company was formed. This one cared not for liege nor coin nor faith.</i></font><br></translate>||||||||||{{Tunit|class-equipment-blackguard|Part of the '''Blackguard''' starter gear}}
+|-
+|[[File:clothes-upperbody-clockmaker-shirt.png|64px]]||<translate><!--T:1422--> Clockmaker shirt</translate>||2°C||<translate><!--T:1423--> <font color="#0099ff"><i>Unassuming wear. The garb of a craftsman suddenly elevated to an important role.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-upperbody-malefactor-shirt.png|64px]]||<translate><!--T:1424--> Malefactor shirt</translate>||2°C||<translate><!--T:1425--> <font color="#0099ff"><i>Undergarments stained with sweat.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-upperbody-forlorn-tunic.png|64px]]||<translate><!--T:1426--> Forlorn Hope tunic</translate>||2°C||<translate><!--T:1427--> <font color="#0099ff"><i>Imbued with alchemical symbols. They were both scholars and warriors.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbody-commoner-shirt.png|64px]]||<translate><!--T:1428--> Commoner shirt</translate>||2°C||<translate><!--T:1429--> <font color="#0099ff"><i>Some people, despite their lack of expertise, found ways to contribute. They were some of our most resilient.</i></font><br></translate>||||||||||{{Tunit|class-equipment-commoner|Part of the '''Commoner''' starter gear}}
+|-
+|[[File:clothes-upperbody-tailor-blouse.png|64px]]||<translate><!--T:1430--> Tailor blouse</translate>||2°C||<translate><!--T:1431--> <font color="#0099ff"><i>Artisans provided what assistance they could and plied their craft when able.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-upperbody-homespun-shirt.png|64px]]||<translate><!--T:1432--> Homespun shirt</translate>||2°C||<translate><!--T:1433--> <font color="#0099ff"><i>Simple garb to keep you warm.</i></font><br></translate>||||||✅||||
+|-
+|[[File:clothes-upperbody-pastoral-shirt.png|64px]]||<translate><!--T:1434--> Pastoral shirt</translate>||2°C||<translate><!--T:1435--> <font color="#0099ff"><i>Made for warm days and cold nights.</i></font><br></translate>||||||✅||||
+|-
+|[[File:clothes-upperbody-chateau-blouse.png|64px]]||<translate><!--T:1436--> Chateau blouse</translate>||2°C||<translate><!--T:1437--> <font color="#0099ff"><i>Simple, yet graceful.</i></font><br></translate>||||||✅||||
+|-
+|[[File:clothes-upperbody-marketeer.png|64px]]||<translate><!--T:1438--> Marketeer shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-upperbody-rottenking.png|64px]]||<translate><!--T:1439--> Rotten king blouse</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-upperbody-king.png|64px]]||<translate><!--T:1440--> King blouse</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbody-surgeon.png|64px]]||<translate><!--T:1441--> Barber surgeon shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-upperbody-miner.png|64px]]||<translate><!--T:1442--> Miner shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-alchemist.png|64px]]||<translate><!--T:1443--> Alchemist shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-upperbody-deep.png|64px]]||<translate><!--T:1444--> Deep noble shirt</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbody-forgotten.png|64px]]||<translate><!--T:1445--> Forgotten noble shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbody-survivor.png|64px]]||<translate><!--T:1446--> Survivor shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-scribe.png|64px]]||<translate><!--T:1447--> Scribe tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-upperbody-alchemist.png|64px]]||<translate><!--T:1448--> Nadiyan alchemist shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-barber.png|64px]]||<translate><!--T:1449--> Nadiyan barber shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-beekeeper.png|64px]]||<translate><!--T:1450--> Nadiyan beekeeper shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-blacksmith.png|64px]]||<translate><!--T:1451--> Nadiyan blacksmith shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15.75 - 26.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-fisher.png|64px]]||<translate><!--T:1452--> Nadiyan fisher shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12.75 - 21.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-guard.png|64px]]||<translate><!--T:1453--> Nadiyan guard tunic</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-hunter.png|64px]]||<translate><!--T:1454--> Nadiyan hunter shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-innkeeper.png|64px]]||<translate><!--T:1455--> Nadiyan innkeeper shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12.75 - 21.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-miner-clean.png|64px]]||<translate><!--T:1456--> Pristine Nadiyan miner tunic</translate>||2°C||||||||||||
+|-
+|[[File:clothes-nadiya-upperbody-miner.png|64px]]||<translate><!--T:1457--> Nadiyan miner tunic</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-musician.png|64px]]||<translate><!--T:1458--> Nadiyan musician shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|18.75 - 31.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-peasant1.png|64px]]||<translate><!--T:1459--> White Nadiyan sleeveless peasant shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-peasant2.png|64px]]||<translate><!--T:1460--> White Nadiyan peasant shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-peasant3.png|64px]]||<translate><!--T:1461--> Beige Nadiyan sleeveless peasant shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-peasant4.png|64px]]||<translate><!--T:1462--> Beige Nadiyan peasant shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-shepherd.png|64px]]||<translate><!--T:1463--> Nadiyan shepherd tunic</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-tailor.png|64px]]||<translate><!--T:1464--> Nadiyan tailor shirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-winter1.png|64px]]||<translate><!--T:1465--> Brown Nadiyan fur-lined shirt</translate>||2.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbody-winter2.png|64px]]||<translate><!--T:1466--> Beige Nadiyan fur-lined shirt</translate>||2.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-upperbody-hunters-green.png|64px]]||<translate><!--T:1467--> Hunter's green shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-hidetunic.png|64px]]||<translate><!--T:1468--> Rawhide tunic</translate>||3°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-jester.png|64px]]||<translate><!--T:1469--> Jester shirt</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-acrobat.png|64px]]||<translate><!--T:1470--> Acrobat bolero</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbody-kirtleyellow.png|64px]]||<translate><!--T:1471--> Yellow kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlewhite.png|64px]]||<translate><!--T:1472--> White kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlered.png|64px]]||<translate><!--T:1473--> Red kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlepurple.png|64px]]||<translate><!--T:1474--> Purple kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlepink.png|64px]]||<translate><!--T:1475--> Pink kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtleorange.png|64px]]||<translate><!--T:1476--> Orange kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlegreen.png|64px]]||<translate><!--T:1477--> Green kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlegray.png|64px]]||<translate><!--T:1478--> Gray kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtleblue.png|64px]]||<translate><!--T:1479--> Blue kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtleblack.png|64px]]||<translate><!--T:1480--> Black kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-kirtlebrown.png|64px]]||<translate><!--T:1481--> Brown kirtle top</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-classicaltunic.png|64px]]||<translate><!--T:1482--> Classical tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-upperbody-furlinedvest.png|64px]]||<translate><!--T:1483--> Fur lined vest</translate>||3°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-chemisesleeveless.png|64px]]||<translate><!--T:1484--> Sleeveless chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-chemiseshort.png|64px]]||<translate><!--T:1485--> Short chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-chemisescoop.png|64px]]||<translate><!--T:1486--> Scoop chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-chemiseshoulderlong.png|64px]]||<translate><!--T:1487--> Off shoulder chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-chemiselong.png|64px]]||<translate><!--T:1488--> Long chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-chemiseshouldershort.png|64px]]||<translate><!--T:1489--> Off shoulder short chemise top</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-fortuneteller.png|64px]]||<translate><!--T:1490--> Fortune teller shirt</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbody-grass.png|64px]]||<translate><!--T:1491--> Grass shirt</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-emeraldreindeerherder.png|64px]]||<translate><!--T:1492--> Emerald reindeer herder shirt</translate>||3.5°C||||||||||||
+|-
+|[[File:clothes-upperbody-arcticfisher.png|64px]]||<translate><!--T:1493--> Arctic fisher shirt</translate>||3.5°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbody-arctichunter.png|64px]]||<translate><!--T:1494--> Arctic hunter shirt</translate>||3.5°C||||||||✅||||
+|-
+|[[File:clothes-upperbody-embroideredfur.png|64px]]||<translate><!--T:1495--> Embroidered fur shirt</translate>||3.5°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-upperbodyover|Upperbodyover}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-upperbodyover-fur-coat.png|64px]]||<translate><!--T:1496--> Fur coat</translate>||3°C||<translate><!--T:1497--> <font color="#0099ff"><i>Given time, and the Falxian creations, travelers from very distant lands began to appear across the kingdoms. Amongst their number were those who dwelt in the far north.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbodyover-warm-robe.png|64px]]||<translate><!--T:1498--> Warm robe</translate>||2°C||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-mediumstatus|3.436%}}</code>||
+|-
+|[[File:clothes-upperbodyover-travelers-earthrobe.png|64px]]||<translate><!--T:1499--> Traveler's earthrobe</translate>||2°C||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||||
+|-
+|[[File:clothes-upperbodyover-nomad-mantle.png|64px]]||<translate><!--T:1500--> Nomad mantle</translate>||2°C||<translate><!--T:1501--> <font color="#0099ff"><i>Some time later, he confessed that he was an agent of the Khanate. By that point, it was of no concern.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbodyover-spice-merchants-coat.png|64px]]||<translate><!--T:1502--> Spice merchants coat</translate>||2°C||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbodyover-reindeer-herder-fur-coat.png|64px]]||<translate><!--T:1503--> Reindeer herder fur coat</translate>||4°C||<translate><!--T:1504--> <font color="#0099ff"><i>The colorful wear of a Sámi. They fared well in their frozen lands. Truly, we envied them.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-artisan|Artisan trader}}|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbodyover-cobalt-mantle.png|64px]]||<translate><!--T:1505--> Cobalt mantle</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbodyover-huntsmans-tunic.png|64px]]||<translate><!--T:1506--> Huntsmans tunic</translate>||2°C||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-upperbodyover-dim-jasmine-coat.png|64px]]||<translate><!--T:1507--> Dim jasmine coat</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbodyover-cerise-embroidered-reindeer-herder-coat.png|64px]]||<translate><!--T:1508--> Cerise embroidered reindeer herder coat</translate>||4°C||<translate><!--T:1509--> <font color="#0099ff"><i>The colorful wear of a Sámi. Warm and comfortable.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-upperbodyover-great-steppe-mantle.png|64px]]||<translate><!--T:1510--> Great Steppe mantle</translate>||2°C||<translate><!--T:1511--> <font color="#0099ff"><i>She was a falconer, from beyond the mountains. With bow and talons, they made a name for themselves.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.624%}}</code>||
+|-
+|[[File:clothes-upperbodyover-clockmaker-tunic.png|64px]]||<translate><!--T:1512--> Clockmaker tunic</translate>||2°C||<translate><!--T:1513--> <font color="#0099ff"><i>Horology lent itself well to the new inventions, thus clockmakers found themselves in high demand.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-upperbodyover-hunter-coat.png|64px]]||<translate><!--T:1514--> Hunter coat</translate>||2°C||<translate><!--T:1515--> <font color="#0099ff"><i>Warm and obscuring, for one who traveled overland during the last hunts.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-upperbodyover-malefactor-tunic.png|64px]]||<translate><!--T:1516--> Malefactor leather tunic</translate>||2°C||<translate><!--T:1517--> <font color="#0099ff"><i>Vagabonds, foragers, and thieves; the outcasts would venture to the surface in search of any remaining resources.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-upperbodyover-commoner-coat.png|64px]]||<translate><!--T:1518--> Commoner coat</translate>||2°C||<translate><!--T:1519--> <font color="#0099ff"><i>When faced with overwhelming despair, some refugees found a powerful will to survive.</i></font><br></translate>||||||||||{{Tunit|class-equipment-commoner|Part of the '''Commoner''' starter gear}}
+|-
+|[[File:clothes-upperbodyover-tailor-jacket.png|64px]]||<translate><!--T:1520--> Tailor jacket</translate>||2°C||<translate><!--T:1521--> <font color="#0099ff"><i>Colors, styles, fittings... something wondrous for each customer.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-upperbodyover-marketeer.png|64px]]||<translate><!--T:1522--> Marketeer tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-upperbodyover-rotwalker.png|64px]]||<translate><!--T:1523--> Rotwalker coat</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-upperbodyover-rottenking.png|64px]]||<translate><!--T:1524--> Rotten king coat</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbodyover-king.png|64px]]||<translate><!--T:1525--> King coat</translate>||2°C||||||||||||
+|-
+|[[File:clothes-upperbodyover-surgeon.png|64px]]||<translate><!--T:1526--> Barber surgeon apron</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-upperbodyover-miner.png|64px]]||<translate><!--T:1527--> Miner tunic</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbodyover-forgotten.png|64px]]||<translate><!--T:1528--> Forgotten noble robe</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-nadiya-upperbodyover-beekeeper.png|64px]]||<translate><!--T:1529--> Nadiyan beekeeper tunic</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|18 - 30 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-coat-long.png|64px]]||<translate><!--T:1530--> Nadiyan coat</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-coat-short.png|64px]]||<translate><!--T:1531--> Nadiyan short coat</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-coat-verylong.png|64px]]||<translate><!--T:1532--> Nadiyan long coat</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-miner-clean.png|64px]]||<translate><!--T:1533--> Pristine Nadiyan miner bolero</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-miner.png|64px]]||<translate><!--T:1534--> Nadiyan miner bolero</translate>||2°C||||||||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-musician.png|64px]]||<translate><!--T:1535--> Nadiyan musician jacket</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|18.75 - 31.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-tailor.png|64px]]||<translate><!--T:1536--> Nadiyan tailor vest</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|19.5 - 32.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-winter1.png|64px]]||<translate><!--T:1537--> Nadiyan fur-lined jacket</translate>||4°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-upperbodyover-winter2.png|64px]]||<translate><!--T:1538--> Nadiyan fur jacket</translate>||4°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|17.25 - 28.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-upperbodyover-temptress.png|64px]]||<translate><!--T:1539--> Temptress surcoat</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbodyover-fortuneteller.png|64px]]||<translate><!--T:1540--> Fortune teller vest</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbodyover-quilteddoublet.png|64px]]||<translate><!--T:1541--> Quilted doublet</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbodyover-quiltedcorsage.png|64px]]||<translate><!--T:1542--> Quilted corsage</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbodyover-peliconpurple.png|64px]]||<translate><!--T:1543--> Royal purple pelicon</translate>||3°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbodyover-peliconburgundy.png|64px]]||<translate><!--T:1544--> Burgundy pelicon</translate>||3°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-upperbodyover-emeraldreindeerherder.png|64px]]||<translate><!--T:1545--> Emerald reindeer herder coat</translate>||4°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-upperbodyover-arcticfisher.png|64px]]||<translate><!--T:1546--> Arctic fisher parka</translate>||4°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-upperbodyover-arctichunter.png|64px]]||<translate><!--T:1547--> Arctic hunter parka</translate>||4°C||||||||✅||||
+|-
+|[[File:clothes-upperbodyover-embroideredfur.png|64px]]||<translate><!--T:1548--> Embroidered fur parka</translate>||4°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-lowerbody|Lowerbody}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-lowerbody-commoner-skirt.png|64px]]||<translate><!--T:1196--> Commoner skirt</translate>||2°C||||||||||||
+|-
+|[[File:clothes-lowerbody-workmans-gown.png|64px]]||<translate><!--T:1197--> Workmans pants</translate>||2°C||||{{Hovertip|{{Tunit|trader-furniture|Furniture trader}}|0.75 - 1.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-woolen-leggings.png|64px]]||<translate><!--T:1198--> Woolen leggings</translate>||3°C||||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|0.344%}}</code>||
+|-
+|[[File:clothes-lowerbody-warm-woolen-pants.png|64px]]||<translate><!--T:1199--> Warm woolen pants</translate>||3°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.156%}}</code>||
+|-
+|[[File:clothes-lowerbody-torn-riding-pants.png|64px]]||<translate><!--T:1200--> Torn riding pants</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-lowerbody-tattered-peasent-gown.png|64px]]||<translate><!--T:1201--> Tattered peasant gown</translate>||2°C||<translate><!--T:1202--> <font color="#0099ff"><i>From a time when men were corralled by other men, not by monsters.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|4.68%}}</code>||
+|-
+|[[File:clothes-lowerbody-nomad-trousers.png|64px]]||<translate><!--T:1203--> Nomad trousers</translate>||2°C||<translate><!--T:1204--> <font color="#0099ff"><i>This was worn by Akmal, the poet. Ever curious, he roamed the countryside, seeking wisdom.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-squire-pants.png|64px]]||<translate><!--T:1205--> Squire pants</translate>||2°C||<translate><!--T:1206--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-lowerbody-shepherd-pants.png|64px]]||<translate><!--T:1207--> Shepherd pants</translate>||2°C||<translate><!--T:1208--> <font color="#0099ff"><i>Simple shepherd’s clothing. They could be found caring for and protecting their flock. Not anymore.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-lowerbody-raw-hide-trousers.png|64px]]||<translate><!--T:1209--> Rawhide trousers</translate>||2°C||<translate><!--T:1210--> <font color="#0099ff"><i>Rather unrefined, but warm and protective.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-reindeer-herder-trousers.png|64px]]||<translate><!--T:1211--> Reindeer herder trousers</translate>||2°C||<translate><!--T:1212--> <font color="#0099ff"><i>The colorful wear of a Sámi. They fared well in their frozen lands. Truly, we envied them.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-lowerbody-prince-breeches.png|64px]]||<translate><!--T:1213--> Prince breeches</translate>||2°C||<translate><!--T:1214--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-lowerbody-noble-pants.png|64px]]||<translate><!--T:1215--> Noble pants</translate>||2°C||<translate><!--T:1216--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-lowerbody-minstrel-pants.png|64px]]||<translate><!--T:1217--> Minstrel pants</translate>||2°C||<translate><!--T:1218--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-lowerbody-messenger-trousers.png|64px]]||<translate><!--T:1219--> Messenger trousers</translate>||2°C||<translate><!--T:1220--> <font color="#0099ff"><i>They carried a simple message, and they were hated and feared for it.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-lowerbody-merchant-pants.png|64px]]||<translate><!--T:1221--> Merchant pants</translate>||2°C||<translate><!--T:1222--> <font color="#0099ff"><i>The Hanseatic League, with their merchant navies, offered their services to charter and transport the incredible amount of goods, materials, and refugees. It was a monumental effort of logistics; something only they could pull off.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-lowerbody-lackey-breeches.png|64px]]||<translate><!--T:1223--> Lackey breeches</translate>||2°C||<translate><!--T:1224--> <font color="#0099ff"><i>Loyal attendants. They clung to kings and queens as a way of life. Graceful or foolish — it was hard to say.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-lowerbody-jailor-pants.png|64px]]||<translate><!--T:1225--> Jailor pants</translate>||2°C||<translate><!--T:1226--> <font color="#0099ff"><i>Innovation did not always herald a change in polity. In this, we were the same as ever.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-mediumstatus|2.405%}}</code>||
+|-
+|[[File:clothes-lowerbody-fine-trousers.png|64px]]||<translate><!--T:1227--> Fine trousers</translate>||2°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-highstatus|6.969%}}</code>||
+|-
+|[[File:clothes-lowerbody-dirty-linen-trousers.png|64px]]||<translate><!--T:1228--> Dirty linen trousers</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-lowerbody-aristocrat-leggings.png|64px]]||<translate><!--T:1229--> Aristocrat leggings</translate>||2°C||<translate><!--T:1230--> <font color="#0099ff"><i>Despite his efforts, the nobility flourished during those golden years.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-lowerbody-blackguard-leggings.png|64px]]||<translate><!--T:1231--> Blackguard leggings</translate>||2°C||<translate><!--T:1232--> <font color="#0099ff"><i>They relied only on each other, using whatever means they had to ensure progress in those dark tunnels.</i></font><br></translate>||||||||||{{Tunit|class-equipment-blackguard|Part of the '''Blackguard''' starter gear}}
+|-
+|[[File:clothes-lowerbody-clockmaker-pants.png|64px]]||<translate><!--T:1233--> Clockmaker pants</translate>||2°C||<translate><!--T:1234--> <font color="#0099ff"><i>Stained here and there with oil and lacquer.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-lowerbody-hunter-leggings.png|64px]]||<translate><!--T:1235--> Hunter leggings</translate>||2°C||<translate><!--T:1236--> <font color="#0099ff"><i>Speckled in lingering mud stains. Remnants of the marshlands.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-lowerbody-malefactor-trousers.png|64px]]||<translate><!--T:1237--> Malefactor trousers</translate>||2°C||<translate><!--T:1238--> <font color="#0099ff"><i>Some people adapted poorly to the underground. They longed to see the forests again.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-lowerbody-forlorn-pants.png|64px]]||<translate><!--T:1239--> Forlorn Hope pants</translate>||2°C||<translate><!--T:1240--> <font color="#0099ff"><i>The knights put their faith in the blessed device to deliver them from imminent death.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-lowerbody-commoner-trousers.png|64px]]||<translate><!--T:1241--> Commoner trousers</translate>||2°C||<translate><!--T:1242--> <font color="#0099ff"><i>Humble clothing. For some, it was all they had.</i></font><br></translate>||||||||||{{Tunit|class-equipment-commoner|Part of the '''Commoner''' starter gear}}
+|-
+|[[File:clothes-lowerbody-tailor-trousers.png|64px]]||<translate><!--T:1243--> Tailor trousers</translate>||2°C||<translate><!--T:1244--> <font color="#0099ff"><i>Even a tailor runs out of cloth from time to time.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-lowerbody-homespun-pants.png|64px]]||<translate><!--T:1245--> Homespun pants</translate>||2°C||<translate><!--T:1246--> <font color="#0099ff"><i>Simple garb to keep you warm.</i></font><br></translate>||||||✅||||
+|-
+|[[File:clothes-lowerbody-pastoral-pants.png|64px]]||<translate><!--T:1247--> Pastoral pants</translate>||2.5°C||<translate><!--T:1248--> <font color="#0099ff"><i>Made for warm days and cold nights.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-lowerbody-chateau-pants.png|64px]]||<translate><!--T:1249--> Chateau pants</translate>||2.5°C||<translate><!--T:1250--> <font color="#0099ff"><i>Simple, yet graceful.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-lowerbody-marketeer.png|64px]]||<translate><!--T:1251--> Marketeer pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-lowerbody-rotwalker.png|64px]]||<translate><!--T:1252--> Rotwalker leggings</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-lowerbody-skirt.png|64px]]||<translate><!--T:1253--> Skirt</translate>||2°C||||||||||||
+|-
+|[[File:clothes-lowerbody-rottenking.png|64px]]||<translate><!--T:1254--> Rotten king pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-lowerbody-king.png|64px]]||<translate><!--T:1255--> King pants</translate>||2°C||||||||||||
+|-
+|[[File:clothes-lowerbody-surgeon.png|64px]]||<translate><!--T:1256--> Barber surgeon pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-lowerbody-miner.png|64px]]||<translate><!--T:1257--> Miner pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-alchemist.png|64px]]||<translate><!--T:1258--> Alchemist pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-lowerbody-deep.png|64px]]||<translate><!--T:1259--> Deep noble leggings</translate>||2°C||||||||||||
+|-
+|[[File:clothes-lowerbody-forgotten.png|64px]]||<translate><!--T:1260--> Forgotten noble leggings</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-lowerbody-survivor.png|64px]]||<translate><!--T:1261--> Survivor pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-scribe.png|64px]]||<translate><!--T:1262--> Scribe pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-lowerbody-alchemist.png|64px]]||<translate><!--T:1263--> Nadiyan alchemist pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-barber.png|64px]]||<translate><!--T:1264--> Nadiyan barber pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-beekeeper.png|64px]]||<translate><!--T:1265--> Nadiyan beekeeper pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-blacksmith.png|64px]]||<translate><!--T:1266--> Nadiyan blacksmith pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-fisher.png|64px]]||<translate><!--T:1267--> Nadiyan fisher pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-guard.png|64px]]||<translate><!--T:1268--> Nadiyan guard pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12.75 - 21.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-hunter.png|64px]]||<translate><!--T:1269--> Nadiyan hunter pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-innkeeper.png|64px]]||<translate><!--T:1270--> Nadiyan innkeeper pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-miner-clean.png|64px]]||<translate><!--T:1271--> Pristine Nadiyan miner pants</translate>||2°C||||||||||||
+|-
+|[[File:clothes-nadiya-lowerbody-miner.png|64px]]||<translate><!--T:1272--> Nadiyan miner pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-musician.png|64px]]||<translate><!--T:1273--> Nadiyan musician pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant-skirt1.png|64px]]||<translate><!--T:1274--> Nadiyan brown peasant skirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12.75 - 21.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant-skirt2.png|64px]]||<translate><!--T:1275--> Nadiyan tan peasant skirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant-skirt3.png|64px]]||<translate><!--T:1276--> Nadiyan white peasant skirt</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant1.png|64px]]||<translate><!--T:1277--> Tan Nadiyan peasant pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant2.png|64px]]||<translate><!--T:1278--> White Nadiyan peasant pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-peasant3.png|64px]]||<translate><!--T:1279--> Brown Nadiyan peasant pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-shepherd.png|64px]]||<translate><!--T:1280--> Nadiyan shepherd pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-tailor.png|64px]]||<translate><!--T:1281--> Nadiyan tailor pants</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-winter1.png|64px]]||<translate><!--T:1282--> Beige Nadiyan fur-lined pants</translate>||3°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-lowerbody-winter2.png|64px]]||<translate><!--T:1283--> Brown Nadiyan fur-lined pants</translate>||3°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-lowerbody-jester.png|64px]]||<translate><!--T:1284--> Jester hose</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-acrobat.png|64px]]||<translate><!--T:1285--> Acrobat pants</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-lowerbody-hoseyellowblack.png|64px]]||<translate><!--T:1286--> Black and yellow hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosewhiteorange.png|64px]]||<translate><!--T:1287--> Orange and white hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hoseredwhite.png|64px]]||<translate><!--T:1288--> White and red hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosepurplepink.png|64px]]||<translate><!--T:1289--> Pink and purple hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hoseorangeblue.png|64px]]||<translate><!--T:1290--> Blue and orange hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosegreenyellow.png|64px]]||<translate><!--T:1291--> Yellow and green hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosegraypurple.png|64px]]||<translate><!--T:1292--> Purple and gray hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosebrowngray.png|64px]]||<translate><!--T:1293--> Gray and brown hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hosebluepink.png|64px]]||<translate><!--T:1294--> Pink and blue hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-hoseblackred.png|64px]]||<translate><!--T:1295--> Red and black hose</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-braiesplain.png|64px]]||<translate><!--T:1296--> Plain braies</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-braiesgray.png|64px]]||<translate><!--T:1297--> Gray braies</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-braiesbrown.png|64px]]||<translate><!--T:1298--> Brown braies</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-braiesblue.png|64px]]||<translate><!--T:1299--> Blue braies</translate>||2°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-embroideredpantaloons.png|64px]]||<translate><!--T:1300--> Embroidered pantaloons</translate>||2°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-lowerbody-emeraldreindeerherder.png|64px]]||<translate><!--T:1301--> Emerald reindeer herder leggings</translate>||2°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-lowerbody-arctichunter.png|64px]]||<translate><!--T:1302--> Arctic hunter pants</translate>||4°C||||||||✅||||
+|-
+|[[File:clothes-lowerbody-arcticfisher.png|64px]]||<translate><!--T:1303--> Arctic fisher pants</translate>||4°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-lowerbody-embroideredfur.png|64px]]||<translate><!--T:1304--> Embroidered fur pants</translate>||4°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-lowerbody-grass.png|64px]]||<translate><!--T:1305--> Grass pants</translate>||2°C||||||||✅||||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-foot|Foot}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-foot-leather.png|64px]]||<translate><!--T:1103--> Leather shoes</translate>||1°C||||||||||||
+|-
+|[[File:clothes-foot-worn-leather-boots.png|64px]]||<translate><!--T:1104--> Worn leather boots</translate>||0.5°C||||||||✅||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-foot-wool-lined-knee-high-boots.png|64px]]||<translate><!--T:1105--> Wool lined knee-high boots</translate>||1.5°C||||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-foot-tigh-high-boots.png|64px]]||<translate><!--T:1106--> Thigh-high boots</translate>||1°C||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-foot-temptress-velvet-shoes.png|64px]]||<translate><!--T:1107--> Temptress velvet shoes</translate>||1°C||<translate><!--T:1108--> <font color="#0099ff"><i>A countess, a diplomat, a mystery. She moved freely from court to court, sowing intrigue for some grand purpose. Truth be told, I don't think anyone could have stopped her.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-foot-nomad-boots.png|64px]]||<translate><!--T:1109--> Nomad boots</translate>||1°C||<translate><!--T:1110--> <font color="#0099ff"><i>This was worn by Akmal, the poet. Ever curious, he roamed the countryside, seeking wisdom.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-foot-squire-boots.png|64px]]||<translate><!--T:1111--> Squire boots</translate>||1°C||<translate><!--T:1112--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-foot-soldier-boots.png|64px]]||<translate><!--T:1113--> Soldier boots</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-foot-shepherd-sandals.png|64px]]||<translate><!--T:1114--> Shepherd sandals</translate>||0.5°C||<translate><!--T:1115--> <font color="#0099ff"><i>Simple shepherd’s clothing. They could be found caring for and protecting their flock. Not anymore.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-agriculture|Agriculture trader}}|0.75 - 1.25 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|3.12%}}</code>||
+|-
+|[[File:clothes-foot-prisoner-binds.png|64px]]||<translate><!--T:1116--> Prisoner binds</translate>||1°C||<translate><!--T:1117--> <font color="#0099ff"><i>A Rot of human design. For what could be worse than the slow, silent decay of sinew and spirit?</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-foot-prince-boots.png|64px]]||<translate><!--T:1118--> Prince boots</translate>||1°C||<translate><!--T:1119--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-foot-peasent-slippers.png|64px]]||<translate><!--T:1120--> Peasant slippers</translate>||0.5°C||<translate><!--T:1121--> <font color="#0099ff"><i>From a time when men were corralled by other men, not by monsters.</i></font><br></translate>||||||✅||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-foot-noble-shoes.png|64px]]||<translate><!--T:1122--> Noble shoes</translate>||0.5°C||<translate><!--T:1123--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-foot-minstrel-boots.png|64px]]||<translate><!--T:1124--> Minstrel boots</translate>||1°C||<translate><!--T:1125--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-foot-metalcap-boots.png|64px]]||<translate><!--T:1126--> Metalcap boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.156%}}</code>||
+|-
+|[[File:clothes-foot-messenger-shoes.png|64px]]||<translate><!--T:1127--> Messenger shoes</translate>||1°C||<translate><!--T:1128--> <font color="#0099ff"><i>They carried a simple message, and they were hated and feared for it.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-foot-merchant-shoes.png|64px]]||<translate><!--T:1129--> Merchant shoes</translate>||0.5°C||<translate><!--T:1130--> <font color="#0099ff"><i>The Hanseatic League, with their merchant navies, offered their services to charter and transport the incredible amount of goods, materials, and refugees. It was a monumental effort of logistics; something only they could pull off.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-foot-lackey-shoes.png|64px]]||<translate><!--T:1131--> Lackey shoes</translate>||1°C||<translate><!--T:1132--> <font color="#0099ff"><i>Loyal attendants. They clung to kings and queens as a way of life. Graceful or foolish — it was hard to say.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|2.062%}}</code>||
+|-
+|[[File:clothes-foot-knee-high-fur-boots.png|64px]]||<translate><!--T:1133--> Knee-high fur boots</translate>||2°C||||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-foot-jailor-boots.png|64px]]||<translate><!--T:1134--> Jailor boots</translate>||1°C||<translate><!--T:1135--> Jailor boots</translate>||||||||<code>{{Hovertip|cloth-mediumstatus|2.062%}}</code>||
+|-
+|[[File:clothes-foot-high-leather-boots.png|64px]]||<translate><!--T:1136--> High leather boots</translate>||1°C||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-foot-fur-lined-reindeer-herder-shoes.png|64px]]||<translate><!--T:1137--> Fur lined reindeer herder shoes</translate>||4°C||<translate><!--T:1138--> <font color="#0099ff"><i>The colorful wear of a Sámi. They fared well in their frozen lands. Truly, we envied them.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-foot-great-steppe-boots.png|64px]]||<translate><!--T:1139--> Great Steppe boots</translate>||1°C||<translate><!--T:1140--> <font color="#0099ff"><i>The common folk adored them for their exploits and humility.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.624%}}</code>||
+|-
+|[[File:clothes-foot-aristocrat-shoes.png|64px]]||<translate><!--T:1141--> Aristocrat shoes</translate>||0.5°C||<translate><!--T:1142--> <font color="#0099ff"><i>Despite his efforts, the nobility flourished during those golden years.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-foot-blackguard-shoes.png|64px]]||<translate><!--T:1143--> Blackguard shoes</translate>||1°C||<translate><!--T:1144--> <font color="#0099ff"><i>They maintained order while the world collapsed around them.</i></font><br></translate>||||||||||{{Tunit|class-equipment-blackguard|Part of the '''Blackguard''' starter gear}}
+|-
+|[[File:clothes-foot-clockmaker-shoes.png|64px]]||<translate><!--T:1145--> Clockmaker felt shoes</translate>||0.5°C||<translate><!--T:1146--> <font color="#0099ff"><i>Simple shoes cobbled together for life in a city.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-foot-hunter-boots.png|64px]]||<translate><!--T:1147--> Hunter boots</translate>||1.5°C||<translate><!--T:1148--> <font color="#0099ff"><i>Well worn, but lovingly maintained.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-foot-malefactor-boots.png|64px]]||<translate><!--T:1149--> Malefactor wrapped boots</translate>||1°C||<translate><!--T:1150--> <font color="#0099ff"><i>Improvised to travel through the filth and mire.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-foot-forlorn-shoes.png|64px]]||<translate><!--T:1151--> Forlorn Hope shoes</translate>||1°C||<translate><!--T:1152--> <font color="#0099ff"><i>The last vassals of a dwindling era.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-foot-commoner-boots.png|64px]]||<translate><!--T:1153--> Commoner boots</translate>||1°C||<translate><!--T:1154--> <font color="#0099ff"><i>Still strong, despite years of damage.</i></font><br></translate>||||||||||{{Tunit|class-equipment-commoner|Part of the '''Commoner''' starter gear}}
+|-
+|[[File:clothes-foot-tailor-shoes.png|64px]]||<translate><!--T:1155--> Tailor shoes</translate>||1°C||<translate><!--T:1156--> <font color="#0099ff"><i>Protection and style, the tailor's produce.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-foot-marketeer.png|64px]]||<translate><!--T:1157--> Marketeer shoes</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-foot-rotwalker.png|64px]]||<translate><!--T:1158--> Rotwalker boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-foot-rottenking.png|64px]]||<translate><!--T:1159--> Rotten king shoes</translate>||1°C||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-foot-king.png|64px]]||<translate><!--T:1160--> King shoes</translate>||1°C||||||||||||
+|-
+|[[File:clothes-foot-surgeon.png|64px]]||<translate><!--T:1161--> Barber surgeon shoes</translate>||1°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-foot-miner.png|64px]]||<translate><!--T:1162--> Miner boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-foot-alchemist.png|64px]]||<translate><!--T:1163--> Alchemist boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-foot-forgotten.png|64px]]||<translate><!--T:1164--> Forgotten noble shoes</translate>||1°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-foot-survivor.png|64px]]||<translate><!--T:1165--> Survivor boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-foot-scribe.png|64px]]||<translate><!--T:1166--> Scribe shoes</translate>||1°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-foot-alchemist.png|64px]]||<translate><!--T:1167--> Nadiyan alchemist sandals</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-barber.png|64px]]||<translate><!--T:1168--> Nadiyan barber shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-beekeeper.png|64px]]||<translate><!--T:1169--> Nadiyan beekeeper boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-blacksmith.png|64px]]||<translate><!--T:1170--> Nadiyan blacksmith boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-fisher.png|64px]]||<translate><!--T:1171--> Nadiyan fisher boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-guard.png|64px]]||<translate><!--T:1172--> Nadiyan guard boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-hunter.png|64px]]||<translate><!--T:1173--> Nadiyan hunter boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-innkeeper.png|64px]]||<translate><!--T:1174--> Nadiyan innkeeper shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-miner-clean.png|64px]]||<translate><!--T:1175--> Pristine Nadiyan miner boots</translate>||1°C||||||||||||
+|-
+|[[File:clothes-nadiya-foot-miner.png|64px]]||<translate><!--T:1176--> Nadiyan miner boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-musician.png|64px]]||<translate><!--T:1177--> Nadiyan musician shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|15.75 - 26.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-peasantbeige.png|64px]]||<translate><!--T:1178--> Beige Nadiyan peasant shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-peasantblue.png|64px]]||<translate><!--T:1179--> Blue Nadiyan peasant shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-peasantbrown.png|64px]]||<translate><!--T:1180--> Brown Nadiyan peasant shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-peasantwhite.png|64px]]||<translate><!--T:1181--> White Nadiyan peasant shoes</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-shepherd.png|64px]]||<translate><!--T:1182--> Nadiyan shepherd boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-tailor.png|64px]]||<translate><!--T:1183--> Nadiyan tailor boots</translate>||1°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-winter1.png|64px]]||<translate><!--T:1184--> Brown Nadiyan fur-lined boots</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-foot-winter2.png|64px]]||<translate><!--T:1185--> Blue Nadiyan fur-lined boots</translate>||2°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-foot-rusty-ankle-manacles.png|64px]]||<translate><!--T:1186--> Rusty manacles</translate>||1°C||||||||||<code>{{Hovertip|accessory-lowstatus|0.966%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-foot-embroideredfur.png|64px]]||<translate><!--T:1187--> Embroidered fur mukluks</translate>||3°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-foot-strawsandals.png|64px]]||<translate><!--T:1188--> Straw sandals</translate>||1°C||||||||✅||||
+|-
+|[[File:clothes-foot-emeraldreindeerherder.png|64px]]||<translate><!--T:1189--> Emerald reindeer herder boots</translate>||4°C||||||||||||
+|-
+|[[File:clothes-foot-jester.png|64px]]||<translate><!--T:1190--> Jester wraps</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-foot-arcticfisher.png|64px]]||<translate><!--T:1191--> Arctic fisher snowshoes</translate>||3°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-foot-hobnailboots.png|64px]]||<translate><!--T:1192--> Hobnail boots</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-foot-arctichunter.png|64px]]||<translate><!--T:1193--> Arctic hunter boots</translate>||2.5°C||||||||✅||||
+|-
+|[[File:clothes-foot-acrobat.png|64px]]||<translate><!--T:1194--> Acrobat anklets</translate>||1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-foot-fortuneteller.png|64px]]||<translate><!--T:1195--> Fortune teller anklet</translate>||1°C||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-face|Face}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-eye-prot|Eye prot.}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref><ref name="eye_prot_unused"><br>as of <code>1.22.0</code> the eye prot. stat is not used or shown ingame</ref>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-face-leather-reinforced-mask.png|64px]]||<translate><!--T:1549--> Leather reinforced mask</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-hunter-mask.png|64px]]||<translate><!--T:1550--> Hunter face mask</translate>||0.25°C||||<translate><!--T:1551--> <font color="#0099ff"><i>Provides what little protection it can against the sickness.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-face-malefactor-mask.png|64px]]||<translate><!--T:1552--> Malefactor whitewood mask</translate>||0.25°C||||<translate><!--T:1553--> <font color="#0099ff"><i>Any discoloration on the mask would be deemed too dangerous to allow re-entry. Those who were brave enough to make multiple journeys would carve tallies on their masks, to show how many times they had cheated death.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-face-forlorn-veil.png|64px]]||<translate><!--T:1554--> Forlorn Hope veil</translate>||0.25°C||||<translate><!--T:1555--> <font color="#0099ff"><i>Look beyond our earthly fetters.</i></font><br></translate>||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-face-tailor-mask.png|64px]]||<translate><!--T:1556--> Tailor mask</translate>||0.25°C||||<translate><!--T:1557--> <font color="#0099ff"><i>Provides a touch of security when dealing with customers.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-face-sheepskull.png|64px]]||<translate><!--T:1558--> Sheep skull mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-crow.png|64px]]||<translate><!--T:1559--> Crow mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-hummingbird.png|64px]]||<translate><!--T:1560--> Hummingbird mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-corroded.png|64px]]||<translate><!--T:1561--> Corroded helmet</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-cat.png|64px]]||<translate><!--T:1562--> Cat mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-festivecat.png|64px]]||<translate><!--T:1563--> Festive cat mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||
+|-
+|[[File:clothes-face-marketeer.png|64px]]||<translate><!--T:1564--> Marketeer mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|2.899%}}</code>||
+|-
+|[[File:clothes-face-rotwalker.png|64px]]||<translate><!--T:1565--> Rotwalker mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|accessory-lowstatus|0.483%}}</code>||
+|-
+|[[File:clothes-face-funeralmask1.png|64px]]||<translate><!--T:1566--> Golden funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask2.png|64px]]||<translate><!--T:1567--> Silver funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask3.png|64px]]||<translate><!--T:1568--> Black bronze funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask4.png|64px]]||<translate><!--T:1569--> Ceramic funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask5.png|64px]]||<translate><!--T:1570--> Green marble skull funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask6.png|64px]]||<translate><!--T:1571--> Bone funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask7.png|64px]]||<translate><!--T:1572--> Gear funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-funeralmask8.png|64px]]||<translate><!--T:1573--> Lead funeral mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|lazaret|0.658%}}</code>||
+|-
+|[[File:clothes-face-snow-goggles.png|64px]]||<translate><!--T:1574--> Snow goggles</translate>||0.25°C||✅||<translate><!--T:1575--> <font color="#0099ff"><i>From what I gathered, the Northerners carried these goggles to protect themselves from the overwhelming light of their home. This style was eventually picked up by some machinists who found it invaluable.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-face-glasses.png|64px]]||<translate><!--T:1576--> Plain glasses</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-face-rottenking.png|64px]]||<translate><!--T:1577--> Rotten king mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|[[File:clothes-face-surgeon.png|64px]]||<translate><!--T:1578--> Barber surgeon mask</translate>||0.25°C||✅||||||||||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||
+|-
+|[[File:clothes-face-surgeonhood.png|64px]]||<translate><!--T:1579--> Barber surgeon mask with hood</translate>||0.25°C||✅||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-face-miner.png|64px]]||<translate><!--T:1580--> Miner mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-face-forgotten.png|64px]]||<translate><!--T:1581--> Forgotten noble mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-face-survivor.png|64px]]||<translate><!--T:1582--> Survivor mask</translate>||0.25°C||||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>||
+|-
+|[[File:clothes-nadiya-face-alchemist.png|64px]]||<translate><!--T:1583--> Nadiyan alchemist hood</translate>||||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-face-barber.png|64px]]||<translate><!--T:1584--> Nadiyan barber hood</translate>||||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-face-blacksmith.png|64px]]||<translate><!--T:1585--> Nadiyan blacksmith goggles</translate>||||✅||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-face-grain.png|64px]]||<translate><!--T:1586--> Piece of straw</translate>||||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-face-hunter.png|64px]]||<translate><!--T:1587--> Nadiyan hunter mask</translate>||||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-face-miner.png|64px]]||<translate><!--T:1588--> Nadiyan miner mask</translate>||||✅||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-face-glasses-clockmaker.png|64px]]||<translate><!--T:1589--> Clockmaker glasses</translate>||0.25°C||✅||||||||||<code>{{Hovertip|accessory-mediumstatus|1.0%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-face-blindfold.png|64px]]||<translate><!--T:1590--> Blindfold</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-arctic.png|64px]]||<translate><!--T:1591--> Arctic mask</translate>||0.5°C||✅||||||||✅||||
+|-
+|[[File:clothes-face-bandageeyes.png|64px]]||<translate><!--T:1592--> Eye bandages</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-bandageleft.png|64px]]||<translate><!--T:1593--> Left eye bandage</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-bandageright.png|64px]]||<translate><!--T:1594--> Right eye bandage</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-eyepatchleatherleft.png|64px]]||<translate><!--T:1595--> Left eye patch</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-eyepatchleatherright.png|64px]]||<translate><!--T:1596--> Right eye patch</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-eyepatchstuddedleft.png|64px]]||<translate><!--T:1597--> Studded left eye patch</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-eyepatchstuddedright.png|64px]]||<translate><!--T:1598--> Studded right eye patch</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-headbandfabric.png|64px]]||<translate><!--T:1599--> Linen headband</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-headbandseashells.png|64px]]||<translate><!--T:1600--> Seashell headband</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-headbandteeth.png|64px]]||<translate><!--T:1601--> Beartooth headband</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-headbandvine.png|64px]]||<translate><!--T:1602--> Vine headband</translate>||0.25°C||||||||||✅||||
+|-
+|[[File:clothes-face-acrobat.png|64px]]||<translate><!--T:1603--> Acrobat mask</translate>||0.25°C||||||||||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-face-linenveil.png|64px]]||clothes-face-linenveil<sup>1</sup>||0.25°C||||||||||✅||||
+|-
+|}<sup>1</sup><translate><!--T:citation-no-name--> This item is not yet present in <tvar name="path_name"><code>assets/game/lang/en.json</code></tvar>, so it has no official name yet.</translate><br><sup>2</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-hand|Hand}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-hand-prince-gloves.png|64px]]||<translate><!--T:1604--> Prince gloves</translate>||0.5°C||<translate><!--T:1605--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-hand-noble-riding-gloves.png|64px]]||<translate><!--T:1606--> Noble riding gloves</translate>||0.5°C||<translate><!--T:1607--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|1.045%}}</code>||
+|-
+|[[File:clothes-hand-minstrel-gloves.png|64px]]||<translate><!--T:1608--> Minstrel gloves</translate>||0.5°C||<translate><!--T:1609--> <font color="#0099ff"><i>The costume of the famous trobairitz Azalais.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-mediumstatus|2.405%}}</code>||
+|-
+|[[File:clothes-hand-lackey-gloves.png|64px]]||<translate><!--T:1610--> Lackey gloves</translate>||0.5°C||<translate><!--T:1611--> <font color="#0099ff"><i>Loyal attendants. They clung to kings and queens as a way of life. Graceful or foolish — it was hard to say.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-hand-laced-handsome-gloves.png|64px]]||<translate><!--T:1612--> Laced handsome gloves</translate>||||||||||||<code>{{Hovertip|cloth-highstatus|3.484%}}</code>||
+|-
+|[[File:clothes-hand-heavy-leather-gloves.png|64px]]||<translate><!--T:1613--> Heavy leather gloves</translate>||0.5°C||||{{Hovertip|{{Tunit|trader-buildmaterials|Building materials trader}}|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||✅||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-hand-fur-gloves.png|64px]]||<translate><!--T:1614--> Fur gloves</translate>||1.5°C||<translate><!--T:1615--> <font color="#0099ff"><i>Given time, and the Falxian creations, travelers from very distant lands began to appear across the kingdoms. Amongst their number were those who dwelt in the far north.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-hand-clockmaker-wristguard.png|64px]]||<translate><!--T:1616--> Clockmaker wristguard</translate>||||<translate><!--T:1617--> <font color="#0099ff"><i>Slight protection for slight mishaps.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-hand-hunter-gloves.png|64px]]||<translate><!--T:1618--> Hunter gloves</translate>||0.5°C||<translate><!--T:1619--> <font color="#0099ff"><i>Made to endure the bowstring's affections.</i></font><br></translate>||||||||||{{Tunit|class-equipment-hunter|Part of the '''Hunter''' starter gear}}
+|-
+|[[File:clothes-hand-malefactor-gloves.png|64px]]||<translate><!--T:1620--> Malefactor wrapped gloves</translate>||0.5°C||<translate><!--T:1621--> <font color="#0099ff"><i>Heavy wrappings meant to be discarded after prolonged use.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-hand-forlorn-bracer.png|64px]]||<translate><!--T:1622--> Forlorn Hope bracer</translate>||||<translate><!--T:1623--> <font color="#0099ff"><i>The right hand kept loose, they were quick to challenge any slight against the faith.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-hand-commoner-gloves.png|64px]]||<translate><!--T:1624--> Commoner gloves</translate>||0.5°C||<translate><!--T:1625--> <font color="#0099ff"><i>Protective, yet supple. Good for a variety of tasks.</i></font><br></translate>||||||||||{{Tunit|class-equipment-commoner|Part of the '''Commoner''' starter gear}}
+|-
+|[[File:clothes-hand-tailor-gloves.png|64px]]||<translate><!--T:1626--> Tailor gloves</translate>||0.5°C||<translate><!--T:1627--> <font color="#0099ff"><i>Long hours inevitably led to injury.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-hand-rottenking.png|64px]]||<translate><!--T:1628--> Rotten king gloves</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-hand-king.png|64px]]||<translate><!--T:1629--> King gloves</translate>||0.5°C||||||||||||
+|-
+|[[File:clothes-hand-surgeon.png|64px]]||<translate><!--T:1630--> Barber surgeon hand wraps</translate>||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-hand-miner.png|64px]]||<translate><!--T:1631--> Miner gloves</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-hand-deep.png|64px]]||<translate><!--T:1632--> Deep noble gloves</translate>||0.5°C||||||||||||
+|-
+|[[File:clothes-hand-forgotten.png|64px]]||<translate><!--T:1633--> Forgotten noble gloves</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-hand-survivor.png|64px]]||<translate><!--T:1634--> Survivor gloves</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-hand-scribe.png|64px]]||<translate><!--T:1635--> Scribe gloves</translate>||0.5°C||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-hand-alchemist.png|64px]]||<translate><!--T:1636--> Nadiyan alchemist gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-barber.png|64px]]||<translate><!--T:1637--> Nadiyan barber gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-beekeeper.png|64px]]||<translate><!--T:1638--> Nadiyan beekeeper gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-blacksmith.png|64px]]||<translate><!--T:1639--> Nadiyan blacksmith gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-fisher.png|64px]]||<translate><!--T:1640--> Nadiyan fisher gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-gloves.png|64px]]||<translate><!--T:1641--> Nadiyan gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-hunter.png|64px]]||<translate><!--T:1642--> Nadiyan hunter gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-miner-clean.png|64px]]||<translate><!--T:1643--> Pristine Nadiyan miner gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-miner.png|64px]]||<translate><!--T:1644--> Nadiyan miner gloves</translate>||0.5°C||||||||||||
+|-
+|[[File:clothes-nadiya-hand-peasant1.png|64px]]||<translate><!--T:1645--> Brown Nadiyan peasant gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-peasant2.png|64px]]||<translate><!--T:1646--> Beige Nadiyan peasant gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-shepherd.png|64px]]||<translate><!--T:1647--> Nadiyan shepherd gloves</translate>||0.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-winter1.png|64px]]||<translate><!--T:1648--> Brown Nadiyan mittens</translate>||1.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-hand-winter2.png|64px]]||<translate><!--T:1649--> Blue Nadiyan mittens</translate>||1.5°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-hand-embroideredfur.png|64px]]||<translate><!--T:1650--> Embroidered fur mittens</translate>||1.5°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-hand-emeraldreindeerherder.png|64px]]||<translate><!--T:1651--> Emerald reindeer herder mittens</translate>||1.5°C||||||||||||
+|-
+|[[File:clothes-hand-arcticfisher.png|64px]]||<translate><!--T:1652--> Arctic fisher mittens</translate>||1.5°C||||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||||
+|-
+|[[File:clothes-hand-arctichunter.png|64px]]||<translate><!--T:1653--> Arctic hunter mittens</translate>||1.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsyellow.png|64px]]||<translate><!--T:1654--> Yellow cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffswhite.png|64px]]||<translate><!--T:1655--> White cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsred.png|64px]]||<translate><!--T:1656--> Red cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffspurple.png|64px]]||<translate><!--T:1657--> Purple cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsplain.png|64px]]||<translate><!--T:1658--> Cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffspink.png|64px]]||<translate><!--T:1659--> Pink cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsorange.png|64px]]||<translate><!--T:1660--> Orange cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsgreen.png|64px]]||<translate><!--T:1661--> Green cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsgray.png|64px]]||<translate><!--T:1662--> Gray cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsbrown.png|64px]]||<translate><!--T:1663--> Brown cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsblack.png|64px]]||<translate><!--T:1664--> Black cuffs</translate>||0.5°C||||||||✅||||
+|-
+|[[File:clothes-hand-cuffsblue.png|64px]]||clothes-hand-cuffsblue<sup>1</sup>||0.5°C||||||||✅||||
+|-
+|}<sup>1</sup>{{Tunit|citation-no-name|This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.}}<br><sup>2</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-waist|Waist}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-waist-sturdy-leather-belt.png|64px]]||<translate><!--T:1759--> Sturdy leather belt</translate>||||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-waist-sturdy-belt.png|64px]]||<translate><!--T:1760--> Sturdy belt</translate>||||||||||||<code>{{Hovertip|cloth-mediumstatus|3.436%}}</code>||
+|-
+|[[File:clothes-waist-squire-belt.png|64px]]||<translate><!--T:1761--> Squire belt</translate>||||<translate><!--T:1762--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|0.687%}}</code>||
+|-
+|[[File:clothes-waist-reindeer-herder-waistband.png|64px]]||<translate><!--T:1763--> Reindeer herder waistband</translate>||0.25°C||<translate><!--T:1764--> <font color="#0099ff"><i>The colorful wear of a Sámi. They fared well in their frozen lands. Truly, we envied them.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
+|-
+|[[File:clothes-waist-prince-waistband.png|64px]]||<translate><!--T:1765--> Prince waistband</translate>||||<translate><!--T:1766--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-waist-peasant-strap.png|64px]]||<translate><!--T:1767--> Peasant strap</translate>||||<translate><!--T:1768--> <font color="#0099ff"><i>From a time when men were corralled by other men, not by monsters.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|1.56%}}</code>||
+|-
+|[[File:clothes-waist-noble-sash.png|64px]]||<translate><!--T:1769--> Noble sash</translate>||0.25°C||<translate><!--T:1770--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-waist-moss-embroidered-belt.png|64px]]||<translate><!--T:1771--> Moss embroidered belt</translate>||0.1°C||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-waist-messenger-belt.png|64px]]||<translate><!--T:1772--> Messenger belt</translate>||0.1°C||<translate><!--T:1773--> <font color="#0099ff"><i>They carried a simple message, and they were hated and feared for it.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-waist-merchant-belt.png|64px]]||<translate><!--T:1774--> Merchant belt</translate>||||<translate><!--T:1775--> <font color="#0099ff"><i>The Hanseatic League, with their merchant navies, offered their services to charter and transport the incredible amount of goods, materials, and refugees. It was a monumental effort of logistics; something only they could pull off.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.031%}}</code>||
+|-
+|[[File:clothes-waist-linen-rope.png|64px]]||<translate><!--T:1776--> Linen rope</translate>||||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-waist-jailor-belt.png|64px]]||<translate><!--T:1777--> Jailor belt</translate>||||<translate><!--T:1778--> <font color="#0099ff"><i>Cruel devices. Pained cries. Ever our shame.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-waist-heavy-tool-belt.png|64px]]||<translate><!--T:1779--> Heavy tool belt</translate>||||||{{Hovertip|{{Tunit|trader-buildmaterials|Building materials trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-furniture|Furniture trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-waist-heavy-belt.png|64px]]||<translate><!--T:1780--> Heavy belt</translate>||0.25°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-waist-gold-waist-chain.png|64px]]||<translate><!--T:1781--> Gold waist chain</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|[[File:clothes-waist-fortune-teller-hip-scarf.png|64px]]||<translate><!--T:1782--> Fortune teller hip scarf</translate>||0.25°C||<translate><!--T:1783--> <font color="#0099ff"><i>He believed there was truth in the words of the old crones and wanderers. A truth only he could see.</i></font><br></translate>||||||❎<br>{{Tunit|table-content-clothier-only|Requires Clothier trait}}||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-waist-fancy-royal-belt.png|64px]]||<translate><!--T:1784--> Fancy royal belt</translate>||||<translate><!--T:1785--> <font color="#0099ff"><i>One day a strange man came to the gate, claiming to be a lost king. He wore only this gaudy belt and a collar.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|1.045%}}</code>||
+|-
+|[[File:clothes-waist-cerise-embroidered-reindeer-herder-waistband.png|64px]]||<translate><!--T:1786--> Cerise embroidered reindeer herder waistband</translate>||0.25°C||<translate><!--T:1787--> <font color="#0099ff"><i>The colorful wear of a Sámi. Warm and comfortable.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.312%}}</code>||
+|-
+|[[File:clothes-waist-aristocrat-belt.png|64px]]||<translate><!--T:1788--> Aristocrat sash</translate>||0.25°C||<translate><!--T:1789--> <font color="#0099ff"><i>Despite his efforts, the nobility flourished during those golden years.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-waist-blackguard-belt.png|64px]]||<translate><!--T:1790--> Blackguard belt</translate>||||<translate><!--T:1791--> <font color="#0099ff"><i>In those days a certain discipline and practicality took hold of many soldiers.</i></font><br></translate>||||||||||{{Tunit|class-equipment-blackguard|Part of the '''Blackguard''' starter gear}}
+|-
+|[[File:clothes-waist-clockmaker-belt.png|64px]]||<translate><!--T:1792--> Clockmaker toolbelt</translate>||||<translate><!--T:1793--> <font color="#0099ff"><i>Small precision tools. Caliper, file, ball-peen hammer.</i></font><br></translate>||||||||||{{Tunit|class-equipment-clockmaker|Part of the '''Clockmaker''' starter gear}}
+|-
+|[[File:clothes-waist-malefactor-sash.png|64px]]||<translate><!--T:1794--> Malefactor sash</translate>||0.25°C||<translate><!--T:1795--> <font color="#0099ff"><i>Some outcasts liked to keep a few findings for themselves.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-waist-forlorn-belt.png|64px]]||<translate><!--T:1796--> Forlorn Hope belt</translate>||0.1°C||<translate><!--T:1797--> <font color="#0099ff"><i>Fastened with charms and trinkets to guide them.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-highstatus|1.742%}}</code>||
+|-
+|[[File:clothes-waist-tailor-belt.png|64px]]||<translate><!--T:1798--> Tailor belt</translate>||0.25°C||<translate><!--T:1799--> <font color="#0099ff"><i>Tools of the trade ready to sever or sew as needed.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-waist-marketeer.png|64px]]||<translate><!--T:1800--> Marketeer belt</translate>||0.1°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.936%}}</code>||
+|-
+|[[File:clothes-waist-rottenking.png|64px]]||<translate><!--T:1801--> Rotten king belt</translate>||0.1°C||||||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
+|-
+|[[File:clothes-waist-king.png|64px]]||<translate><!--T:1802--> King belt</translate>||0.1°C||||||||||||
+|-
+|[[File:clothes-waist-miner.png|64px]]||<translate><!--T:1803--> Miner belt</translate>||0.25°C||||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
+|-
+|[[File:clothes-waist-alchemist.png|64px]]||<translate><!--T:1804--> Alchemist belt</translate>||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-waist-scribe.png|64px]]||<translate><!--T:1805--> Scribe belt</translate>||||||||||||<code>{{Hovertip|cloth-mediumstatus|1.718%}}</code>||
+|-
+|[[File:clothes-nadiya-waist-alchemist.png|64px]]||<translate><!--T:1806--> Nadiyan alchemist belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-barber.png|64px]]||<translate><!--T:1807--> Nadiyan barber belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-beekeeper.png|64px]]||<translate><!--T:1808--> Nadiyan beekeeper belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-fisher.png|64px]]||<translate><!--T:1809--> Nadiyan fisher belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-guard.png|64px]]||<translate><!--T:1810--> Nadiyan guard belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-hunter.png|64px]]||<translate><!--T:1811--> Nadiyan hunter belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-innkeeper-accessories.png|64px]]||<translate><!--T:1812--> Nadiyan innkeeper belt and tab</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-innkeeper.png|64px]]||<translate><!--T:1813--> Nadiyan innkeeper belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-miner-accessories.png|64px]]||<translate><!--T:1814--> Nadiyan miner belt and lantern</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|13.5 - 22.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-miner.png|64px]]||<translate><!--T:1815--> Nadiyan miner belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-musician.png|64px]]||<translate><!--T:1816--> Nadiyan musician belt</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-peasant1.png|64px]]||<translate><!--T:1817--> Brown Nadiyan peasant belt</translate>||||||||||||||
+|-
+|[[File:clothes-nadiya-waist-peasant2.png|64px]]||<translate><!--T:1818--> Red Nadiyan peasant belt</translate>||||||||||||||
+|-
+|[[File:clothes-nadiya-waist-shepherd.png|64px]]||<translate><!--T:1819--> Nadiyan shepherd rope</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|3.75 - 6.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-tailor.png|64px]]||<translate><!--T:1820--> Nadiyan tailor sash</translate>||||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-winter1.png|64px]]||<translate><!--T:1821--> Nadiyan heavy belt</translate>||0.25°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|11.25 - 18.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-waist-winter2.png|64px]]||<translate><!--T:1822--> Nadiyan fur belt</translate>||0.25°C||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-waist-jambiya-belt.png|64px]]||<translate><!--T:1823--> Jambiya belt</translate>||||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-waist-regalwrap.png|64px]]||<translate><!--T:1824--> Regal wrap</translate>||||||||||||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|[[File:clothes-waist-peasantapron.png|64px]]||<translate><!--T:1825--> Peasant apron</translate>||||||||||✅||||
+|-
+|[[File:clothes-waist-bronzebelt.png|64px]]||<translate><!--T:1826--> Bronze belt</translate>||||||||||||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+=== {{Tunit|title-pure-accessories|Pure accessories}} ===
+==== {{Tunit|title-arm|Arm}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-arm-squire-bracers.png|64px]]||<translate><!--T:1827--> Squire bracers</translate>||<translate><!--T:1828--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-arm-silver-chain.png|64px]]||<translate><!--T:1829--> Silver chain</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-highstatus|11.173%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.04%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.01%}}
+|-
+|[[File:clothes-arm-silver-bracelet.png|64px]]||<translate><!--T:1830--> Silver bracelet</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-highstatus|5.587%}}</code>||
+|-
+|[[File:clothes-arm-rosary.png|64px]]||<translate><!--T:1831--> Rosary</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-arm-prisoner-binds.png|64px]]||<translate><!--T:1832--> Prisoner binds</translate>||<translate><!--T:1833--> <font color="#0099ff"><i>A Rot of human design. For what could be worse than the slow, silent decay of sinew and spirit?</i></font><br></translate>||||||||<code>{{Hovertip|accessory-lowstatus|4.831%}}</code>||
+|-
+|[[File:clothes-arm-merchant-bracelet.png|64px]]||<translate><!--T:1834--> Merchant bracelet</translate>||<translate><!--T:1835--> <font color="#0099ff"><i>The Hanseatic League, with their merchant navies, offered their services to charter and transport the incredible amount of goods, materials, and refugees. It was a monumental effort of logistics; something only they could pull off.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-arm-leather-bracers.png|64px]]||<translate><!--T:1836--> Leather bracers</translate>||||||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>||
+|-
+|[[File:clothes-arm-copper-bracelet.png|64px]]||<translate><!--T:1837--> Copper bracelet</translate>||<translate><!--T:1838--> <font color="#0099ff"><i>This belonged to clan chieftain of the Celtic isles. A burden of leadership and protection.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-buildmaterials|Building materials trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>||
+|-
+|[[File:clothes-arm-bronze-bracelet.png|64px]]||<translate><!--T:1839--> Bronze bracelet</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|20.0%}}</code>||
+|-
+|[[File:clothes-arm-bronze-armlet.png|64px]]||<translate><!--T:1840--> Bronze armlet</translate>||||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.16%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.08%}}
+|-
+|[[File:clothes-arm-tailor-needlepuff.png|64px]]||<translate><!--T:1841--> Tailor needle puff</translate>||<translate><!--T:1842--> <font color="#0099ff"><i>All those clothes — torn to pieces and left in the dark. But not forgotten.</i></font><br></translate>||||||||||{{Tunit|class-equipment-tailor|Part of the '''Tailor''' starter gear}}
+|-
+|[[File:clothes-nadiya-arm-armlet-teeth.png|64px]]||<translate><!--T:1843--> Nadiyan wolftooth armlet</translate>||||||||||||
+|-
+|[[File:clothes-nadiya-arm-barber-pouch.png|64px]]||<translate><!--T:1844--> Nadiyan barber pouch</translate>||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-bronze-lapis-bracelet.png|64px]]||<translate><!--T:1845--> Nadiyan bronze lapis bracelet</translate>||||||{{Hovertip|{{Tunit|villager-agnieszka|Village blacksmith}}<sup>2</sup>|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-copper-armlet.png|64px]]||<translate><!--T:1846--> Nadiyan copper armlet</translate>||||||{{Hovertip|{{Tunit|villager-agnieszka|Village blacksmith}}<sup>2</sup>|5.25 - 8.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-copper-lapis-bracelet.png|64px]]||<translate><!--T:1847--> Nadiyan copper lapis bracelet</translate>||||||{{Hovertip|{{Tunit|villager-agnieszka|Village blacksmith}}<sup>2</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-coral-bracelet.png|64px]]||<translate><!--T:1848--> Nadiyan coral bracelet</translate>||||||{{Hovertip|{{Tunit|villager-liga|Village innkeeper}}<sup>2</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-guard-bracers.png|64px]]||<translate><!--T:1849--> Nadiyan guard bracers</translate>||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-musician-bangles.png|64px]]||<translate><!--T:1850--> Nadiyan musician bangles</translate>||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>2</sup>|12 - 20 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-arm-peasant-bracersbrown.png|64px]]||<translate><!--T:1851--> Brown Nadiyan peasant bracers</translate>||||||||||||
+|-
+|[[File:clothes-nadiya-arm-peasant-bracerswhite.png|64px]]||<translate><!--T:1852--> White Nadiyan peasant bracers</translate>||||||||||||
+|-
+|[[File:clothes-nadiya-arm-seashell-bracelet.png|64px]]||<translate><!--T:1853--> Nadiyan seashell bracelet</translate>||||||{{Hovertip|{{Tunit|villager-liga|Village innkeeper}}<sup>2</sup>|15 - 25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-arm-gem-studded-bracelet.png|64px]]||<translate><!--T:1854--> Gem studded bracelet</translate>||||||||||<code>{{Hovertip|accessory-highstatus|5.587%}}</code>||
+|-
+|[[File:clothes-arm-long-gem-studded-bracelet.png|64px]]||<translate><!--T:1855--> Long gem studded bracelet</translate>||||||||||<code>{{Hovertip|cloth-highstatus|0.348%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-arm-large-silver-bracelets.png|64px]]||<translate><!--T:1856--> Large silver bracelets</translate>||||||||||<code>{{Hovertip|accessory-highstatus|5.587%}}</code>||
+|-
+|[[File:clothes-arm-japamala.png|64px]]||<translate><!--T:1857--> Japamala</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|0.966%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-arm-rusty-wrist-manacles.png|64px]]||<translate><!--T:1858--> Rusty wrist manacles</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|0.966%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-arm-acacia.png|64px]]||<translate><!--T:1859--> Acacia seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-bamboo.png|64px]]||<translate><!--T:1860--> Bamboo sapling bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-birch.png|64px]]||<translate><!--T:1861--> Birch seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-cattail.png|64px]]||<translate><!--T:1862--> Cattail root bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-coral.png|64px]]||<translate><!--T:1863--> Coral bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-cypress.png|64px]]||<translate><!--T:1864--> Cypress seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-ebony.png|64px]]||<translate><!--T:1865--> Ebony seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-feather.png|64px]]||<translate><!--T:1866--> Feather bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-flint.png|64px]]||<translate><!--T:1867--> Flint bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-kapok.png|64px]]||<translate><!--T:1868--> Kapok seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-larch.png|64px]]||<translate><!--T:1869--> Larch seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-maple.png|64px]]||<translate><!--T:1870--> Maple seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-maplered.png|64px]]||<translate><!--T:1871--> Crimson maple seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-papyrus.png|64px]]||<translate><!--T:1872--> Papyrus root bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-tule.png|64px]]||<translate><!--T:1873--> Tule root bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-walnut.png|64px]]||<translate><!--T:1874--> Walnut seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-hornedbracelet.png|64px]]||<translate><!--T:1875--> Horned bracelet</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-arm-acrobat.png|64px]]||<translate><!--T:1876--> Acrobat bracelet</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|4.831%}}</code>||
+|-
+|[[File:clothes-arm-fortuneteller.png|64px]]||<translate><!--T:1877--> Fortune teller bracelet</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|4.831%}}</code>||
+|-
+|[[File:clothes-arm-oak.png|64px]]||<translate><!--T:1878--> Acorn bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-pine.png|64px]]||<translate><!--T:1879--> Pinecone bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-purpleheart.png|64px]]||<translate><!--T:1880--> Purpleheart seed bracelet</translate>||||||||✅||||
+|-
+|[[File:clothes-arm-redwood.png|64px]]||clothes-arm-redwood<sup>1</sup>||||||||✅||||
+|-
+|}<sup>1</sup>{{Tunit|citation-no-name|This item is not yet present in <code>assets/game/lang/en.json</code>, so it has no official name yet.}}<br><sup>2</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+==== {{Tunit|title-emblem|Emblem}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-emblem-silverpin.png|64px]]||<translate><!--T:1881--> Emblem (Silverpin)</translate>||||||
+|-
+|[[File:clothes-emblem-squire-emblem.png|64px]]||<translate><!--T:1882--> Squire emblem</translate>||<translate><!--T:1883--> <font color="#0099ff"><i>They were young lads, often noble-born. This was a symbol of their fledgling honor.</i></font><br></translate>||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-emblem-silver-star.png|64px]]||<translate><!--T:1884--> Silver star</translate>||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-emblem-silver-pin.png|64px]]||<translate><!--T:1885--> Silver pin</translate>||||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|[[File:clothes-emblem-royal-pin.png|64px]]||<translate><!--T:1886--> Prince emblem</translate>||<translate><!--T:1887--> <font color="#0099ff"><i>Proof of his bloodline. He wore it proudly as the light faded around him.</i></font><br></translate>||<code>{{Hovertip|accessory-highstatus|1.117%}}</code>||
+|-
+|[[File:clothes-emblem-messenger-pin.png|64px]]||<translate><!--T:1888--> Messenger pin</translate>||<translate><!--T:1889--> <font color="#0099ff"><i>“It’s time.”</i></font><br></translate>||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||
+|-
+|[[File:clothes-emblem-brass-ruby-brooch.png|64px]]||<translate><!--T:1890--> Brass ruby brooch</translate>||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-emblem-blue-seal.png|64px]]||<translate><!--T:1891--> Blue seal</translate>||||<code>{{Hovertip|accessory-lowstatus|4.831%}}</code>||
+|-
+|[[File:clothes-emblem-blackguard-pin.png|64px]]||<translate><!--T:1892--> Blackguard pin</translate>||<translate><!--T:1893--> <font color="#0099ff"><i>They resolved to do whatever they must to survive. This was a sign of their dread conviction.</i></font><br></translate>||||{{Tunit|class-equipment-blackguard|Part of the '''Blackguard''' starter gear}}
+|-
+|[[File:clothes-emblem-falcon.png|64px]]||<translate><!--T:1894--> Falcon emblem</translate>||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-emblem-silver-brooch.png|64px]]||<translate><!--T:1895--> Silver brooch</translate>||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-emblem-lily.png|64px]]||<translate><!--T:1896--> Lily emblem</translate>||||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||
+|-
+|[[File:clothes-emblem-fibula.png|64px]]||<translate><!--T:1897--> Fibula</translate>||||<code>{{Hovertip|accessory-mediumstatus|2.0%}}</code>||
+|-
+|[[File:clothes-emblem-cursedgemstone.png|64px]]||<translate><!--T:1898--> Cursed gemstone</translate>||<translate><!--T:1899--> Said to complement your 'glowing' look at the cost of a mysterious and terrible fate.</translate>||||{{Hovertip|{{Tunit|table-content-fishing-junk|Obtainable from fishing}}|0.476%}}
+|-
+|[[File:clothes-emblem-flyingfishfigurine.png|64px]]||<translate><!--T:1900--> Flying fish figurine</translate>||<translate><!--T:1901--> Something looks fishy about this.</translate>||||{{Hovertip|{{Tunit|table-content-fishing-junk|Obtainable from fishing}}|0.476%}}
+|-
+|[[File:clothes-emblem-starburst.png|64px]]||<translate><!--T:1902--> Starlight emblem</translate>||||<code>{{Hovertip|accessory-highstatus|1.676%}}</code>||
+|-
+|[[File:clothes-emblem-cloak-clasp.png|64px]]||<translate><!--T:1903--> Black bronze clasp</translate>||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-emblem-cloak-clasp-chain.png|64px]]||<translate><!--T:1904--> Blass clasp</translate>||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-emblem-cloak-clasp-beads.png|64px]]||<translate><!--T:1905--> Beaded clasp</translate>||||<code>{{Hovertip|accessory-highstatus|1.676%}}</code>||
+|-
+|[[File:clothes-butterflypin-acadianhairstreak.png|64px]]||<translate><!--T:1906--> Butterfly pin (Acadian hairstreak)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-alchemical.png|64px]]||<translate><!--T:1907--> Butterfly pin (Alchemical)</translate>||||<code>{{Hovertip|butterfly|0.99%}}</code>||
+|-
+|[[File:clothes-butterflypin-bandedpeacock.png|64px]]||<translate><!--T:1908--> Butterfly pin (Banded peacock)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-bluekallima.png|64px]]||<translate><!--T:1909--> Butterfly pin (Blue kallima)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-bluemorpho.png|64px]]||<translate><!--T:1910--> Butterfly pin (Blue morpho)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-bluepansy.png|64px]]||<translate><!--T:1911--> Butterfly pin (Blue pansy)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-bogcopper.png|64px]]||<translate><!--T:1912--> Butterfly pin (Bog copper)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-bronzecopper.png|64px]]||<translate><!--T:1913--> Butterfly pin (Bronze copper)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-cabbagewhite.png|64px]]||<translate><!--T:1914--> Butterfly pin (Cabbage white)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-clipper.png|64px]]||<translate><!--T:1915--> Butterfly pin (Clipper)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-coloradohairstreak.png|64px]]||<translate><!--T:1916--> Butterfly pin (Colorado hairstreak)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-comma.png|64px]]||<translate><!--T:1917--> Butterfly pin (Comma)</translate>||||<code>{{Hovertip|butterfly|3.96%}}</code>||
+|-
+|[[File:clothes-butterflypin-commonbrimstone.png|64px]]||<translate><!--T:1918--> Butterfly pin (Common brimstone)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-darkbluepansy.png|64px]]||<translate><!--T:1919--> Butterfly pin (Dark bluepansy)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-desertorangetip.png|64px]]||<translate><!--T:1920--> Butterfly pin (Desert orange tip)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-easterntigerswallowtail.png|64px]]||<translate><!--T:1921--> Butterfly pin (Eastern tiger swallowtail)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-godartsnumberwing.png|64px]]||<translate><!--T:1922--> Butterfly pin (Godarts numberwing)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-goldbandedforester.png|64px]]||<translate><!--T:1923--> Butterfly pin (Gold banded forester)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-greatpurplehairstreak.png|64px]]||<translate><!--T:1924--> Butterfly pin (Great purple hairstreak)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-greencharaxes.png|64px]]||<translate><!--T:1925--> Butterfly pin (Green charaxes)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-largewhite.png|64px]]||<translate><!--T:1926--> Butterfly pin (Large white)</translate>||||<code>{{Hovertip|butterfly|5.941%}}</code>||
+|-
+|[[File:clothes-butterflypin-littlemetalmark.png|64px]]||<translate><!--T:1927--> Butterfly pin (Little metalmark)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-littlewoodsatyr.png|64px]]||<translate><!--T:1928--> Butterfly pin (Little wood satyr)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-malachite.png|64px]]||<translate><!--T:1929--> Butterfly pin (Malachite)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-marbledwhite.png|64px]]||<translate><!--T:1930--> Butterfly pin (Marbled white)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-milbertstortoiseshell.png|64px]]||<translate><!--T:1931--> Butterfly pin (Milberts tortoiseshell)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-mourningcloak.png|64px]]||<translate><!--T:1932--> Butterfly pin (Mourning cloak)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-oakblue.png|64px]]||<translate><!--T:1933--> Butterfly pin (Oakblue)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-paintedbeauty.png|64px]]||<translate><!--T:1934--> Butterfly pin (Painted beauty)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-pallidnawab.png|64px]]||<translate><!--T:1935--> Butterfly pin (Pallid nawab)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-peacock.png|64px]]||<translate><!--T:1936--> Butterfly pin (Peacock)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-pipevineswallowtail.png|64px]]||<translate><!--T:1937--> Butterfly pin (Pipevine swallowtail)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-purpleemperor.png|64px]]||<translate><!--T:1938--> Butterfly pin (Purple emperor)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-redadmiral.png|64px]]||<translate><!--T:1939--> Butterfly pin (Red admiral)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-redglider.png|64px]]||<translate><!--T:1940--> Butterfly pin (Red glider)</translate>||||<code>{{Hovertip|butterfly|0.396%}}</code>||
+|-
+|[[File:clothes-butterflypin-redpostman.png|64px]]||<translate><!--T:1941--> Butterfly pin (Red postman)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-resplendantforester.png|64px]]||<translate><!--T:1942--> Butterfly pin (Resplendent forester)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-ringlet.png|64px]]||<translate><!--T:1943--> Butterfly pin (Ringlet)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-rot.png|64px]]||<translate><!--T:1944--> Butterfly pin (Rot)</translate>||||<code>{{Hovertip|butterfly|0.594%}}</code>||
+|-
+|[[File:clothes-butterflypin-rust.png|64px]]||<translate><!--T:1945--> Butterfly pin (Rust)</translate>||||<code>{{Hovertip|butterfly|0.594%}}</code>||
+|-
+|[[File:clothes-butterflypin-rustytippedpage.png|64px]]||<translate><!--T:1946--> Butterfly pin (Rusty-tipped page)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-silveryblue.png|64px]]||<translate><!--T:1947--> Butterfly pin (Silvery blue)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-smallheath.png|64px]]||<translate><!--T:1948--> Butterfly pin (Small heath)</translate>||||<code>{{Hovertip|butterfly|3.96%}}</code>||
+|-
+|[[File:clothes-butterflypin-speckledwood.png|64px]]||<translate><!--T:1949--> Butterfly pin (Speckled wood)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-temporal.png|64px]]||<translate><!--T:1950--> Butterfly pin (Temporal)</translate>||||<code>{{Hovertip|butterfly|0.396%}}</code>||
+|-
+|[[File:clothes-butterflypin-whiteadmiral.png|64px]]||<translate><!--T:1951--> Butterfly pin (White admiral)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-whitepeacock.png|64px]]||<translate><!--T:1952--> Butterfly pin (White peacock)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-zebraheliconan.png|64px]]||<translate><!--T:1953--> Butterfly pin (Zebra heliconan)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-zebraswallowtail.png|64px]]||<translate><!--T:1954--> Butterfly pin (Zebra swallowtail)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|[[File:clothes-butterflypin-zeredaskipper.png|64px]]||<translate><!--T:1955--> Butterfly pin (Zereda skipper)</translate>||||<code>{{Hovertip|butterfly|1.98%}}</code>||
+|-
+|}
+|}
+==== {{Tunit|title-neck|Neck}} ====
+{|<!--
+This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!
+-->class="mw-collapsible""
+|+
+|
+{|class="wikitable sortable" style="text-align:center;
+|+
+|-
+!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+|-
+|[[File:clothes-neck-pearl-necklace.png|64px]]||<translate><!--T:1956--> Pearl necklace</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>||
+|-
+|[[File:clothes-neck-noble-necklace.png|64px]]||<translate><!--T:1957--> Noble necklace</translate>||<translate><!--T:1958--> <font color="#0099ff"><i>The Stadtholder’s garb. He was a vain man.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}},<br>{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-neck-merchant-amulet.png|64px]]||<translate><!--T:1959--> Merchant amulet</translate>||<translate><!--T:1960--> <font color="#0099ff"><i>They chose a different struggle. Who knows if any of them survived?</i></font><br></translate>||{{Hovertip|{{Tunit|trader-commodities|Commodities trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|10.0%}}</code>||
+|-
+|[[File:clothes-neck-golden-necklace.png|64px]]||<translate><!--T:1961--> Golden necklace</translate>||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|1.676%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.04%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.01%}}
+|-
+|[[File:clothes-neck-fancy-royal-collar.png|64px]]||<translate><!--T:1962--> Fancy royal collar</translate>||<translate><!--T:1963--> <font color="#0099ff"><i>One day a strange man came to the gate, claiming to be a lost king. He wore only this gaudy collar and a belt.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|9 - 15 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>||
+|-
+|[[File:clothes-neck-copper-torc.png|64px]]||<translate><!--T:1964--> Copper torc</translate>||<translate><!--T:1965--> <font color="#0099ff"><i>This belonged to a clan chieftain of the Celtic isles. A burden of leadership and protection.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-buildmaterials|Building materials trader}}|3 - 5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>||
+|-
+|[[File:clothes-neck-bronze-gem-necklace.png|64px]]||<translate><!--T:1966--> Bronze gem necklace</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||{{Hovertip|{{Tunit|table-content-panning-bonysoil|Obtainable from panning bony soil}}|0.04%}},<br>{{Hovertip|{{Tunit|table-content-panning-other|Obtainable from panning gravel or sand}}|0.01%}}
+|-
+|[[File:clothes-neck-forlorn-talisman.png|64px]]||<translate><!--T:1967--> Forlorn Hope talisman</translate>||<translate><!--T:1968--> <font color="#0099ff"><i>They sought to enwreathe themselves in the prima materia and wield it directly. Much of their efforts were directed towards such a feat.</i></font><br></translate>||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-neck-walnut-amulet.png|64px]]||<translate><!--T:1969--> Walnut amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-redwood-amulet.png|64px]]||<translate><!--T:1970--> Redwood amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-pinecone-amulet.png|64px]]||<translate><!--T:1971--> Pinecone amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-larch-seed-amulet.png|64px]]||<translate><!--T:1972--> Larch seed amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-cypress-seed-amulet.png|64px]]||<translate><!--T:1973--> Cypress seed amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-acorn-amulet.png|64px]]||<translate><!--T:1974--> Acorn amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-marketeer.png|64px]]||<translate><!--T:1975--> Marketeer undermask</translate>||||||||||||
+|-
+|[[File:clothes-neck-malefactor-pendant.png|64px]]||<translate><!--T:1976--> Malefactor bloody pendant</translate>||<translate><!--T:1977--> <font color="#0099ff"><i>Those who committed crimes in the underground were exiled to join the scouts on the surface until they found something of value to bring back.</i></font><br></translate>||||||||||{{Tunit|class-equipment-malefactor|Part of the '''Malefactor''' starter gear}}
+|-
+|[[File:clothes-neck-rottenking.png|64px]]||<translate><!--T:1978--> Rotten king collar</translate>||||||||||||
+|-
+|[[File:clothes-neck-king.png|64px]]||<translate><!--T:1979--> King collar</translate>||||||||||||
+|-
+|[[File:clothes-neck-deep.png|64px]]||<translate><!--T:1980--> Deep noble amulet</translate>||||||||||||
+|-
+|[[File:clothes-neck-forgotten.png|64px]]||<translate><!--T:1981--> Forgotten noble amulet</translate>||||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-nadiya-neck-acacia-amulet.png|64px]]||<translate><!--T:1982--> Acacia amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-bamboo-seed-amulet.png|64px]]||<translate><!--T:1983--> Bamboo shoot amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-birch-amulet.png|64px]]||<translate><!--T:1984--> Birch amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-cattail-root-amulet.png|64px]]||<translate><!--T:1985--> Cattail root amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-copper-lapis-necklace.png|64px]]||<translate><!--T:1986--> Nadiyan copper lapis necklace</translate>||||||{{Hovertip|{{Tunit|villager-agnieszka|Village blacksmith}}<sup>1</sup>|16.5 - 27.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-ebony-amulet.png|64px]]||<translate><!--T:1987--> Ebony amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-feather-amulet.png|64px]]||<translate><!--T:1988--> Nadiyan feather amulet</translate>||||||{{Hovertip|{{Tunit|villager-gerhardt|Village hunter}}<sup>1</sup>|10.5 - 17.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-flint-amulet.png|64px]]||<translate><!--T:1989--> Nadiyan flint amulet</translate>||||||{{Hovertip|{{Tunit|villager-gerhardt|Village hunter}}<sup>1</sup>|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-fur-shawl.png|64px]]||<translate><!--T:1990--> Nadiyan fur collar</translate>||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|8.25 - 13.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-kapok-amulet.png|64px]]||<translate><!--T:1991--> Kapok amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-lapis-necklace.png|64px]]||<translate><!--T:1992--> Nadiyan lapis necklace</translate>||||||{{Hovertip|{{Tunit|villager-agnieszka|Village blacksmith}}<sup>1</sup>|18.75 - 31.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-maple-amulet.png|64px]]||<translate><!--T:1993--> Maple amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-maple-red-amulet.png|64px]]||<translate><!--T:1994--> Red maple amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-necklace-coral.png|64px]]||<translate><!--T:1995--> Nadiyan coral necklace</translate>||||||{{Hovertip|{{Tunit|villager-liga|Village innkeeper}}<sup>1</sup>|17.25 - 28.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-necklace-musician.png|64px]]||<translate><!--T:1996--> Nadiyan musician necklace</translate>||||||{{Hovertip|{{Tunit|villager-alba|Village tailor}}<sup>1</sup>|7.5 - 12.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-necklace-seashells.png|64px]]||<translate><!--T:1997--> Nadiyan seashell necklace</translate>||||||{{Hovertip|{{Tunit|villager-liga|Village innkeeper}}<sup>1</sup>|17.25 - 28.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-necklace-teeth.png|64px]]||<translate><!--T:1998--> Nadiyan wolftooth necklace</translate>||||||{{Hovertip|{{Tunit|villager-gerhardt|Village hunter}}<sup>1</sup>|18 - 30 {{Tunit|item-gear-rusty|rusty gears}}}}||||||
+|-
+|[[File:clothes-nadiya-neck-papyrus-root-amulet.png|64px]]||<translate><!--T:1999--> Papyrus root amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-purpleheart-amulet.png|64px]]||<translate><!--T:2000--> Purpleheart amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-nadiya-neck-tule-root-amulet.png|64px]]||<translate><!--T:2001--> Tule root amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-pillory.png|64px]]||<translate><!--T:2002--> Pillory</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|0.966%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-neck-nazar3.png|64px]]||<translate><!--T:2003--> Nazar</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|1.0%}}</code>,<br><code>{{Hovertip|lazaret|5.263%}}</code>||
+|-
+|[[File:clothes-neck-nazar2.png|64px]]||<translate><!--T:2004--> Nazar</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|1.0%}}</code>,<br><code>{{Hovertip|lazaret|5.263%}}</code>||
+|-
+|[[File:clothes-neck-nazar1.png|64px]]||<translate><!--T:2005--> Nazar</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|1.0%}}</code>,<br><code>{{Hovertip|lazaret|5.263%}}</code>||
+|-
+|[[File:clothes-neck-japamala.png|64px]]||<translate><!--T:2006--> Japamala</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|1.932%}}</code>,<br><code>{{Hovertip|lazaret|7.895%}}</code>||
+|-
+|[[File:clothes-neck-jade-amulet.png|64px]]||<translate><!--T:2007--> Jade amulet</translate>||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-neck-gorget-vulture.png|64px]]||<translate><!--T:2008--> Vulture gorget</translate>||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-neck-gorget.png|64px]]||<translate><!--T:2009--> Gold gorget</translate>||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-neck-gear-amulet-temporal.png|64px]]||<translate><!--T:2010--> Temporal gear amulet</translate>||||||||✅||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|1.316%}}</code>||
+|-
+|[[File:clothes-neck-gear-amulet-gold.png|64px]]||<translate><!--T:2011--> Gold gear amulet</translate>||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-neck-gear-amulet-rusty.png|64px]]||<translate><!--T:2012--> Rusty gear amulet</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-fancy-cross.png|64px]]||<translate><!--T:2013--> Ornamental cross</translate>||||||||||<code>{{Hovertip|accessory-highstatus|0.559%}}</code>,<br><code>{{Hovertip|lazaret|2.632%}}</code>||
+|-
+|[[File:clothes-neck-simple-cross.png|64px]]||<translate><!--T:2014--> Simple cross</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
+|-
+|[[File:clothes-neck-teardrop-amulet.png|64px]]||<translate><!--T:2015--> Teardrop amulet</translate>||||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-neck-necklace-seashell1.png|64px]]||<translate><!--T:2016--> Seashell necklace</translate>||||||||✅||||
+|-
+|[[File:clothes-neck-lunula.png|64px]]||<translate><!--T:2017--> Lunula</translate>||||||||||<code>{{Hovertip|accessory-highstatus|2.793%}}</code>||
+|-
+|[[File:clothes-neck-pomander.png|64px]]||<translate><!--T:2018--> Pomander</translate>||||||||||<code>{{Hovertip|accessory-lowstatus|2.899%}}</code>||
+|-
+|[[File:clothes-neck-bronzeamulet.png|64px]]||<translate><!--T:2019--> Bronze amulet</translate>||||||||||<code>{{Hovertip|accessory-mediumstatus|3.0%}}</code>||
+|-
+|}<sup>1</sup>{{Tunit|citation-villager|Villagers, while similar to {{ll|Trading|traders}} are separate. At the risk of spoiling the game's story, see {{ll|Villager}} and/or {{ll|Village}} if you want to learn more.}}
+|}
+== {{Tunit|title-citations|Citations}} ==
+<references/>

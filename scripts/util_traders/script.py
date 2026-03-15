@@ -1,11 +1,12 @@
-from os import listdir, mkdir
 import json
-from _util_general.mediawiki_templates import tunit
-from util_0lang.script import get_dict
+
+from scripts._util_general.file_util import read_file, write_file
+from os import listdir
+from scripts._util_general.mediawiki_templates import tunit
+from scripts.util_0lang.script import get_dict
 
 def generate(install_path:str, *, output_path:str="./", lang):
-    global traders_json
-    global trades
+    global traders_json, trades, traders_lang_dict
 
     path = install_path+"/assets/survival/config/tradelists/"
 
@@ -13,12 +14,9 @@ def generate(install_path:str, *, output_path:str="./", lang):
 
     traders_json={}
     for trader_file in trader_files:
-        with open(path+trader_file, "r") as f:
-            traders_json[trader_file[:-5]]=json.load(f)
+        traders_json[trader_file[:-5]] = read_file(path+trader_file, decode_json=True)
 
-    mkdir(output_path+"/generated")
-    with open(output_path+"/generated/traders.json", "x", encoding="utf-8") as f:
-        f.write(json.dumps(traders_json, indent=4))
+    write_file(output_path+"/generated/traders.json", traders_json, encode_json=True)
 
     trades = {}
     directions = ["selling", "buying"]
@@ -29,18 +27,15 @@ def generate(install_path:str, *, output_path:str="./", lang):
                     trades[listings["code"]] = {d:[] for d in directions}
                 #trades[listings["code"]][direction].append(very_specific_function(trader, listings))
                 trades[listings["code"]][direction].append((trader, listings))
+    lang_dict = get_dict(lang)
+    traders_lang_dict = {"trader-"+(trader_id[23:][:-5]): (lang_dict[trader_id][:-7]) for trader_id in lang_dict if trader_id.startswith("item-creature-trader") and trader_id.endswith("-cold")} |\
+                        {"villager-"+(villager_id.split("-")[-1]): "Village "+(lang_dict[villager_id].lower()) for villager_id in lang_dict if villager_id.startswith("item-creature-villager") and not villager_id.endswith("generic")}
+    write_file(output_path+"/generated/trader_lang.json", traders_lang_dict, encode_json=True)
 
 
 def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False, villagerCounter:list=None):
-    langs_dict=get_dict(lang)
-
-    name = ""
-    villager = False
-    if trader.startswith("trader-"):
-        name = langs_dict[f"item-creature-{trader.replace("-","-*-")}-cold"][:-7]
-    else:
-        name = langs_dict[trader.replace("villager", "nametag")]
-        villager = True
+    name = traders_lang_dict[trader]
+    villager = trader.startswith("villager-")
     if addTunit:
         name = tunit(trader,name)
     if villager and type(villagerCounter) is list:

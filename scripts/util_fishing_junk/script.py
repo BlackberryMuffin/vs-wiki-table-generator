@@ -1,15 +1,14 @@
+from scripts._util_general.file_util import read_file, write_file
 from pathlib import Path
 import json
-from _util_general.json_util import repair
-from _util_general.mediawiki_templates import tunit
-
+from scripts._util_general.json_util import repair
+from datetime import timedelta, datetime
+start = datetime.now()
 
 def generate(install_path:str, *, output_path:str="./", lang):
     global fishing_junk
-    Path(output_path+"/generated").mkdir(parents=True, exist_ok=True)
 
-    with open(install_path+"/assets/survival/entities/nonliving/bobber.json", "r") as f:
-        fishing_junk=json.loads(repair(f.read()))["attributes"]["junkCatches"]
+    fishing_junk = read_file(install_path+"/assets/survival/entities/nonliving/bobber.json", decode_json=True)["attributes"]["junkCatches"]
 
     tmp=fishing_junk
     fishing_junk={fishing_junk[i]["code"]:fishing_junk[i]["weight"] for i in range(len(fishing_junk))}
@@ -22,10 +21,9 @@ def generate(install_path:str, *, output_path:str="./", lang):
     for item in fishing_junk:
         fishing_junk[item]/=weight_sum
 
-    with open(output_path + "generated/weight_sum.txt", "x") as f:
-        f.write(str(weight_sum))
-    with open(output_path+"generated/fish.json", "x") as f:
-        f.write(json.dumps(fishing_junk, indent=4))
+    write_file(output_path + "generated/weight_sum.txt", str(weight_sum), encode_json=False)
+    write_file(output_path+"generated/fish.json", fishing_junk, encode_json=True)
+    print(datetime.now()-start)
 
 
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:

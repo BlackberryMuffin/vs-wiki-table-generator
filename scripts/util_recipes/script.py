@@ -1,5 +1,8 @@
+from scripts._util_general.file_util import read_file, write_file
+from datetime import timedelta, datetime
+start = datetime.now()
 from os import scandir
-from _util_general.json_util import repair as repair_json
+from scripts._util_general.json_util import repair as repair_json
 from pathlib import Path
 import json
 
@@ -21,7 +24,6 @@ def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_js
     recipes={}
 
     sub_dirs=[(install_path+"/assets/survival/recipes/grid/", "")]
-
     i=0
     while i < len(sub_dirs):
         with scandir(sub_dirs[i][0]) as dirs:
@@ -29,18 +31,15 @@ def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_js
                 if entry.is_dir():
                     sub_dirs.append((entry.path, sub_dirs[i][1]+entry.name+"-"))
                 elif entry.is_file() and entry.name.endswith(".json"):
-                    with open(entry.path, "r") as f:
-                        recipes[sub_dirs[i][1]+entry.name[:-5]] = json.loads(repair_json(f.read()))
+                    file_path=sub_dirs[i][1]+entry.name[:-5]
+                    recipes[file_path] = read_file(entry.path, decode_json=True)
                     if gen_cleaned_jsons:
                         path = output_path + "/generated/cleaned_jsons/" + "/".join(sub_dirs[i][1].split("-"))
-                        if not Path(path).exists():
-                            Path(path).mkdir(parents=True, exist_ok=True)
-                        with open(path+entry.name, "x", encoding="utf-8") as fi:
-                            fi.write(json.dumps(recipes[sub_dirs[i][1]+entry.name[:-5]], indent=4))
+                        write_file(path+entry.name, recipes[file_path], encode_json=True)
         i+=1
     if gen_cleaned_jsons:
-        with open(output_path + "/generated/cleaned_jsons/_combined.json", "x", encoding="utf-8") as fi:
-            fi.write(json.dumps(recipes, indent=4))
+        write_file(output_path+"/generated/cleaned_jsons/_combined.json", recipes, encode_json=True)
+    print(datetime.now()-start)
 
 
 

@@ -1,14 +1,11 @@
 import json
-from _util_general.json_util import repair
+from scripts._util_general.file_util import read_file, write_file
 from pathlib import Path
 
 def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
-    Path(output_path+"/generated").mkdir(parents=True, exist_ok=True)
     global stackrandomizer
 
-    with open(install_path+"/assets/survival/itemtypes/meta/stackrandomizer.json", "r") as f:
-        stackrandomizer = json.loads(repair(f.read()))
-
+    stackrandomizer=read_file(install_path+"/assets/survival/itemtypes/meta/stackrandomizer.json", decode_json=True)
     for stack_type in stackrandomizer["variantgroups"][0]["states"]:
         if not ".*-"+stack_type in stackrandomizer["attributesByType"]:
             print("\t\tWARNING:", stack_type, "is not a used variant group")
@@ -30,8 +27,7 @@ def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_js
                      str(items[i]["quantity"] if "quantity" in items[i] else "")
             if name in uniques:
                 items[uniques[name]]["chance"]+=items[i]["chance"]
-                dupes.append(items[i])
-                del items[i]
+                dupes.append(items.pop(i))
                 i-=1
             else:
                 uniques[name]=i
@@ -42,14 +38,10 @@ def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_js
         for item in items:
             type_sum_new[stack_type]+=item["chance"]
 
-    with open(output_path+"/generated/chance_sums_new.json", "x") as f:
-        f.write(json.dumps(type_sum_new, indent=4))
-    with open(output_path+"/generated/chance_sums.json", "x") as f:
-        f.write(json.dumps(type_sum, indent=4))
-    with open(output_path+"/generated/stackrandomizer.json", "x") as f:
-        f.write(json.dumps(stackrandomizer, indent=4))
-    with open(output_path+"/generated/dupes.json", "x") as f:
-        f.write(json.dumps(dupes, indent=4))
+    write_file(output_path+"/generated/chance_sums_new.json", type_sum_new, encode_json=True)
+    write_file(output_path+"/generated/chance_sums.json", type_sum, encode_json=True)
+    write_file(output_path+"/generated/stackrandomizer.json", stackrandomizer, encode_json=True)
+    write_file(output_path+"/generated/dupes.json", dupes, encode_json=True)
 
 
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
