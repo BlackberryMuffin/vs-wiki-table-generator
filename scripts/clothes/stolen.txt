@@ -1,0 +1,154 @@
+<translate>
+
+<!--T:45-->
+[[File:Clothes-UI-example.png|thumb|alt=The character screen showing the default clothing worn by the Commoner class|Character screen with 12 clothing slots and 3 armor slots]]
+
+<!--T:1-->
+'''Clothes''' are decorative items that change the player's appearance when equipped. A clothing item can protect a player from the cold depending on its condition.
+
+<!--T:2-->
+__TOC__
+
+== Obtaining == <!--T:46-->
+
+<!--T:47-->
+Some clothes can be crafted using {{ll|Cloth|cloth}}, {{ll|Leather|leather}}, or other materials. Most clothes are not craftable, and can only be found as loot in {{ll|Ruin|ruins}}, or bought from {{ll|Trader|traders}}. Players are given a set of starter clothes for free when they choose their {{ll|Players#Classes|class}}.
+
+<!--T:48-->
+Many clothing items can only be crafted by the [[Classes#Tailor|Tailor]] player class. Tailors also receive a 10% bonus to armor durability, but this doesn't affect clothing durability.<ref>Tailors get -0.1 <code>"armorDurabilityLoss"</code>, which is used only in <code>DamageItem()</code> in <code>ItemWearable.cs</code> for armor.</ref>
+
+== Usage == <!--T:49-->
+
+<!--T:50-->
+=== Warmth ===
+:''Main page: {{ll|Temperature#Body_temperature|Body temperature}}''
+
+<!--T:51-->
+[[File:Worn clothing example.png|390px|thumb|alt=Hover tooltip for worn hunter boots|Clothing item tooltip showing condition, warmth value, and max warmth]]
+
+<!--T:52-->
+Wearing warm clothes protects the player from the cold. Without clothing, players begin to take damage from the cold when the outside temperature is below 0°C (with default world settings). Each piece of worn clothing offsets the effective temperature by the amount shown in green when hovering the mouse pointer over the item.
+
+<!--T:53-->
+For example, if the player wears a full set of {{ll|Fur clothing set|fur clothes}} in "Good" condition, the combined warmth buff will be 3 + 2 + 1.5 = +6.5°C, allowing the player to withstand outside temperatures as cold as -6.5°C without taking damage.
+
+<!--T:54-->
+Hovering over a clothing item also shows its condition and max warmth. The warmth value is calculated from the max warmth and condition using this function:<ref><code>GetWarmth()</code> in <code>ItemWearable.cs</code></ref>
+
+<!--T:55-->
+<code>warmth = maxWarmth * min(2*condition, 100%)</code>
+
+<!--T:56-->
+Clothing with 50% or more condition gives its max warmth value. Below 50% condition, warmth decreases as condition degrades, and is reduced to +0°C at 0% condition.
+
+<!--T:57-->
+Some clothing items are purely decorative and don't give any warmth benefit; hovering over them doesn't show any condition or warmth value.
+
+=== Damage and repair === <!--T:58-->
+
+<!--T:59-->
+Clothes slowly degrade while being worn,<ref><code>updateWearableConditions()</code> in <code>ItemWearable.cs</code></ref> decreasing their condition by 100% after 54 days, or 6 months (with default world settings). Clothes don't degrade while not being worn, or while the player is standing still.
+
+<!--T:60-->
+Damaged clothing can be repaired by 10% using {{ll|Twine|flax twine}}, by 50% using {{ll|Linen|linen}}, or by 75% using a {{ll|Sewing_kit|sewing kit}}. To do so, hold the repair item with the mouse pointer and left-click the clothing item in your inventory or character screen.
+
+<!--T:61-->
+Clothes don't take damage from enemy attacks, unlike armor. Clothes that reach 0% condition aren't destroyed, but offer no warmth bonus.
+
+<!--T:62-->
+Because 4 twine can be crafted into 1 linen sheet, it's more efficient to use linen sheets or sewing kits for repairing. Clothing condition doesn't affect warmth until it reaches 50%, so repairing isn't necessary before then. To conserve materials, you can take off warm clothes during the summer months, when cold isn't a problem.
+
+=== Other uses === <!--T:63-->
+
+<!--T:64-->
+Clothes with "Tattered" in their name can be crafted into {{ll|Bandage|clean bandages}} which heal the player, regardless of their condition.
+
+<!--T:65-->
+Some clothing items can be sold to {{ll|Trader|traders}} in exchange for {{ll|Rusty gear|rusty gears}}. The item's condition doesn't matter, and traders will buy clothes in any condition for the same price.
+
+== Clothing types == <!--T:66-->
+
+<!--T:67-->
+There are 12 categories of clothing, based on which clothing slot an item can be equipped in.
+
+<!--T:73-->
+[[File:Gui clothing slots.png|thumb|right|alt=Displays an avatar in the character customization interface|The Character Selection interface]]
+
+<!--T:68-->
+{| class="wikitable" style="text-align:left; width: 40%;"
+|-
+! Identifier in image
+! Slot
+! Clothing type
+|-
+| 1
+| Head
+| {{ll|Headgear}}
+|-
+| 2
+| Shoulder
+| {{ll|Shoulder gear}}
+|-
+| 3
+| Upper body
+| {{ll|Shirt|Shirts}}
+|-
+| 4
+| Upper body over
+| {{ll|Coat|Coats}}
+|-
+| 5
+| Lower body
+| {{ll|Pants}}
+|-
+| 6
+| Foot
+| {{ll|Footwear}}
+|-
+| 7
+| Neck
+| {{ll|Necklace|Necklaces}}
+|-
+| 8
+| Emblem
+| {{ll|Emblem|Emblems}}
+|-
+| 9
+| Face
+| {{ll|Mask|Masks}}
+|-
+| 10
+| Arm
+| {{ll|Bracer|Bracers}}
+|-
+| 11
+| Hand
+| {{ll|Glove|Gloves}}
+|-
+| 12
+| Waist
+| {{ll|Belt|Belts}}
+|-
+| 1A
+| {{ll|Armor|Head armor}}
+| Not applicable
+|-
+| 3A
+| {{ll|Armor|Body armor}}
+| Not applicable
+|-
+| 5A
+| {{ll|Armor|Leg armor}}
+| Not applicable
+|}
+
+=== Warmest clothing combination === <!--T:69-->
+
+<!--T:70-->
+Combining the warmest item in each clothing category gives an outfit with +19.5°C, but requires several items which can only be found as random loot. The warmest outfit which can be crafted by a Tailor gives +18.1°C. A non-Tailor player can craft an outfit which gives +12.75°C.
+
+== Clothing sets == <!--T:71-->
+
+<!--T:72-->
+"Clothing sets" are sets of clothing items which can be equipped at the same time, and share similar names. These also usually have related appearances, recipes, and flavor text. There are many clothing sets in the game, including but not limited to:
+</translate>

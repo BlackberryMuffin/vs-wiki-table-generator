@@ -168,6 +168,7 @@ def get_old_t_ids(input_path:str):
         return {}
     contents = read_file(file_name, decode_json=False).split("|-")
     out={}
+
     for content in contents:
         name=re.findall(r"\[\[File\:(.+)\.png\|64px\]\]", content)
         t_ids=re.findall(r"\<\!\-\-T\:\d+\-\-\> ", content)

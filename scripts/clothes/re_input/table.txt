@@ -1,4 +1,3 @@
-== {{Tunit|title-tables|Tables}} ==
 === {{Tunit|title-primary-clothing|Primary clothing}} ===
 ==== {{Tunit|title-head|Head}} ====
 {|<!--
@@ -9,7 +8,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"><br><code>.blockitempngexport all 400</code></ref>!!{{Tunit|table-header-name|Item name}}<ref name="lang"><br><code>assets/game/lang/</code></ref>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref>!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref><ref name="rain_prot_unused"><br>as of <code>1.22.0</code> the rain prot. stat is not used or shown ingame</ref>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"><br><code>assets/survival/config/tradelists/</code></ref>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"><br><code>assets/survival/recipes/grid/clothes/</code></ref>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"><br><code>assets/survival/itemtypes/meta/stackrandomizer.json</code></ref>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"><br>{{ll|Class}}: <code>assets/survival/config/characterclasses.json</code><br>{{ll|Panning}}: <code>assets/survival/blocktypes/wood/pan.json</code><br>{{ll|Fishing}}: <code>assets/survival/entities/nonliving/bobber.json</code></ref>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-head-bamboo-conehat-large.png|64px]]||<translate><!--T:1665--> Bamboo cone hat (large)</translate>||1°C||85%||||||||✅||||
 |-
@@ -184,7 +183,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}<ref name="attribute"/><ref name="rain_prot_unused"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!data-sort-type="number"|{{Tunit|table-header-rain-prot|Rain prot.}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-shoulder-scarf.png|64px]]||<translate><!--T:1306--> Scarf</translate>||1°C||||||||||||||
 |-
@@ -323,7 +322,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-upperbody-great-steppe-shirt.png|64px]]||<translate><!--T:1379--> Great Steppe shirt</translate>||2°C||<translate><!--T:1380--> <font color="#0099ff"><i>Her partner, Lima, was always close by, circling the skies.</i></font><br></translate>||||||||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
 |-
@@ -520,7 +519,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-upperbodyover-fur-coat.png|64px]]||<translate><!--T:1496--> Fur coat</translate>||3°C||<translate><!--T:1497--> <font color="#0099ff"><i>Given time, and the Falxian creations, travelers from very distant lands began to appear across the kingdoms. Amongst their number were those who dwelt in the far north.</i></font><br></translate>||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|6 - 10 {{Tunit|item-gear-rusty|rusty gears}}}}||✅||<code>{{Hovertip|cloth-lowstatus|0.78%}}</code>||
 |-
@@ -619,7 +618,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-lowerbody-commoner-skirt.png|64px]]||<translate><!--T:1196--> Commoner skirt</translate>||2°C||||||||||||
 |-
@@ -804,7 +803,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-foot-leather.png|64px]]||<translate><!--T:1103--> Leather shoes</translate>||1°C||||||||||||
 |-
@@ -957,7 +956,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-eye-prot|Eye prot.}}<ref name="attribute"><br><code>assets/survival/itemtypes/wearable/seraph/</code></ref><ref name="eye_prot_unused"><br>as of <code>1.22.0</code> the eye prot. stat is not used or shown ingame</ref>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-eye-prot|Eye prot.}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-face-leather-reinforced-mask.png|64px]]||<translate><!--T:1549--> Leather reinforced mask</translate>||0.25°C||||||||||✅||||
 |-
@@ -1072,7 +1071,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-hand-prince-gloves.png|64px]]||<translate><!--T:1604--> Prince gloves</translate>||0.5°C||<translate><!--T:1605--> <font color="#0099ff"><i>The ceremonial garb of Prince Wilfried. The proud, last-remaining Imperial son.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|6.75 - 11.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||||<code>{{Hovertip|cloth-highstatus|0.697%}}</code>||
 |-
@@ -1187,7 +1186,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}<ref name="attribute"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!data-sort-type="number"|{{Tunit|table-header-warmth|Warmth}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-waist-sturdy-leather-belt.png|64px]]||<translate><!--T:1759--> Sturdy leather belt</translate>||||||{{Hovertip|{{Tunit|trader-survivalgoods|Survival goods trader}}|4.5 - 7.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|2.25 - 3.75 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|cloth-lowstatus|0.468%}}</code>||
 |-
@@ -1303,7 +1302,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-arm-squire-bracers.png|64px]]||<translate><!--T:1827--> Squire bracers</translate>||<translate><!--T:1828--> <font color="#0099ff"><i>Such clothes are cast aside for more protective accoutrements upon achieving knighthood.</i></font><br></translate>||{{Hovertip|{{Tunit|trader-clothing|Clothing trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-mediumstatus|5.0%}}</code>||
 |-
@@ -1416,7 +1415,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-emblem-silverpin.png|64px]]||<translate><!--T:1881--> Emblem (Silverpin)</translate>||||||
 |-
@@ -1567,7 +1566,7 @@ This tables layout was generated automatically via https://github.com/Blackberry
 {|class="wikitable sortable" style="text-align:center;
 |+
 |-
-!{{Tunit|table-header-icon|Item icon}}<ref name="icon"/>!!{{Tunit|table-header-name|Item name}}<ref name="lang"/>!!{{Tunit|table-header-desc|Item description}}<ref name="lang"/>!!{{Tunit|table-header-sold-to|Sold to}}<ref name="trades"/>!!{{Tunit|table-header-bought-from|Bought from}}<ref name="trades"/>!!{{Tunit|table-header-craftable|Craftable}}<ref name="crafting"/>!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}<ref name="looting"/>!!{{Tunit|table-header-other-means|Other means of obtaining}}<ref name="other_means"/>
+!{{Tunit|table-header-icon|Item icon}}!!{{Tunit|table-header-name|Item name}}!!{{Tunit|table-header-desc|Item description}}!!{{Tunit|table-header-sold-to|Sold to}}!!{{Tunit|table-header-bought-from|Bought from}}!!{{Tunit|table-header-craftable|Craftable}}!!{{Tunit|table-header-lootpool|Present in stackrandomizers}}!!{{Tunit|table-header-other-means|Other means of obtaining}}
 |-
 |[[File:clothes-neck-pearl-necklace.png|64px]]||<translate><!--T:1956--> Pearl necklace</translate>||||||{{Hovertip|{{Tunit|trader-luxuries|Luxuries trader}}|9.75 - 16.25 {{Tunit|item-gear-rusty|rusty gears}}}}||||<code>{{Hovertip|accessory-lowstatus|9.662%}}</code>||
 |-

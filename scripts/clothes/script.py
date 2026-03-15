@@ -51,6 +51,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         "table-content-panning-bonysoil": "Obtainable from panning bony soil",
         "table-content-panning-other": "Obtainable from panning gravel or sand",
         "table-content-fishing-junk": "Obtainable from fishing",
+        "title-tables": "Tables",
+        "title-columns": "Columns",
     }
 
     old_t_ids=get_old_t_ids(output_path+"/re_input/")
@@ -174,7 +176,6 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
     sorted_categories=list(categories.keys())
     super_categories={
-        "tables ==":(),
         "primary-clothing ===": ("head", "shoulder", "upperbody", "upperbodyover", "lowerbody", "foot", "face", "hand", "waist"),
         "pure-accessories ===": ("arm", "emblem", "neck"),
         "citations ==": (),
@@ -224,6 +225,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         "other_means": [['<ref name="other_means"><br>{{ll|Class}}: <code>assets/survival/config/characterclasses.json</code><br>{{ll|Panning}}: <code>assets/survival/blocktypes/wood/pan.json</code><br>{{ll|Fishing}}: <code>assets/survival/entities/nonliving/bobber.json</code></ref>']]
     }
     def get_ref(ref_str:str, *, force_og:bool=False):
+        return[""]
         yield "".join(references[ref_str][0 if force_og else -1])
         #print(ref_str, "".join(references[ref_str]))
         if not force_og and len(references[ref_str]) == 1:
@@ -239,7 +241,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             special_tunit_entries[re.sub(r"(.*) (=+)", r"title-\1", category)] = re.sub(r"(.*) (=+)", r"\1", name)
             combined_tables.append(re.sub(r"(.*) (=+)", r"\2 {{Tunit|_-XYZ-_|\1}} \2", name).replace("_-XYZ-_", re.sub(r"(.*) (=+)", r"title-\1", category)))
             continue
-        special_tunit_entries["title-"+category] = category.title()
+        if category != "--all":
+            special_tunit_entries["title-"+category] = category.title()
 
 
         annot_bools = {
@@ -281,7 +284,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
 
         out=(
-                f"==== {tunit("title-"+category, special_tunit_entries["title-"+category])} ====\n"
+                (f"==== {tunit("title-"+category, special_tunit_entries["title-"+category])} ====\n" if category != "--all" else "")+
                 '{|<!--\n'
                 "This tables layout was generated automatically via https://github.com/BlackberryMuffin/vs-wiki-table-generator. If you want to modify this tables layout, consider changing the code directly instead the table's source text!\n"
                 '-->class="mw-collapsible""\n'
@@ -291,17 +294,17 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
                 f"|+\n"
                 "|-"
                 "\n"
-                f'!{tunit("table-header-icon", special_tunit_entries["table-header-icon"])}{list(get_ref("icon", force_og=category=="--all"))[0]}'
-                f'!!{tunit("table-header-name", special_tunit_entries["table-header-name"])}{list(get_ref("lang", force_og=category=="--all"))[0]}'+
-                (f'!!data-sort-type="number"|{tunit("table-header-warmth", special_tunit_entries["table-header-warmth"])}{list(get_ref("warmth", force_og=category=="--all"))[0]}' if has_warmth != 0 else "")+
-                (f'!!data-sort-type="number"|{tunit("table-header-rain-prot", special_tunit_entries["table-header-rain-prot"])}{list(get_ref("rain_prot", force_og=category=="--all"))[0]}' if has_rain_prot != 0 else "")+
-                (f'!!{tunit("table-header-eye-prot", special_tunit_entries["table-header-eye-prot"])}{list(get_ref("eye_prot", force_og=category=="--all"))[0]}' if has_eye_prot != 0 else "")+
-                (f'!!{tunit("table-header-desc", special_tunit_entries["table-header-desc"])}{list(get_ref("lang", force_og=category=="--all"))[0]}' if has_descriptions != 0 else "")+
-                (f'!!{tunit("table-header-sold-to", special_tunit_entries["table-header-sold-to"])}{list(get_ref("trades", force_og=category=="--all"))[0]}' if has_bought_by != 0 else "")+
-                (f'!!{tunit("table-header-bought-from", special_tunit_entries["table-header-bought-from"])}{list(get_ref("trades", force_og=category=="--all"))[0]}' if has_sold_by != 0 else "")+
-                (f'!!{tunit("table-header-craftable", special_tunit_entries["table-header-craftable"])}{list(get_ref("crafting", force_og=category=="--all"))[0]}' if has_craftable != 0 else "")+
-                (f'!!{tunit("table-header-lootpool", special_tunit_entries["table-header-lootpool"])}{list(get_ref("looting", force_og=category=="--all"))[0]}' if has_lootable != 0 else "")+
-                (f'!!{tunit("table-header-other-means", special_tunit_entries["table-header-other-means"])}{list(get_ref("other_means", force_og=category=="--all"))[0]}' if has_other_means != 0 else "")+
+                f'!{tunit("table-header-icon", special_tunit_entries["table-header-icon"])}'
+                f'!!{tunit("table-header-name", special_tunit_entries["table-header-name"])}'+
+                (f'!!data-sort-type="number"|{tunit("table-header-warmth", special_tunit_entries["table-header-warmth"])}' if has_warmth != 0 else "")+
+                (f'!!data-sort-type="number"|{tunit("table-header-rain-prot", special_tunit_entries["table-header-rain-prot"])}' if has_rain_prot != 0 else "")+
+                (f'!!{tunit("table-header-eye-prot", special_tunit_entries["table-header-eye-prot"])}' if has_eye_prot != 0 else "")+
+                (f'!!{tunit("table-header-desc", special_tunit_entries["table-header-desc"])}' if has_descriptions != 0 else "")+
+                (f'!!{tunit("table-header-sold-to", special_tunit_entries["table-header-sold-to"])}' if has_bought_by != 0 else "")+
+                (f'!!{tunit("table-header-bought-from", special_tunit_entries["table-header-bought-from"])}' if has_sold_by != 0 else "")+
+                (f'!!{tunit("table-header-craftable", special_tunit_entries["table-header-craftable"])}' if has_craftable != 0 else "")+
+                (f'!!{tunit("table-header-lootpool", special_tunit_entries["table-header-lootpool"])}' if has_lootable != 0 else "")+
+                (f'!!{tunit("table-header-other-means", special_tunit_entries["table-header-other-means"])}' if has_other_means != 0 else "")+
                 '\n'
                 '|-\n'
              )
@@ -321,8 +324,6 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
                 (f"||{f"{other_means[item]}" if item in other_means else ""}" if has_other_means else "")+
                 "\n|-\n"
             )
-        print()
-        print(category, "\n".join([f"<sup>{i+1}</sup>{annotations_inner[i]}" for i in range(len(annotations_inner))]))
         out+=""+\
             "|}"+\
             "<br>".join([f"<sup>{i+1}</sup>{annotations_inner[i]}" for i in range(len(annotations_inner))])+\
@@ -337,11 +338,11 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     combined_tables_string = "\n".join(combined_tables)
     write_file(output_path+"/generated/tables/_combined.txt", combined_tables_string, encode_json=False)
     write_file_safe(output_path + "/re_input/table.txt", combined_tables_string, encode_json=False)
-    write_file("./generated/clothes_combined_tables.txt", combined_tables_string, encode_json=False)
+    write_file("./generated/clothes_3_combined_tables.txt", combined_tables_string, encode_json=False)
 
     trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
     tunit_entries = [(entry, special_tunit_entries[entry]) for entry in special_tunit_entries] + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]
     trans_help += [f"<translate><!--T:{entry[0]}--> {entry[1]}</translate>" for entry in tunit_entries] + ["}}", trans_help[0]]
     trans_help = "<languages/>\n"+("\n".join(trans_help))
     write_file(output_path+"/generated/translation_help.txt", trans_help, encode_json=False)
-    write_file("./generated/clothes_translation_help.txt", trans_help, encode_json=False)
+    write_file("./generated/clothes_0_translation_help.txt", trans_help, encode_json=False)
