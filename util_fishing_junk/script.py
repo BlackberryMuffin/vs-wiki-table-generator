@@ -4,7 +4,7 @@ from _util_general.json_util import repair
 from _util_general.mediawiki_templates import tunit
 
 
-def setup(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str="./", lang):
     global fishing_junk
     Path(output_path+"/generated").mkdir(parents=True, exist_ok=True)
 

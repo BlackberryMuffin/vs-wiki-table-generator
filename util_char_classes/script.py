@@ -1,10 +1,9 @@
 from pathlib import Path
 import json
 from _util_general.json_util import repair
-from _util_general.mediawiki_templates import tunit
 
 
-def setup(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str="./", lang):
     global char_classes
     Path(output_path+"/generated").mkdir(parents=True, exist_ok=True)
 
@@ -29,6 +28,3 @@ def char_class_gear_by_type(destinction_fun):
                     out[item]=[]
                 out[item].append("class-equipment-"+char_class)
     return out
-    #return {item: [[soil, panning_items[soil][item]] for item in panning_items[soil]] for soil in panning_items}
-
-    return json.loads(json.dumps(out))

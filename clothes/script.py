@@ -1,7 +1,9 @@
 import json
 from pathlib import Path
+
+from _util_general.file_stuff import safe_write
 from _util_general.mediawiki_templates import tunit, hovertip
-from _util_general.lang_dicts import get_dict
+from util_0lang.script import get_dict
 from _util_general.json_util import repair as repair_json
 from os import scandir, path as os_path
 from shutil import rmtree
@@ -29,7 +31,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     Path(output_path+"/generated/tables").mkdir(parents=True, exist_ok=True)
     Path(output_path+"/generated/recipes").mkdir(parents=True, exist_ok=True)
 
-    lang_dict=get_dict(install_path, lang=lang)
+    lang_dict=get_dict(lang=lang)
     gen_clothing_attributes(install_path, output_path, gen_cleaned_jsons=True)
 
     special_tunit_entries = {
@@ -70,7 +72,6 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     pan=pannable_by_type(lambda item: item.startswith("clothes-"))
     fish=fishable_by_type(lambda item: item.startswith("clothes-"))
     char=char_class_gear_by_type(lambda item: item.startswith("clothes-"))
-    print(char)
 
     round_to=3
 
@@ -347,14 +348,14 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
         with open(output_path+f"/generated/tables/{category}.txt", "x", encoding="utf-8") as f:
             f.write(out)
     combined_tables.append("<references/>")
+    combined_tables_string = "\n".join(combined_tables)
     with open(output_path+"/generated/tables/_combined.txt", "x", encoding="utf-8") as f:
-        f.write("\n".join(combined_tables))
+        f.write(combined_tables_string)
 
     if os_path.exists(output_path + "/re_input/"):
         rmtree(output_path + "/re_input/")
     Path(output_path + "/re_input/").mkdir(parents=True, exist_ok=True)
-    with open(output_path + "/re_input/table.txt", "x", encoding="utf-8") as f:
-        f.write("\n".join(combined_tables))
+    safe_write(output_path + "/re_input/table.txt", combined_tables_string)
 
     trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
     tunit_entries = [(entry, special_tunit_entries[entry]) for entry in special_tunit_entries] + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]
@@ -496,7 +497,6 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
         f.write(json.dumps([clothing for clothing in replace], indent=4))
 
     ### DEBUG addition, just tests the warning system
-    replace["fake-{wild}-{card}-item, this is just a drill!"] = 1
     for clothing in replace:
         if re.search(r"(.*\{[^}]*})(.*\{[^}]*})+.*", clothing):
             print("\t\tPANIC: THERE IS A CLOTHING RECIPE WITH MORE THAN ONE WILD CARD!!! IT IS:\t", clothing)

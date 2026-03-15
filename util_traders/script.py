@@ -1,9 +1,9 @@
 from os import listdir, mkdir
 import json
 from _util_general.mediawiki_templates import tunit
-from _util_general.lang_dicts import get_dict
+from util_0lang.script import get_dict
 
-def setup(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str="./", lang):
     global traders_json
     global trades
 
@@ -32,7 +32,7 @@ def setup(install_path:str, *, output_path:str="./", lang):
 
 
 def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False, villagerCounter:list=None):
-    langs_dict=get_dict(install_path, lang)
+    langs_dict=get_dict(lang)
 
     name = ""
     villager = False

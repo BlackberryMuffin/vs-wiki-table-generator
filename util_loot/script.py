@@ -2,7 +2,7 @@ import json
 from _util_general.json_util import repair
 from pathlib import Path
 
-def setup(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
+def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
     Path(output_path+"/generated").mkdir(parents=True, exist_ok=True)
     global stackrandomizer
 

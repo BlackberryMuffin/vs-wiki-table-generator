@@ -10,13 +10,13 @@ To search for relevant shapes look for
     (starting and ending with the quotation marks))
 within the vanilla (not generated) grid recipes. Idk if this will cause problems yet.
 """
-"""
+r"""
 Oh gods no, there are some recipes with multiple wildcards, look for in the generated recipes:
     "([^"\n]*\{[^"\n}]*})([^"\n]*\{[^"\n}]*})+[^"\n]*"
     (starting and ending with the quotation marks))
 """
 
-def setup(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
+def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True):
     global recipes
     recipes={}
 
