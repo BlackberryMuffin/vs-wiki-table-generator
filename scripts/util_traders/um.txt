@@ -1,9 +1,3 @@
-assets/survival/blocktypes/wood/pan.json
-assets/survival/config/characterclasses.json
-assets/survival/entities/nonliving/bobber.json
-
-
-
 (assets/survival/itemtypes/meta/stackrandomizer-library.json) (plain glasses)
 (assets/survival/itemtypes/meta/stackrandomizer-clutter.json) (plain glasses)
 

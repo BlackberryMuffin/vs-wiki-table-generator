@@ -1,6 +1,0 @@
-<noinclude><languages /></noinclude><includeonly>{{#if: {{{2}}}
- |{{#expr: {{{1}}} - {{{2}}} }} - {{#expr: {{{1}}} + {{{2}}} }}
- |{{{1}}}
-}}{{Hovertip|*|<translate><!--T:1--> 2.5 means 2 + 50% chance</translate>}}</includeonly><noinclude>
-{{Documentation}}
-</noinclude>
