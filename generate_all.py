@@ -40,8 +40,9 @@ def generate(install_path:str, *, lang:str="en", debug=True):
 
 
 
-if len(argv)>1:
-    if len(argv) == 2:
-        generate(install_path=argv[1])
-    else:
-        generate(argv[1], lang=argv[2])
+if len(argv)<2:
+    print(f"Missing arguments. Should be '{argv[0]} <install_path> [<lang>]'")
+elif len(argv) == 2:
+    generate(install_path=argv[1])
+else:
+    generate(argv[1], lang=argv[2])

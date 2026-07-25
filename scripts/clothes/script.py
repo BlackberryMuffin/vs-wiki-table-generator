@@ -235,6 +235,7 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
 
 
     combined_tables = []
+    csv:str = ""#+"Name, slot, warmth, rain prot, sold to, bought from, recipe type\n"
     for category in categories:
         if category.endswith("="):
             name=category.replace("-", " ").capitalize()
@@ -282,7 +283,6 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
                 annotations_inner.append(get_ann(annotation, force_og=category=="--all"))
                 annot_bools[annotation] = str(len(annotations_inner))
 
-
         out=(
                 (f"==== {tunit("title-"+category, special_tunit_entries["title-"+category])} ====\n" if category != "--all" else "")+
                 '{|<!--\n'
@@ -324,6 +324,20 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
                 (f"||{f"{other_means[item]}" if item in other_means else ""}" if has_other_means else "")+
                 "\n|-\n"
             )
+
+            if csv and category != "--all" and item in craftable:
+                tmp=(
+                    f"{items[item].replace("_-XYZ-_", "" if not annot_bools["no_name"] else annot_bools["no_name"])}"+
+                    f",{special_tunit_entries["title-"+category]}"+
+                    (f",{f"{warmth[item]}" if item in warmth else ""}" if has_warmth else "")+
+                    (f",{f"{rain_prot[item]}" if item in rain_prot else ""}" if has_rain_prot else "")+
+                    (f",{f"{",<br>".join(sold_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in sold_by else ""}" if has_sold_by else "")+
+                    (f",{f"{",<br>".join(bought_by[item][0]).replace("_-XYZ-_", "" if not annot_bools["villager"] else annot_bools["villager"])}" if item in bought_by else ""}" if has_bought_by else "")+
+                    (f",{f"{craftable[item]}" if item in craftable else ""}" if has_craftable else "")+
+                    "\n"
+                ).replace("<translate>","").replace("</translate>","")
+                csv+=tmp
+
         out+=""+\
             "|}"+\
             "<br>".join([f"<sup>{i+1}</sup>{annotations_inner[i]}" for i in range(len(annotations_inner))])+\
@@ -333,6 +347,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
             combined_tables.append(out)
 
         write_file(output_path+f"/generated/tables/{category}.txt", out, encode_json=False)
+
+
     combined_tables.append("<references/>")
 
     combined_tables_string = "\n".join(combined_tables)
@@ -346,3 +362,8 @@ def generate(install_path:str, *, output_path:str="./", lang:str="en"):
     trans_help = "<languages/>\n"+("\n".join(trans_help))
     write_file(output_path+"/generated/translation_help.txt", trans_help, encode_json=False)
     write_file("./generated/clothes_0_translation_help.txt", trans_help, encode_json=False)
+
+
+    if csv:
+        write_file("./generated/zestydippingsauce.csv", csv, encode_json=False)
+
