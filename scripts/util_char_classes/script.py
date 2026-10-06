@@ -1,5 +1,4 @@
 from scripts._util_general.file_util import read_file, write_file
-from pathlib import Path
 
 
 def generate(install_path:str, *, output_path:str, lang:str, debug:bool):

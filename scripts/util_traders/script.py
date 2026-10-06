@@ -1,5 +1,3 @@
-import json
-
 from scripts._util_general.file_util import read_file, write_file
 from os import listdir
 from scripts._util_general.mediawiki_templates import tunit
@@ -14,18 +12,19 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
 
     traders_json={}
     for trader_file in trader_files:
+        # I do some shenanigans some sometimes. This way I can keep my _combined.json around :3
+        if trader_file.startswith("_"): continue
         traders_json[trader_file[:-5]] = read_file(path+trader_file, decode_json=True)
 
     write_file(output_path+"/generated/traders.json", traders_json, encode_json=True)
 
     trades = {}
-    directions = ["selling", "buying"]
+    directions = ("selling", "buying")
     for trader in traders_json:
         for direction in directions:
             for listings in traders_json[trader][direction]["list"]:
                 if not listings["code"] in trades:
                     trades[listings["code"]] = {d:[] for d in directions}
-                #trades[listings["code"]][direction].append(very_specific_function(trader, listings))
                 trades[listings["code"]][direction].append((trader, listings))
     lang_dict = get_dict(lang)
     traders_lang_dict = {"trader-"+(trader_id[23:][:-5]): (lang_dict[trader_id][:-7]) for trader_id in lang_dict if trader_id.startswith("item-creature-trader") and trader_id.endswith("-cold")} |\

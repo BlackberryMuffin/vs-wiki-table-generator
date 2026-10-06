@@ -1,9 +1,9 @@
-from datetime import datetime, timedelta
-start = datetime.now()
 from sys import argv
 from os import scandir, path as os_path
 from importlib import import_module
 from shutil import rmtree
+from datetime import datetime, timedelta
+start = datetime.now()
 
 
 args_options = {
@@ -48,8 +48,9 @@ def help_message(call_name):
 
 def generate(args:list):
     values = {}
+    if len(args) == 1: args.append("-h")
     args_iter = iter(args[1:])
-    if len(args)>=2 and args[1] not in args_options_simple:
+    if args[1] not in args_options_simple:
         values["install_path"] = [next(args_iter)]
 
     for i, arg in enumerate(args_iter):
@@ -104,7 +105,7 @@ def generate(args:list):
         time_lost = int(time_lost/timedelta(microseconds=1))
     if debug:
         print("It took:", total_time)
-        print(f"Lost {time_lost} μs to the eather >:3") # debug=True adds ~70μs to this
+        print(f"Lost {time_lost} μs to the aether >:3") # debug=True adds ~70μs to this
 
 
 generate(argv)

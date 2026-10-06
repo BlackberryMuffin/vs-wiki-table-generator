@@ -19,7 +19,7 @@ Oh gods no, there are some recipes with multiple wildcards, look for in the gene
     (starting and ending with the quotation marks))
 """
 
-def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True, debug:bool):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global recipes
     recipes={}
 
@@ -33,11 +33,11 @@ def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_js
                 elif entry.is_file() and entry.name.endswith(".json"):
                     file_path=sub_dirs[i][1]+entry.name[:-5]
                     recipes[file_path] = read_file(entry.path, decode_json=True)
-                    if gen_cleaned_jsons:
+                    if debug:
                         path = output_path + "/generated/cleaned_jsons/" + "/".join(sub_dirs[i][1].split("-"))
                         write_file(path+entry.name, recipes[file_path], encode_json=True)
         i+=1
-    if gen_cleaned_jsons:
+    if debug:
         write_file(output_path+"/generated/cleaned_jsons/_combined.json", recipes, encode_json=True)
 
 

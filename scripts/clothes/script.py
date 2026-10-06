@@ -1,4 +1,4 @@
-from scripts._util_general.file_util import read_file, write_file, write_file_safe
+from scripts._util_general.file_util import write_file, write_file_safe
 from scripts._util_general.mediawiki_templates import tunit, hovertip
 from scripts.util_0lang.script import get_dict
 import re
@@ -9,8 +9,6 @@ from scripts.util_panning.script import pannable_by_type
 import scripts.util_traders.script as trader_util
 from scripts.clothes.de_clutter import get_test_var, gen_clothing_attributes, get_attributes, crafting_help, get_old_t_ids
 
-debug = True
-
 """
     Seperately from "generated/table.txt", the script will produce "generated/translation_help.txt".
     If its content has not yet been placed in the wiki page of the table, it is to be placed below the <languages/> tag at the top of the page.
@@ -18,12 +16,10 @@ debug = True
         It can technically be anywhere, but this placement reduces the risk of it being deleted by accident.
 """
 
-
-
 def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
 
     lang_dict=get_dict(lang=lang)
-    gen_clothing_attributes(install_path, output_path, debug, gen_cleaned_jsons=True)
+    gen_clothing_attributes(install_path=install_path, output_path=output_path, debug=debug)
 
     special_tunit_entries = {
         "item-gear-rusty": "rusty gears",
@@ -83,11 +79,11 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     fishable={item: hovertip(tunit("table-content-fishing-junk", special_tunit_entries["table-content-fishing-junk"]), f"{round(fish[item]*100, round_to)}%") for item in fish}
     starter_gear={item: ",<br>".join([tunit(char_class, special_tunit_entries[char_class]) for char_class in char[item]]) for item in char}
 
-    write_file(output_path+"/generated/lootable.json", lootable, encode_json=True)
+    write_file(output_path+"/generated/misc/lootable.json", lootable, encode_json=True)
 
-    write_file(output_path+"/generated/pannable.json", pannable, encode_json=True)
-    write_file(output_path+"/generated/fishable.json", fishable, encode_json=True)
-    write_file(output_path+"/generated/class_obtainable.json", starter_gear, encode_json=True)
+    write_file(output_path+"/generated/misc/pannable.json", pannable, encode_json=True)
+    write_file(output_path+"/generated/misc/fishable.json", fishable, encode_json=True)
+    write_file(output_path+"/generated/misc/class_obtainable.json", starter_gear, encode_json=True)
 
 
     recipes = crafting_help(install_path, output_path, lang_dict)
@@ -138,7 +134,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         if categories_replace[replacee] not in categories:
             categories[categories_replace[replacee]] = []
         categories[categories_replace[replacee]] += categories.pop(replacee)
-    write_file(output_path+"/generated/categories.json", categories, encode_json=True)
+    #write_file(output_path+"/generated/categories.json", categories, encode_json=True)
 
 
     # Fills `warmth`, `rain_prot`, and `eye_prot` (no clue what the latter 2 do tbh)
@@ -157,7 +153,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     test_var_out = list(get_test_var())
     test_var_out.sort()
     if debug:
-        write_file(output_path+"generated/attributes", "\n".join(test_var_out), encode_json=False)
+        write_file(output_path+"generated/misc/attributes", "\n".join(test_var_out), encode_json=False)
 
     # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
     contains_villagers=[0]

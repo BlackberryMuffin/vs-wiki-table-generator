@@ -1,7 +1,5 @@
 from scripts._util_general.file_util import read_file, write_file, write_file_safe
-from pathlib import Path
 import json
-from scripts._util_general.json_util import repair
 from scripts._util_general.mediawiki_templates import tunit
 
 

@@ -1,8 +1,7 @@
 import json
 from scripts._util_general.file_util import read_file, write_file
-from pathlib import Path
 
-def generate(install_path:str, output_path:str, *, lang:str="en", gen_cleaned_jsons:bool=True, debug:bool):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global stackrandomizer
 
     stackrandomizer=read_file(install_path+"/assets/survival/itemtypes/meta/stackrandomizer.json", decode_json=True)
