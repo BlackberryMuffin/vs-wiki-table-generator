@@ -20,7 +20,7 @@ debug = True
 
 
 
-def generate(install_path:str, *, output_path:str="./", lang:str="en"):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
 
     lang_dict=get_dict(lang=lang)
     gen_clothing_attributes(install_path, output_path, debug, gen_cleaned_jsons=True)

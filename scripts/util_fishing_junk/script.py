@@ -1,11 +1,10 @@
 from scripts._util_general.file_util import read_file, write_file
-from pathlib import Path
 import json
-from scripts._util_general.json_util import repair
-from datetime import timedelta, datetime
+from datetime import datetime
+
 start = datetime.now()
 
-def generate(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global fishing_junk
 
     fishing_junk = read_file(install_path+"/assets/survival/entities/nonliving/bobber.json", decode_json=True)["attributes"]["junkCatches"]
@@ -23,11 +22,8 @@ def generate(install_path:str, *, output_path:str="./", lang):
 
     write_file(output_path + "generated/weight_sum.txt", str(weight_sum), encode_json=False)
     write_file(output_path+"generated/fish.json", fishing_junk, encode_json=True)
-    print(datetime.now()-start)
-
 
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
 ###   `pannable_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))` to narrow it down to just clothing items.
 def fishable_by_type(destinction_fun):
-    out={}
     return json.loads(json.dumps({item:fishing_junk[item] for item in fishing_junk if destinction_fun(item)}))

@@ -8,7 +8,7 @@ from scripts._util_general.json_util import repair
 dicts={}
 get_dict=set_dict=None
 
-def generate(install_path:str, *, output_path:str="./", lang:str="en"):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global get_dict, set_dict
     def get_dict(lang:str="en", *, fix_missing=True):
         set_dict(lang)

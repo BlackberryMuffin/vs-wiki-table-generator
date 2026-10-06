@@ -5,7 +5,7 @@ from scripts._util_general.json_util import repair
 from scripts._util_general.mediawiki_templates import tunit
 
 
-def generate(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global panning_items
 
     panning_items = read_file(install_path+"/assets/survival/blocktypes/wood/pan.json", decode_json=True)["attributes"]["panningDrops"]

@@ -2,7 +2,7 @@ from scripts._util_general.file_util import read_file, write_file
 from pathlib import Path
 
 
-def generate(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global char_classes
 
     char_classes = {char_class["code"]: {"traits":char_class["traits"], "gear": char_class["gear"]} for char_class in read_file(install_path + "/assets/survival/config/characterclasses.json", decode_json=True)}

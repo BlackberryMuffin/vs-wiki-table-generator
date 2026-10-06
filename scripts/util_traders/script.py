@@ -5,7 +5,7 @@ from os import listdir
 from scripts._util_general.mediawiki_templates import tunit
 from scripts.util_0lang.script import get_dict
 
-def generate(install_path:str, *, output_path:str="./", lang):
+def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     global traders_json, trades, traders_lang_dict
 
     path = install_path+"/assets/survival/config/tradelists/"
