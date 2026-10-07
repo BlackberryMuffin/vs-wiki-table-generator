@@ -8,7 +8,8 @@ from scripts.util_loot.script import lootable_by_type
 from scripts.util_panning.script import pannable_by_type
 import scripts.util_traders.script as trader_util
 from scripts.clothes.de_clutter import get_test_var, gen_clothing_attributes, get_attributes, crafting_help, get_old_t_ids
-
+from json import dumps
+from yaml import dump
 """
     Seperately from "generated/table.txt", the script will produce "generated/translation_help.txt".
     If its content has not yet been placed in the wiki page of the table, it is to be placed below the <languages/> tag at the top of the page.
@@ -228,6 +229,43 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
             references[ref_str].append([])
             for i in range(len(references[ref_str][0])):
                 references[ref_str][1].append(re.sub(r'<ref name="([^"\n]*)">.*', r'<ref name="\1"/>', references[ref_str][0][i]))
+
+
+
+
+    ### SETS, FUCK
+    normal = [(tuple(item_id.split("-")[1:]), item_id) for item_id in categories["--all"]]
+    nadiya = [(i, (item[2:], item_id)) for i, (item, item_id) in enumerate(normal) if item[0] == "nadiya"]
+    [normal.pop(i-j) for j, (i, (_, _)) in enumerate(nadiya)]
+    nadiya = [item for _, item in nadiya]
+    normal = [(item[1:], item_id) for item, item_id in normal]
+
+    idk = {}
+    for item, item_full in normal:
+        if item not in idk:
+            idk[item] = []
+        idk[item].append(item_full)
+
+    idk_items = [(k,v) for k,v in idk.items()]
+    for group, g_items in idk_items:
+        if len(g_items)!=1 or len(group)==1: continue
+        del idk[group]
+        if group[:1] not in idk:
+            idk[group[:1]] = []
+        idk[group[:1]].append(g_items[0])
+    for item in nadiya:
+        pass
+
+    idk = {" ".join(k):v for k,v in idk.items() if len(v)>1}
+
+
+    #[print(" ".join(k)+":", [" ".join(t) for t in v]) for k, v in idk.items() if len(v) > 1]
+    write_file(output_path+f"/generated/misc/sets.yaml", dump(idk, indent=2))
+    print(output_path+f"/generated/misc/sets.yaml")
+
+
+
+
 
 
     combined_tables = []
