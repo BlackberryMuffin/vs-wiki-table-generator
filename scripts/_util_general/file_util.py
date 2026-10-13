@@ -1,4 +1,4 @@
-from os import rename, path, remove
+from os import rename
 from pathlib import Path
 import json
 
@@ -10,18 +10,15 @@ def write_file_safe(file_name:str, content, encode_json:bool=False):
     rename(file_name+".failsafe_measure", file_name)
 
 def read_file(file_name:str, decode_json:bool=False):
-    if not path.exists(file_name):
+    if not Path(file_name).exists():
         return ""
     content = open(file_name, "r", encoding="utf-8").read()
     return json.loads(repair(content)) if decode_json else content
 
 def write_file(file_name:str, content, encode_json:bool=False):
-    exists = path.exists(file_name)
-    if not exists and not path.exists(path.dirname(file_name)):
-        Path(path.dirname(file_name)).mkdir(parents=True, exist_ok=True)
-    _help_write_file(file_name, "w" if exists else "x", content, encode_json)
-
-
-def _help_write_file(file_name:str, open_type:str, content:str, encode_json:bool=False):
-    with open(file_name, open_type, encoding="utf-8") as file:
-        file.write(json.dumps(content, indent=4) if encode_json else content)
+    file_path = Path(file_name)
+    if not file_path.parent.exists():
+        file_path.parent.mkdir(parents=True, exist_ok=True)
+    elif not file_path.is_dir():
+        raise Exception(f"Path {file_path.parent} is must be a directory, but is not.")
+    open(file_name, "w", encoding="utf-8").write(json.dumps(content, indent=4) if encode_json else content)

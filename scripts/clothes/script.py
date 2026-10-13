@@ -8,7 +8,6 @@ from scripts.util_loot.script import lootable_by_type
 from scripts.util_panning.script import pannable_by_type
 import scripts.util_traders.script as trader_util
 from scripts.clothes.de_clutter import get_test_var, gen_clothing_attributes, get_attributes, crafting_help, get_old_t_ids
-from json import dumps
 from yaml import dump
 """
     Seperately from "generated/table.txt", the script will produce "generated/translation_help.txt".
@@ -256,11 +255,12 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     for item in nadiya:
         pass
 
-    idk = {" ".join(k):v for k,v in idk.items() if len(v)>1}
+    #idk = {" ".join(k):[f"{item+",":<49} {re.findall(r'--> (.+)</', items[item])[0]}" for item in v] for k,v in idk.items() if len(v)>1}
+    idk = {" ".join(k):[re.findall(r"--> (.+)</", items[item])[0] for item in v] for k,v in idk.items() if len(v)>1}
 
 
     #[print(" ".join(k)+":", [" ".join(t) for t in v]) for k, v in idk.items() if len(v) > 1]
-    write_file(output_path+f"/generated/misc/sets.yaml", dump(idk, indent=2))
+    write_file(output_path+f"/generated/misc/sets.yaml", dump(idk, indent=2, width=10000))
     print(output_path+f"/generated/misc/sets.yaml")
 
 
