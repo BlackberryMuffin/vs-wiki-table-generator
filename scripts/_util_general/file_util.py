@@ -1,7 +1,6 @@
 from os import rename
 from pathlib import Path
 import json
-
 from scripts._util_general.json_util import repair
 
 
@@ -19,6 +18,6 @@ def write_file(file_name:str, content, encode_json:bool=False):
     file_path = Path(file_name)
     if not file_path.parent.exists():
         file_path.parent.mkdir(parents=True, exist_ok=True)
-    elif not file_path.is_dir():
-        raise Exception(f"Path {file_path.parent} is must be a directory, but is not.")
+    elif not file_path.parent.is_dir():
+        raise Exception(f"Path {file_path.parent} must be a directory, but is not.")
     open(file_name, "w", encoding="utf-8").write(json.dumps(content, indent=4) if encode_json else content)
