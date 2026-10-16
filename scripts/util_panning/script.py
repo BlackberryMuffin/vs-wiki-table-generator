@@ -1,13 +1,12 @@
-from scripts._util_general.file_util import read_file, write_file, write_file_safe
+from scripts._util_general.file_util import read_file, write_file
 import json
 from scripts._util_general.mediawiki_templates import tunit
 
 
-def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
+def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
     global panning_items
 
     panning_items = read_file(install_path+"/assets/survival/blocktypes/wood/pan.json", decode_json=True)["attributes"]["panningDrops"]
-
     panning_items[tunit("table-content-panning-bonysoil", "Obtainable from panning bony soil")]=panning_items.pop('@(bonysoil|bonysoil-..*)')
     panning_items[tunit("table-content-panning-other", "Obtainable from panning gravel or sand")]=panning_items.pop('@(sand|gravel|sandwavy)-..*')
     total_chances={}
@@ -22,8 +21,8 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         panning_items[soil]=tmp
 
 
-    write_file(output_path + "generated/total_chances.json", total_chances, encode_json=True)
-    write_file(output_path+"generated/pan.json", panning_items, encode_json=True)
+    write_file(script_path + "generated/total_chances.json", total_chances, encode_json=True)
+    write_file(script_path+"generated/pan.json", panning_items, encode_json=True)
 
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
 ###   `pannable_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))` to narrow it down to just clothing items.

@@ -4,7 +4,7 @@ from datetime import datetime
 
 start = datetime.now()
 
-def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
+def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
     global fishing_junk
 
     fishing_junk = read_file(install_path+"/assets/survival/entities/nonliving/bobber.json", decode_json=True)["attributes"]["junkCatches"]
@@ -20,8 +20,8 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     for item in fishing_junk:
         fishing_junk[item]/=weight_sum
 
-    write_file(output_path + "generated/weight_sum.txt", str(weight_sum), encode_json=False)
-    write_file(output_path+"generated/fish.json", fishing_junk, encode_json=True)
+    write_file(script_path + "generated/weight_sum.txt", str(weight_sum), encode_json=False)
+    write_file(script_path+"generated/fish.json", fishing_junk, encode_json=True)
 
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
 ###   `pannable_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))` to narrow it down to just clothing items.

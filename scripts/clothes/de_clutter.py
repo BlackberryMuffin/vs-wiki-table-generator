@@ -3,13 +3,15 @@ from scripts._util_general.file_util import read_file, write_file
 from os import scandir, path as os_path
 from numpy import array
 import re
+
+from scripts.util_0lang.script import get_dict
 from scripts.util_recipes.script import recipes_by_type
 from json import dumps
 
 def get_test_var():
     return test_var
 
-def gen_clothing_attributes(install_path:str, output_path:str, debug:bool):
+def gen_clothing_attributes(install_path:str, script_path:str, debug:bool):
     global clothing_attributes
     if "clothing_attributes" in globals():
         return
@@ -25,12 +27,10 @@ def gen_clothing_attributes(install_path:str, output_path:str, debug:bool):
                     sub_dirs.append((entry.path, sub_dirs[i][1]+((entry.name+"-") if entry.name != "villager" else "")))
                 elif entry.is_file() and entry.name.endswith(".json"):
                     clothing_attributes[sub_dirs[i][1]+entry.name[:-5]] = read_file(entry.path, decode_json=True)
-                    if debug:
-                        path=output_path + "/generated/cleaned_jsons/"+"/".join(sub_dirs[i][1].split("-"))
-                        write_file(path+entry.name, clothing_attributes[sub_dirs[i][1]+entry.name[:-5]], encode_json=True)
+                    path=script_path + "/generated/cleaned_jsons/"+"/".join(sub_dirs[i][1].split("-"))
+                    write_file(path+entry.name, clothing_attributes[sub_dirs[i][1]+entry.name[:-5]], encode_json=True)
         i+=1
-    if debug:
-        write_file(output_path + "/generated/cleaned_jsons/_combined.json", clothing_attributes, encode_json=True)
+    write_file(script_path + "/generated/cleaned_jsons/_combined.json", clothing_attributes, encode_json=True)
 
 
 def get_attributes(item:str, debug):
@@ -106,7 +106,8 @@ def shape(l:list):
     else:
         return out
 
-def crafting_help(install_path:str, output_path:str, lang_dict):
+def crafting_help(install_path:str, script_path:str, lang:str, *, debug:bool):
+    lang_dict = get_dict(lang)
     specials = {
         "color": [w[11:] for w in lang_dict if w.startswith("item-cloth-")]
     }
@@ -164,7 +165,7 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
                                 new = sub_recipe["ingredients"][ingredient]["allowedvariants"]
                     replace[clothing][s[0]] = new
                 s = re.search(r"(\{.*})", clothing_copy)
-    write_file(output_path + "/generated/recipes/wild_cards.json", [clothing for clothing in replace], encode_json=True)
+    write_file(script_path + "/generated/recipes/wild_cards.json", [clothing for clothing in replace], encode_json=True)
 
     ### DEBUG addition, just tests the warning system
     for clothing in replace:
@@ -182,7 +183,7 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
                             tmp = sub_recipe["ingredients"][ingredient]
                             tmp["code"] = tmp["code"].replace(replacee, replacement)
         del recipes[clothing]
-    write_file(output_path + "/generated/recipes/main.json", recipes, encode_json=True)
+    write_file(script_path + "/generated/recipes/main.json", recipes, encode_json=True)
 
     multi = []
     fakes = []
@@ -191,8 +192,8 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
             fakes.append(recipe)
         elif len(recipes[recipe]) > 1:
             multi.append(recipe)
-    write_file(output_path + "/generated/recipes/fake.json", fakes, encode_json=True)
-    write_file(output_path + "/generated/recipes/multi.json", multi, encode_json=True)
+    write_file(script_path + "/generated/recipes/fake.json", fakes, encode_json=True)
+    write_file(script_path + "/generated/recipes/multi.json", multi, encode_json=True)
 
     columns = ("A", "B", "C")
     rows = ("1", "2", "3")
@@ -219,7 +220,8 @@ def crafting_help(install_path:str, output_path:str, lang_dict):
             grid.append("}}")
 
     chars.sort()
-    print(f"\t\tUsed characters for recipe patterns: '{"".join(chars)}'")
+    if debug:
+        print(f"\t\tUsed characters for recipe patterns: '{"".join(chars)}'")
 
 
 

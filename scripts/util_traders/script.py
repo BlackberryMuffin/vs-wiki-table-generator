@@ -3,7 +3,7 @@ from os import listdir
 from scripts._util_general.mediawiki_templates import tunit
 from scripts.util_0lang.script import get_dict
 
-def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
+def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
     global traders_json, trades, traders_lang_dict
 
     path = install_path+"/assets/survival/config/tradelists/"
@@ -16,7 +16,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         if trader_file.startswith("_"): continue
         traders_json[trader_file[:-5]] = read_file(path+trader_file, decode_json=True)
 
-    write_file(output_path+"/generated/traders.json", traders_json, encode_json=True)
+    write_file(script_path+"/generated/traders.json", traders_json, encode_json=True)
 
     trades = {}
     directions = ("selling", "buying")
@@ -29,7 +29,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     lang_dict = get_dict(lang)
     traders_lang_dict = {"trader-"+(trader_id[23:][:-5]): (lang_dict[trader_id][:-7]) for trader_id in lang_dict if trader_id.startswith("item-creature-trader") and trader_id.endswith("-cold")} |\
                         {"villager-"+(villager_id.split("-")[-1]): "Village "+(lang_dict[villager_id].lower()) for villager_id in lang_dict if villager_id.startswith("item-creature-villager") and not villager_id.endswith("generic")}
-    write_file(output_path+"/generated/trader_lang.json", traders_lang_dict, encode_json=True)
+    write_file(script_path+"/generated/trader_lang.json", traders_lang_dict, encode_json=True)
 
 
 def translate_trader(install_path:str, trader:str, *, lang:str="en", addTunit:bool=False, villagerCounter:list=None):

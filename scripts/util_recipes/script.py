@@ -1,9 +1,7 @@
 from scripts._util_general.file_util import read_file, write_file
-from datetime import timedelta, datetime
+from datetime import datetime
 start = datetime.now()
 from os import scandir
-from scripts._util_general.json_util import repair as repair_json
-from pathlib import Path
 import json
 
 """
@@ -19,7 +17,7 @@ Oh gods no, there are some recipes with multiple wildcards, look for in the gene
     (starting and ending with the quotation marks))
 """
 
-def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
+def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
     global recipes
     recipes={}
 
@@ -33,12 +31,10 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
                 elif entry.is_file() and entry.name.endswith(".json"):
                     file_path=sub_dirs[i][1]+entry.name[:-5]
                     recipes[file_path] = read_file(entry.path, decode_json=True)
-                    if debug:
-                        path = output_path + "/generated/cleaned_jsons/" + "/".join(sub_dirs[i][1].split("-"))
-                        write_file(path+entry.name, recipes[file_path], encode_json=True)
+                    path = script_path + "/generated/cleaned_jsons/" + "/".join(sub_dirs[i][1].split("-"))
+                    write_file(path+entry.name, recipes[file_path], encode_json=True)
         i+=1
-    if debug:
-        write_file(output_path+"/generated/cleaned_jsons/_combined.json", recipes, encode_json=True)
+    write_file(script_path+"/generated/cleaned_jsons/_combined.json", recipes, encode_json=True)
 
 
 

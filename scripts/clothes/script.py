@@ -16,10 +16,10 @@ from yaml import dump
         It can technically be anywhere, but this placement reduces the risk of it being deleted by accident.
 """
 
-def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
+def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
 
     lang_dict=get_dict(lang=lang)
-    gen_clothing_attributes(install_path=install_path, output_path=output_path, debug=debug)
+    gen_clothing_attributes(install_path=install_path, script_path=script_path, debug=debug)
 
     special_tunit_entries = {
         "item-gear-rusty": "rusty gears",
@@ -51,7 +51,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         "title-columns": "Columns",
     }
 
-    old_t_ids=get_old_t_ids(output_path+"/re_input/")
+    old_t_ids=get_old_t_ids(script_path+"/re_input/")
 
     categories_ignore=["nadiya"]
     categories_replace={"butterflypin": "emblem"}
@@ -79,14 +79,14 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
     fishable={item: hovertip(tunit("table-content-fishing-junk", special_tunit_entries["table-content-fishing-junk"]), f"{round(fish[item]*100, round_to)}%") for item in fish}
     starter_gear={item: ",<br>".join([tunit(char_class, special_tunit_entries[char_class]) for char_class in char[item]]) for item in char}
 
-    write_file(output_path+"/generated/misc/lootable.json", lootable, encode_json=True)
+    write_file(script_path+"/generated/misc/lootable.json", lootable, encode_json=True)
 
-    write_file(output_path+"/generated/misc/pannable.json", pannable, encode_json=True)
-    write_file(output_path+"/generated/misc/fishable.json", fishable, encode_json=True)
-    write_file(output_path+"/generated/misc/class_obtainable.json", starter_gear, encode_json=True)
+    write_file(script_path+"/generated/misc/pannable.json", pannable, encode_json=True)
+    write_file(script_path+"/generated/misc/fishable.json", fishable, encode_json=True)
+    write_file(script_path+"/generated/misc/class_obtainable.json", starter_gear, encode_json=True)
 
 
-    recipes = crafting_help(install_path, output_path, lang_dict)
+    recipes = crafting_help(install_path=install_path, script_path=script_path, lang=lang, debug=debug)
 
     # Fills `items` (used for item-id + item name) and `descriptions` (used for item lore text) from the games translation files
     for key in lang_dict:
@@ -134,7 +134,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         if categories_replace[replacee] not in categories:
             categories[categories_replace[replacee]] = []
         categories[categories_replace[replacee]] += categories.pop(replacee)
-    #write_file(output_path+"/generated/categories.json", categories, encode_json=True)
+    #write_file(script_path+"/generated/categories.json", categories, encode_json=True)
 
 
     # Fills `warmth`, `rain_prot`, and `eye_prot` (no clue what the latter 2 do tbh)
@@ -152,8 +152,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
 
     test_var_out = list(get_test_var())
     test_var_out.sort()
-    if debug:
-        write_file(output_path+"generated/misc/attributes", "\n".join(test_var_out), encode_json=False)
+    write_file(script_path+"generated/misc/attributes", "\n".join(test_var_out), encode_json=False)
 
     # A lambda function which generates a string like "{{Hovertip|{{Tunit|trader-treasurehunter|Treasure hunter trader}}|1.5 - 2.5 {{Tunit|item-gear-rusty|rusty gears}}}}" from trade information
     contains_villagers=[0]
@@ -260,11 +259,7 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
 
 
     #[print(" ".join(k)+":", [" ".join(t) for t in v]) for k, v in idk.items() if len(v) > 1]
-    write_file(output_path+f"/generated/misc/sets.yaml", dump(idk, indent=2, width=10000))
-    print(output_path+f"/generated/misc/sets.yaml")
-
-
-
+    write_file(script_path+f"/generated/misc/sets.yaml", dump(idk, indent=2, width=10000))
 
 
 
@@ -380,22 +375,22 @@ def generate(install_path:str, *, output_path:str, lang:str, debug:bool):
         if category != "--all":
             combined_tables.append(out)
 
-        write_file(output_path+f"/generated/tables/{category}.txt", out, encode_json=False)
+        write_file(script_path+f"/generated/tables/{category}.txt", out, encode_json=False)
 
 
     combined_tables.append("<references/>")
 
     combined_tables_string = "\n".join(combined_tables)
-    write_file(output_path+"/generated/tables/_combined.txt", combined_tables_string, encode_json=False)
-    write_file_safe(output_path + "/re_input/table.txt", combined_tables_string, encode_json=False)
-    write_file("./generated/clothes_3_combined_tables.txt", combined_tables_string, encode_json=False)
+    write_file(script_path+"/generated/tables/_combined.txt", combined_tables_string, encode_json=False)
+    write_file_safe(script_path + "/re_input/table.txt", combined_tables_string, encode_json=False)
+    write_file("./generated/clothes/tables.txt", combined_tables_string, encode_json=False)
 
     trans_help=["<!--This is here for easier translation of the table using Tunit. Do not touch this if you don't know what you're doing!-->", "{{Hovertip||"]
     tunit_entries = [(entry, special_tunit_entries[entry]) for entry in special_tunit_entries] + [(trader, trader_util.translate_trader(install_path, trader, lang=lang)) for trader in trader_util.get_trader_ids()]
     trans_help += [f"<translate><!--T:{entry[0]}--> {entry[1]}</translate>" for entry in tunit_entries] + ["}}", trans_help[0]]
     trans_help = "<languages/>\n"+("\n".join(trans_help))
-    write_file(output_path+"/generated/translation_help.txt", trans_help, encode_json=False)
-    write_file("./generated/clothes_0_translation_help.txt", trans_help, encode_json=False)
+    write_file(script_path+"/generated/translation_help.txt", trans_help, encode_json=False)
+    write_file("./generated/clothes/translation_marker_comment.txt", trans_help, encode_json=False)
 
 
     if csv:

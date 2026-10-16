@@ -87,9 +87,8 @@ def generate(args:list):
     for entry in directories:
         sub_times[entry[1]]=datetime.now()
         generated_path = "/".join(entry) + "/generated"
-        if os_path.exists(generated_path):
-            rmtree(generated_path)
-        import_module(".".join(entry)+".script").generate(install_path=install_path, output_path="/".join(entry)+"/", lang=lang, debug=debug)
+        rmtree(generated_path, ignore_errors=True)
+        import_module(".".join(entry)+".script").generate(install_path=install_path, script_path="/".join(entry)+"/", lang=lang, debug=debug)
         sub_times[entry[1]]=datetime.now()-sub_times[entry[1]]
         if debug:
             print(f"\tFinished setting up {entry[1]} in:".ljust(45) + f"{sub_times[entry[1]]}, ~{(round(sub_times[entry[1]] / timedelta(milliseconds=1)))} ms")
