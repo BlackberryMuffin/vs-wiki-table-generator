@@ -25,7 +25,7 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
         if dicts[lang].keys()!=dicts["en"].keys():
             dicts[lang] = {key: (dicts[lang] if key in dicts[lang] else dicts["en"])[key] for key in dicts["en"]}
             dicts[lang+"_missing"] = [key for key in dicts["en"] if key not in dicts[lang]]
-        dicts[lang] = cast(LangDict, dicts[lang])
+        dicts[lang] = LangDict(dicts[lang])
 
         write_file(script_path+f"/generated/{lang}.json", dicts[lang], encode_json=True)
     get_dict = inner_get_dict
