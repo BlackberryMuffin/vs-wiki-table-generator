@@ -25,31 +25,33 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
         "itempage": (script_path+"/re_input/item_page.txt", "old items-table"),
     }
 
-    missing = False
-    file_contents = {id:
+    file_contents = {key:
                          (
                              path,
                              (open(path).read() if Path(path).exists() else ""),
-                             msg
+                             name
                          )
-                     for id, (path, msg) in paths.items()
+                     for key, (path, name) in paths.items()
                     }
     data = {}
-    for id, (path, content, msg) in file_contents.items():
+    missing = False
+    for key, (path, content, name) in file_contents.items():
         if not content:
             write_file(path, "")
-            print(f"The {msg} is missing. Please paste it into '{path}' and try again.")
-            missing = True
-        if id in ("blockcodes", "itemcodes"):
+            print(f"The '{name}' is missing. Please paste it into '{path}' and try again.")
+            missing += True
+        if key in ("blockcodes", "itemcodes"):
             # [Code]
-            data[id] = [code.strip() for code in content.split("\n") if code.strip()]
+            data[key] = [code.strip() for code in content.split("\n") if code.strip()]
         else:
             # [Item, Code, Creative Tab, Notes]
             tmp = [[cell.strip() for cell in line.split("||")] for line in content.split("|}")[0].split("|-")[1:] if line.strip()]
-            data[id] = {code: (item, code, c_tab, notes) for (item, code, c_tab, notes) in tmp}
-            if mishaps := [e for e in data[id].values() if len(e)!=4]:
-                raise Exception(f"There are  weirdnesses in '{id}':\n\t{'\n\t'.join([str(e) for e in mishaps])}")
-    if missing: exit(1)
+            data[key] = {code: (item, code, c_tab, notes) for (item, code, c_tab, notes) in tmp}
+            if mishaps := [e for e in data[key].values() if len(e)!=4]:
+                raise Exception(f"There are weirdnesses in the '{name}':\n\t{'\n\t'.join([str(e) for e in mishaps])}")
+    if missing:
+        print(f"Since the contents of {missing} file{'s' * missing!=1} were missing, Block/Item code page generation will be skipped")
+        return
 
     lost_item_ids = [item for (_, item, _, _) in data["itempage"].values() if item not in data["itemcodes"]]
     lost_block_ids = [block for (_, block, _, _) in data["blockpage"].values() if block not in data["blockcodes"]]
@@ -64,17 +66,18 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
 
 
     if debug:
-        from sys import setrecursionlimit
+        from sys import setrecursionlimit, _getframe
         setrecursionlimit(20)
         _=[lang_dict[id] for id in (
                 [f'block-{block}' for block in data["blockcodes"]]+
                 [f'item-{item}' for item in data["itemcodes"]]
         )]
-        errors = sorted((n, k) for k,n in lang_dict.primaries.items())
-        print(
-            f"There's {lang_dict.lang_codeErrorCounter} bad keys.\n"+
-            f"The top primaries are:\n\t"+
-            "\n\t".join((str(t) for t in errors[:5]))
-        )
-        setrecursionlimit(1000)
+        if lang_dict.lang_codeErrorCounter:
+            errors = sorted([(len(v), k, v) for k,v in lang_dict.error_codes.items()], reverse=True)
+            print(
+                f"\tThere's {lang_dict.lang_codeErrorCounter} bad keys, with the top primaries are:\n\t\t"+
+                "\n\t\t".join((str(t[:2]) for t in errors[:5]))+"\n"+
+                f'Find out more near File "{__file__}", line {_getframe().f_lineno}'
+            )
+        setrecursionlimit(1000); del setrecursionlimit, _getframe
 
