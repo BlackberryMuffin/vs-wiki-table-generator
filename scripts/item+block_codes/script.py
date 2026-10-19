@@ -45,7 +45,7 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
             data[id] = [code.strip() for code in content.split("\n") if code.strip()]
         else:
             # [Item, Code, Creative Tab, Notes]
-            tmp = [[cell.strip() for cell in line.split("||")] for line in content.split("|-")[1:] if line.strip()]
+            tmp = [[cell.strip() for cell in line.split("||")] for line in content.split("|}")[0].split("|-")[1:] if line.strip()]
             data[id] = {code: (item, code, c_tab, notes) for (item, code, c_tab, notes) in tmp}
             if mishaps := [e for e in data[id].values() if len(e)!=4]:
                 raise Exception(f"There are  weirdnesses in '{id}':\n\t{'\n\t'.join([str(e) for e in mishaps])}")
