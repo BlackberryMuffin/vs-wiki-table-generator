@@ -64,8 +64,11 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
 
 
     if debug:
-        a=[lang_dict[id] for id in (
+        from sys import setrecursionlimit
+        setrecursionlimit(20)
+        _=[lang_dict[id] for id in (
                 [f'block-{block}' for block in data["blockcodes"]]+
                 [f'item-{item}' for item in data["itemcodes"]]
         )]
+        setrecursionlimit(1000)
 

@@ -1,4 +1,4 @@
-import json
+from scripts._util_general.data_util import deep_copy
 from scripts._util_general.file_util import read_file, write_file
 from scripts.util_0lang.LangDict import LangDict
 from scripts.util_0lang.script import get_dict
@@ -50,10 +50,10 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
                 "!<translate>Item</translate>!!<translate>Chance</translate>\n" +
                 f"|- ||{'\n|-\n|'.join([
                     f'<translate>{
-                        lang_dict.__getitem__(
+                        lang_dict[
                             f"{item['type']}-{item['code']}",
                             item["attributes"] if "attributes" in item else {}
-                        )
+                        ]
                     }</translate>||{round(item["chance"]*100,2)}%'
                     for item in items
                 ])}\n" +
@@ -77,6 +77,6 @@ def lootable_by_type(destinction_fun):
                 if item["code"] not in out:
                     out[item["code"]] = []
                 out[item["code"]].append((stack_type, item["chance"]))
-    return json.loads(json.dumps(out))
+    return deep_copy(out)
 
 

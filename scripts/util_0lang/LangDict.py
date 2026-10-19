@@ -1,18 +1,21 @@
 from typing import override
 
 class LangDict(dict[str, str]):
-    i=0
+    lang_codeErrorCounter=0
     @override
-    def __getitem__(self, key:str, attributes:dict[str,str]|None=None) -> str:
-        if key in self and not (
-                (key=="item-shield-woodmetal" and attributes)
+    def __getitem__(self, key:str|tuple[str, dict[str,str]]) -> str:
+        lang_code = key[0] if isinstance(key, tuple) else key
+        attributes = key[1] if isinstance(key, tuple) else {}
+        
+        if lang_code in self and not (
+                (lang_code=="item-shield-woodmetal" and attributes)
         ):
-            return super().__getitem__(key)
-        key_parts = key.split("-")
-        #print(key)
-        match key_parts, attributes:
+            return super().__getitem__(lang_code)
+        lang_code_parts = lang_code.split("-")
+        #print(lang_code)
+        match lang_code_parts, attributes:
             case ("item", ("crystalizedore"|"ore"), rarity, metal, rock), _:
-                size = key_parts[1] if key_parts[1]=="ore" else "crystallizedore"
+                size = lang_code_parts[1] if lang_code_parts[1]=="ore" else "crystallizedore"
                 return(
                     self["ore-in-rock"]
                     .replace("{0}",
@@ -74,7 +77,7 @@ class LangDict(dict[str, str]):
                 return self["Air"]
 
             case ("block", "lantern", "large"|"small", _), {"material":material}:
-                size = key_parts[2]
+                size = lang_code_parts[2]
                 return self[f"block-lantern-{size}-*-{material}"]
             case ("block", "painting", painting, _), _:
                 return self[f"block-painting-{painting}-*"]
@@ -142,10 +145,10 @@ class LangDict(dict[str, str]):
             case ("block", "bed", type, *_), _:
                 return self[f"block-bed-{type}-head-*"]
             case ("block", "brickslabs", "blue"|"brown"|"fire"|"red", *_), _:
-                color = key_parts[2]
+                color = lang_code_parts[2]
                 return self[f"block-brickslabs-{color}-*"]
             case ("block", "brickslabs", "four"|"eight", color, *_), _:
-                shape = key_parts[2]
+                shape = lang_code_parts[2]
                 return self[f"block-brickslabs-{shape}-{color}-*"]
             case ("block", "roughhewnfencegate", wood, *_), _:
                 return self[f"block-roughhewnfencegate-{wood}-n-closed-*"]
@@ -176,9 +179,10 @@ class LangDict(dict[str, str]):
             case ("block", "stonebrickslab", material, *_), _:
                 return self[f"block-stonebrickslab-{material}-*"]
             case ("block", "ladder", "wood", wood, _), _:
+                print(f"block-ladder-wood-{wood}-*")
+                print(self[f"block-ladder-wood-{wood}-*"])
                 return self[f"block-ladder-wood-{wood}-*"]
-            case ("block", "ladder", kind, _), _:
-                print(key)
+            case ("block", "ladder", kind, "north"|"south"|"east"|"west"), _:
                 return self[f"block-ladder-{kind}-*"]
 
 
@@ -209,7 +213,7 @@ class LangDict(dict[str, str]):
                 return ""
 
             case _:
-                self.i+=1
-                print(self.i, f"Debug KeyError: {key:<55}, {attributes}"); return key
-                #raise KeyError(key)
+                self.lang_codeErrorCounter+=1
+                print(self.lang_codeErrorCounter, f"Debug lang_codeError: {lang_code:<55}, {attributes}"); return lang_code
+                #raise lang_codeError(f"{lang_code:<55}, {attributes}")
 

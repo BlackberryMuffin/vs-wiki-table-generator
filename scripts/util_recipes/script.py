@@ -1,8 +1,8 @@
-from scripts._util_general.file_util import read_file, write_file
 from datetime import datetime
 start = datetime.now()
 from os import scandir
-import json
+from scripts._util_general.data_util import deep_copy
+from scripts._util_general.file_util import read_file, write_file
 
 """
 A lot of the grid recipes have horizontal tabulators inside strings, which is not allowed under standard JSON.
@@ -48,7 +48,7 @@ def recipes_by_type(destinction_fun):
                 if recipe["output"]["code"] not in out:
                     out[recipe["output"]["code"]] = []
                 out[recipe["output"]["code"]].append(recipe)
-    return json.loads(json.dumps(out))
+    return deep_copy(out)
 
 
 

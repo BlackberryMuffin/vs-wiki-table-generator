@@ -1,6 +1,6 @@
-from scripts._util_general.file_util import read_file, write_file
-import json
 from datetime import datetime
+from scripts._util_general.data_util import deep_copy
+from scripts._util_general.file_util import read_file, write_file
 
 start = datetime.now()
 
@@ -26,4 +26,4 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
 ### destinction_fun expects a function to specify what kinda of items are wanted. It should be able to receive 1 string parameter e.g.:
 ###   `pannable_by_type(destinction_fun=(lambda item: item.startswith("clothes-")))` to narrow it down to just clothing items.
 def fishable_by_type(destinction_fun):
-    return json.loads(json.dumps({item:fishing_junk[item] for item in fishing_junk if destinction_fun(item)}))
+    return deep_copy({item:fishing_junk[item] for item in fishing_junk if destinction_fun(item)})

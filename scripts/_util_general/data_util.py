@@ -1,4 +1,4 @@
-from msgpack import packb, unpackb
+from json import loads, dumps
 
 def deep_copy(obj):
-    return unpackb(packb(obj))
+    return loads(dumps(obj))

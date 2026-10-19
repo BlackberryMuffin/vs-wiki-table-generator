@@ -1,5 +1,5 @@
+from scripts._util_general.data_util import deep_copy
 from scripts._util_general.file_util import read_file, write_file
-import json
 from scripts._util_general.mediawiki_templates import tunit
 
 
@@ -36,4 +36,4 @@ def pannable_by_type(destinction_fun):
                 out[item].append([soil, panning_items[soil][item]])
     #return {item: [[soil, panning_items[soil][item]] for item in panning_items[soil]] for soil in panning_items}
 
-    return json.loads(json.dumps(out))
+    return deep_copy(out)
