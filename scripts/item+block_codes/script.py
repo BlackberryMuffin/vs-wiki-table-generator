@@ -70,5 +70,11 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
                 [f'block-{block}' for block in data["blockcodes"]]+
                 [f'item-{item}' for item in data["itemcodes"]]
         )]
+        errors = sorted((n, k) for k,n in lang_dict.primaries.items())
+        print(
+            f"There's {lang_dict.lang_codeErrorCounter} bad keys.\n"+
+            f"The top primaries are:\n\t"+
+            "\n\t".join((str(t) for t in errors[:5]))
+        )
         setrecursionlimit(1000)
 

@@ -2,6 +2,7 @@ from typing import override
 
 class LangDict(dict[str, str]):
     lang_codeErrorCounter=0
+    primaries=[]
     @override
     def __getitem__(self, key:str|tuple[str, dict[str,str]]) -> str:
         lang_code = key[0] if isinstance(key, tuple) else key
@@ -101,7 +102,9 @@ class LangDict(dict[str, str]):
               | (("block", "fruitingbush", state, berry), _)
             ):
                 return self[f"block-fruitingbush-{state}-{berry}-*"]
-            case ("block", "windmillrotor", _), _:
+            case ("block", "windmillrotor", "wood", _), _:
+                return self[f"block-windmillrotor-wood-*"]
+            case ("block", "windmillrotor", _, _), _:
                 return self[f"block-windmillrotor-*"]
             case ("block", "mushroom", shroom, _), _:
                 return self[f"block-mushroom-{shroom}-normal"]
@@ -214,6 +217,10 @@ class LangDict(dict[str, str]):
 
             case _:
                 self.lang_codeErrorCounter+=1
-                print(self.lang_codeErrorCounter, f"Debug lang_codeError: {lang_code:<55}, {attributes}"); return lang_code
+                if lang_code_parts[1] not in self.primaries:
+                    self.primaries[lang_code_parts[1]] = []
+                self.primaries[lang_code_parts[1]].append(key)
+
+                #print(self.lang_codeErrorCounter, f"Debug lang_codeError: {lang_code:<55}, {attributes}"); return lang_code
                 #raise lang_codeError(f"{lang_code:<55}, {attributes}")
 
