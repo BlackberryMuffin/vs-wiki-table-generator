@@ -62,18 +62,12 @@ class LangDict(dict[str, str]):
 
             case ("item", "shield", "metal"), {"metal": metal, "color":_}:
                 return self[f"item-shield-metal-{metal}-*"]
-            case ("item", "shield", "metal"), attr if not attr:
-                ### TODO this isn't actially a todo, just wanted to say this is bad
-                return "Metal round shield"
             case ("item", "shield", "woodmetal"), {"deco": "none", "wood": wood, "metal": _}:
                 return self[f"item-shield-woodmetal-*-{wood}-none"]
             case ("item", "shield", "woodmetalleather"), {"wood":"generic", "deco": "ornate", "metal": _, "color": _}:
                 return self["item-shield-woodmetalleather-*-generic-*-ornate"]
             case ("item", "shield", "woodmetalleather"), {"deco": "none", "color": color, "wood": "generic", "metal": _}:
                 return self[f"item-shield-woodmetalleather-*-generic-{color}-none"]
-            case ("item", "shield", "woodmetalleather"), attr if not attr:
-                ### TODO this isn't actially a todo, just wanted to say this is bad
-                return "Leather-reinforced round shield"
 
             case ("item"|"block", "air"), _:
                 return self["Air"]
@@ -148,12 +142,6 @@ class LangDict(dict[str, str]):
                 return self["block-fencebamboo-*"]
             case ("block", "bed", bed_type, *_), _:
                 return self[f"block-bed-{bed_type}-head-*"]
-            case ("block", "brickslabs", "blue"|"brown"|"fire"|"red", *_), _:
-                color = lang_code_parts[2]
-                return self[f"block-brickslabs-{color}-*"]
-            case ("block", "brickslabs", "four"|"eight", color, *_), _:
-                shape = lang_code_parts[2]
-                return self[f"block-brickslabs-{shape}-{color}-*"]
             case ("block", "roughhewnfencegate", wood, *_), _:
                 return self[f"block-roughhewnfencegate-{wood}-n-closed-*"]
             case ("block", "roughhewnfence", wood, *_), _:
@@ -180,16 +168,85 @@ class LangDict(dict[str, str]):
                 return self[f"block-slantedroofingcornerinner-{material}-*"]
             case ("block", "slantedroofingridgehalfright", material, *_), _:
                 return self[f"block-slantedroofingridgehalfright-{material}-*"]
-            case ("block", "stonebrickslab", material, *_), _:
-                return self[f"block-stonebrickslab-{material}-*"]
+            case ("block", "stonebrickslab", stone, *_), _:
+                return self[f"block-stonebrickslab-{stone}-*"]
             case ("block", "ladder", "wood", wood, _), _:
                 return self[f"block-ladder-wood-{wood}-*"]
             case ("block", "ladder", kind, "north"|"south"|"east"|"west"), _:
                 return self[f"block-ladder-{kind}-*"]
             case ("block", "gravel", rock, *_), _:
                 return self[f"block-gravel-{rock}-*"]
+            case ("block", "slantedroofingtop", material, *_), _:
+                return self[f"block-slantedroofingtop-{material}-*"]
+            case ("block", "slantedroofingridgehalfleft", material, *_), _:
+                return self[f"block-slantedroofingridgehalfleft-{material}-*"]
+            case ("block", "slantedroofinghalfright", material, *_), _:
+                return self[f"block-slantedroofinghalfright-{material}-*"]
+            case ("block", "slantedroofinghalfleft", material, *_), _:
+                return self[f"block-slantedroofinghalfleft-{material}-*"]
+            case ("block", "slantedroofingcornerouter", material, *_), _:
+                return self[f"block-slantedroofingcornerouter-{material}-*"]
+            case ("block", "slantedroofingridgeend", material, *_), _:
+                return self[f"block-slantedroofingridgeend-{material}-*"]
+            case ("block", "slantedroofingbottom", material, *_), _:
+                return self[f"block-slantedroofingbottom-{material}-*"]
+            case ("block", "slantedroofing", material, *_), _:
+                return self[f"block-slantedroofing-{material}-*"]
+            case ("block", "polishedrockslab", rock, *_), _:
+                return self[f"block-polishedrockslab-{rock}-*"]
+            case ("block", "crystal", crystal, size, _), _:
+                return self[f"block-crystal-{crystal}-{size}-up"]
+            case ("block", "crystal", crystal, size, _), _:
+                return self[f"block-crystal-{crystal}-{size}-up"]
+            case ("block", "logquad", log_type, wood, _), _:
+                return self[f"block-logquad-{log_type}-{wood}-{'north' if log_type=='barkedcorner' else '*'}"]
+            case ("block", "plankstairs", wood, *_), _:
+                return self[f"block-plankstairs-{wood}-*"]
+            case ("block", "plankslab", wood, *_), _:
+                return self[f"block-plankslab-{wood}-*"]
+            case ("block", "stalagsection", rock, _), _:
+                return (self[f"block-speleothem"].replace(
+                    "{0}",
+                    self[f"block-{rock}"]
+                ))
+            case ("block", "caveart", *_), _:
+                return self["block-caveart-*"]
+            case ("block", "tileslab", size, design, color, *_), _:
+                return self[f"block-tileslab-{size}-{design}-{color}-*"]
+            case ("block", "metalsheet", metal, _), _:
+                return self[f"block-metalsheet-{metal}-{'down' if metal=='meteoriciron' else '*'}"]
+            case ("block", "glassslab", color, *_), _:
+                return self[f"block-glassslab-{color}-{'down-free' if color in ('smoky', 'pink') else '*'}"]
 
 
+
+            case ("block", "brickslabs", "blue"|"brown"|"fire"|"red", *_), _:
+                color = lang_code_parts[2]
+                return self[f"block-brickslabs-{color}-*"]
+            case ("block", "brickslabs", "four"|"eight", color, *_), _:
+                shape = lang_code_parts[2]
+                return self[f"block-brickslabs-{shape}-{color}-*"]
+            case ("block", "brickstairs", "blue"|"brown"|"fire"|"red", *_), _:
+                color = lang_code_parts[2]
+                return self[f"block-brickstairs-{color}-*"]
+            case ("block", "brickstairs", "four"|"eight", color, *_), _:
+                shape = lang_code_parts[2]
+                return self[f"block-brickstairs-{shape}-{color}-*"]
+
+            # TODO (I don't wanna do these)
+            case (
+                (("block", "door", *_), _)
+              | (("block", "coral", *_, _), _)
+              | (("block", "crop", *_, _), _)
+            ):
+                return "<<fuck you>>"
+
+
+            ### Technically doesn't have a name, but one can be implied
+            case ("item", "shield", "metal"), attr if not attr:
+                return "Metal round shield"
+            case ("item", "shield", "woodmetalleather"), attr if not attr:
+                return "Leather-reinforced round shield"
 
             # likely just not fully implemented:
             case (
@@ -197,7 +254,7 @@ class LangDict(dict[str, str]):
               | (("item", "ontree", "bellpepper", _, _), _)
               | (("block", "crop", "bellpepper", _), _)
             ):
-                return ""
+                return "<<probably yet to be implemented>>"
 
             # these are all seemingly just leftover codes
             case (
@@ -213,8 +270,9 @@ class LangDict(dict[str, str]):
               | (("block", "supportbeam", "veryagedrotten", *_), _)
               | (("block", "debarkedlog", "veryagedrotten", *_), _)
               | (("block", "fruitingbush", _), _)
+              | (("block", "multiblock", *_), _)
             ):
-                return ""
+                return "<<probably legacy>>"
 
             case _:
                 self.lang_codeErrorCounter+=1

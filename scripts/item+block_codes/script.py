@@ -50,7 +50,7 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
             if mishaps := [e for e in data[key].values() if len(e)!=4]:
                 raise Exception(f"There are weirdnesses in the '{name}':\n\t{'\n\t'.join([str(e) for e in mishaps])}")
     if missing:
-        print(f"Since the contents of {missing} file{'s' * missing!=1} were missing, Block/Item code page generation will be skipped")
+        print(f"Since the contents of {missing} file{'s' * (missing!=1)} were missing, Block/Item code page generation will be skipped")
         return
 
     lost_item_ids = [item for (_, item, _, _) in data["itempage"].values() if item not in data["itemcodes"]]
@@ -75,8 +75,8 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
         if lang_dict.lang_codeErrorCounter:
             errors = sorted([(len(v), k, v) for k,v in lang_dict.error_codes.items()], reverse=True)
             print(
-                f"\tThere's {lang_dict.lang_codeErrorCounter} bad keys, with the top primaries are:\n\t\t"+
-                "\n\t\t".join((str(t[:2]) for t in errors[:5]))+"\n"+
+                f"\tThere's {lang_dict.lang_codeErrorCounter} bad key{'s' * (lang_dict.lang_codeErrorCounter!=1)} across {len(lang_dict.error_codes)} categor{'y' if len(lang_dict.error_codes)>1 else 'ies'} with the top categories being:\n\t\t"+
+                "\n\t\t".join((str(t[:2]) for t in errors[:5])).replace("'",'"')+"\n"+
                 f'Find out more near File "{__file__}", line {_getframe().f_lineno}'
             )
         setrecursionlimit(1000); del setrecursionlimit, _getframe
