@@ -53,16 +53,17 @@ def generate(install_path:str, *, script_path:str, lang:str, debug:bool):
         print(f"Since the contents of {missing} file{'s' * (missing!=1)} were missing, Block/Item code page generation will be skipped")
         return
 
-    lost_item_ids = [item for (_, item, _, _) in data["itempage"].values() if item not in data["itemcodes"]]
-    lost_block_ids = [block for (_, block, _, _) in data["blockpage"].values() if block not in data["blockcodes"]]
     tmp_file_name_item, tmp_file_name_block = path_out_items+"lost_item_ids.txt", path_out_items+"lost_block_ids.txt"
 
-    write_file(tmp_file_name_item, "\n".join(lost_item_ids))
-    if debug and lost_item_ids:
-        print(f"Some item codes seem to no longer exist. You can find them in '{tmp_file_name_item}'")
-    write_file(tmp_file_name_block, "\n".join(lost_block_ids))
-    if debug and lost_block_ids:
-        print(f"Some block codes seem to no longer exist. You can find them in '{tmp_file_name_block}'")
+    if debug:
+        lost_item_ids = [item for (_, item, _, _) in data["itempage"].values() if item not in data["itemcodes"]]
+        if lost_item_ids:
+            write_file(tmp_file_name_item, "\n".join(lost_item_ids))
+            print(f"Some item codes seem to no longer exist. You can find them in '{tmp_file_name_item}'")
+        lost_block_ids = [block for (_, block, _, _) in data["blockpage"].values() if block not in data["blockcodes"]]
+        if lost_block_ids:
+            write_file(tmp_file_name_block, "\n".join(lost_block_ids))
+            print(f"Some block codes seem to no longer exist. You can find them in '{tmp_file_name_block}'")
 
 
     if debug:

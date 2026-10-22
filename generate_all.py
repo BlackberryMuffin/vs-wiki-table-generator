@@ -32,7 +32,7 @@ args_options = {
     ),
     ("--debug", "-d"): (
         (),
-        "Enables certain debug data being printed (mainly process times).",
+        "Enables certain debug data being printed and tests being performed (will substantially increase generation times).",
         "debug",
     ),
 }
@@ -90,8 +90,7 @@ def generate(args:list):
         rmtree(generated_path, ignore_errors=True)
         import_module(".".join(entry)+".script").generate(install_path=install_path, script_path="/".join(entry)+"/", lang=lang, debug=debug)
         sub_times[entry[1]]=datetime.now()-sub_times[entry[1]]
-        if debug:
-            print(f"\tFinished setting up {entry[1]} in:".ljust(45) + f"{sub_times[entry[1]]}, ~{(round(sub_times[entry[1]] / timedelta(milliseconds=1)))} ms")
+        print(f"\tFinished setting up {entry[1]} in:".ljust(45) + f"{sub_times[entry[1]]}, ~{(round(sub_times[entry[1]] / timedelta(milliseconds=1)))} ms")
 
     print("All done :3")
     def sum_timedelta(l:list):
@@ -102,9 +101,8 @@ def generate(args:list):
     time_lost=total_time-sum_timedelta(sub_times.values())
     if time_lost/timedelta(milliseconds=1)<1:
         time_lost = int(time_lost/timedelta(microseconds=1))
-    if debug:
-        print("It took:", total_time)
-        print(f"Lost {time_lost} μs to the aether >:3") # debug=True adds ~70μs to this
+    print("It took:", total_time)
+    print(f"Lost {time_lost} μs to the aether >:3") # debug=True adds ~70μs to this
 
 
 generate(argv)
